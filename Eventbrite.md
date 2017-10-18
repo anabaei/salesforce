@@ -1,4 +1,4 @@
-# Evebtbrite vs Salesforce
+### Deploy Evebtbrite in Salesforce
 * After installing the event brite on your account it lands you this page which you should authenticate it with eventbrite account 
 ![alt text](https://user-images.githubusercontent.com/7471619/31694204-cc6b01a0-b357-11e7-8179-ea561069d172.png)
 * As followed it ask you authentication 

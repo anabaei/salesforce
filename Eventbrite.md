@@ -10,4 +10,7 @@
 ------
 * To select mapping salesfoce config I choose event objects as the target to create new campaign object in salesforce, notice these options all could be customized 
 ![alt text](https://user-images.githubusercontent.com/7471619/31694247-0435a3ba-b358-11e7-96ee-25276eab54c1.png)
+--- 
+* Then you are able to see the events at salesfoce campaign section  
+![alt text](https://user-images.githubusercontent.com/7471619/31694270-29e551c8-b358-11e7-871f-820cf8a95e9d.png)
 

@@ -13,4 +13,4 @@
 --- 
 * Then you are able to see the events at salesfoce campaign section  
 ![alt text](https://user-images.githubusercontent.com/7471619/31694270-29e551c8-b358-11e7-871f-820cf8a95e9d.png)
-
+* By mapping each event all attendees map as campaign members and opportunity in campaign, also you each campaign displays eventid as well, 

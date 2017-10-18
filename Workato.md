@@ -1,4 +1,5 @@
 ### Eventbrite vs Salesforce using Workato
+* Assumptions: you have an account with Eventbrite which has at least on event listed in that which you aim to map it to your salesforce account (clearly you should have one salesforce account as well)
 * After insalling workato from appexchange you should see landing page like this, finally your receipe would be like the current one 
 * Click on Create new recipe to start 
 ![alt text](https://user-images.githubusercontent.com/7471619/31692692-b259d960-b34f-11e7-80ce-a55dd532b125.png)

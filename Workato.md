@@ -44,6 +44,6 @@ attendee registered in Eventbrite
 ![alt text](https://user-images.githubusercontent.com/7471619/31735301-576b3038-b3f6-11e7-8e9e-867ca0d97c98.png)
 -----
 * After running the test, as you see the campaign id is same and in details page you see the opportunities for that campaing 
-
+![alt text](https://user-images.githubusercontent.com/7471619/31735399-a43245dc-b3f6-11e7-85a0-e17e82fb31ad.png)
 
 

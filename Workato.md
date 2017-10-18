@@ -1,4 +1,4 @@
-# Eventbrite vs Salesforce using Workato
+### Eventbrite vs Salesforce using Workato
 * After insalling workato from appexchange you should see landing page like this, finally your receipe would be like the current one 
 * Click on Create new recipe to start 
 ![alt text](https://user-images.githubusercontent.com/7471619/31692692-b259d960-b34f-11e7-80ce-a55dd532b125.png)

@@ -33,6 +33,17 @@
 * If you click the campaign just created you should see the details of that as below 
 -------
 ![alt text](https://user-images.githubusercontent.com/7471619/31692816-4d4b4602-b350-11e7-8c41-64600b6ad16a.png)
+------
+### Opportunities
+* Each campaigns includes opportunities who purchased the tickets from the events, to map ticketets to events define trigger as new event 
+* Define action application as salesforce and the action as create an object and define that object as opportunity
+attendee registered in Eventbrite 
+![alt text](https://user-images.githubusercontent.com/7471619/31735182-f3953f0e-b3f5-11e7-9259-b1fc0840573f.png)
+-----
+* Define the close date and attribute for object to be presentedby and also most important the campaign ID which you have it from salesforce view 
+![alt text](https://user-images.githubusercontent.com/7471619/31735301-576b3038-b3f6-11e7-8e9e-867ca0d97c98.png)
+-----
+* After running the test, as you see the campaign id is same and in details page you see the opportunities for that campaing 
 
 
 

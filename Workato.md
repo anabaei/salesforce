@@ -49,20 +49,20 @@ attendee registered in Eventbrite
 ![alt text](https://user-images.githubusercontent.com/7471619/31735394-a1defdfc-b3f6-11e7-9161-76f3f1d3de9c.png)
 ![alt text](https://user-images.githubusercontent.com/7471619/31735543-1744223e-b3f7-11e7-8c5c-0cf113bb49c2.png)
 -------
-#### Create Campaign with an Event Trigger
+## Create Campaign with an Event Trigger
 * When an event was created in Eventbrite then create a campaign in Salesforce as 
 ![alt text](https://user-images.githubusercontent.com/7471619/31917714-d72a9e9c-b80d-11e7-8606-651ee82dc3c4.png)
 * Add optional Event Id to be able to keep track of the Event 
 ![alt text](https://user-images.githubusercontent.com/7471619/31917559-0d46c5c4-b80d-11e7-8c34-e469b9617280.png)
 * The result of executing this receipe would be 
 ![alt text](https://user-images.githubusercontent.com/7471619/31917553-0843052e-b80d-11e7-8e87-762ad3f50a42.png)
-#### Create contacts when new attendee registered 
+## Create contacts when new attendee registered 
 ![alt text](https://user-images.githubusercontent.com/7471619/31917566-11c0df36-b80d-11e7-87e8-59a47abba33c.png)
 * Same as campaign add Event ID attribute to be able to track each contacts 
 ![alt text](https://user-images.githubusercontent.com/7471619/31917571-15a116c0-b80d-11e7-8190-bad786332454.png)
 * The result of running this receipe would be new contacts in salesforce 
 ![alt text](https://user-images.githubusercontent.com/7471619/31917549-05b49c8c-b80d-11e7-8a8e-c7845fb5985e.png)
-#### Managing campaigns members 
+## Managing campaigns members 
 * Inside campaign edit tab click on `add members`
 * Select the contatcs from step 1 and next steps would be customizing filter by Event Id eqalus to our ids then press `Go`
 ![alt text](https://user-images.githubusercontent.com/7471619/31917556-0acfddd0-b80d-11e7-98aa-1aa2a42c92db.png)

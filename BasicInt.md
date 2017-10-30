@@ -10,4 +10,22 @@ What they can do and what type of query they are able to run
 6. *App* provides rapid development and deployment extending CRM 
 7. *IoT* is event processing engine that connects products and devices to salesforce and gain vivid pircutre of product usage
 
+### Campaign: a tool to track teams
+* A tool to track teams with leads, contracts, accounts, tasks, activitis and files and track team actions
+### Report : generate any data we need to review 
+* A certain report that allow measurement by creating new ones we have different types of reports and share it
+
+
+
+
+
+
+
+
+* Users can track activities by runing queries with their emails, accounts tasks and dates  etc they call it campaign
+* Users can use different email templates or cutomoize them 
+* Users can add custom fields to common data types
+
+
+
 

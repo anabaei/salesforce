@@ -15,12 +15,10 @@ What they can do and what type of query they are able to run
 ### Report : generate any data we need to review 
 * A certain report that allow measurement by creating new ones we have different types of reports and share it
 
-
-
-
-
-
-
+### Opportunites : Track opportunites 
+* Associated with contacts and accounts you can add / remove directly from accounts 
+------------
+------------
 
 * Users can track activities by runing queries with their emails, accounts tasks and dates  etc they call it campaign
 * Users can use different email templates or cutomoize them 

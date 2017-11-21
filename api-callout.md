@@ -26,3 +26,32 @@ public class PositionsController {
     }
 }
 ```
+* To parse json return body we first map the results into string: list(objects) format. If the end point is like 
+```java
+{
+    "emails": [
+        {
+            "email": "amirxxxx@gmail.com", 
+            "verified": false, 
+            "primary": true
+        }
+    ], 
+    "id": "2355xxxxxxxx", 
+    "name": "sfu3 xxxx", 
+    "first_name": "sfuxxxx", 
+    "last_name": "Txxxxx", 
+    "is_public": false, 
+    "image_id": null
+}
+```
+* Then the parsing format is like 
+```java
+ Map<String, Object> m = (Map<String, Object>)JSON.deserializeUntyped(res.getBody()); 
+ List<Object> positions = (List<Object>) m.get('emails');
+ for (Object item : positions) {
+           Map<String, Object> i = (Map<String, Object>)item;
+           System.debug(i.get('email')); //which returns amirxxxx@gmail.com
+        }
+```
+
+

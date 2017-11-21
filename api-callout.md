@@ -53,5 +53,6 @@ public class PositionsController {
            System.debug(i.get('email')); //which returns amirxxxx@gmail.com
         }
 ```
+* Helpfull [link](https://stackoverflow.com/questions/14912599/parsing-json-object-in-salesforce-apex)
 
 

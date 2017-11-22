@@ -55,4 +55,30 @@ public class PositionsController {
 ```
 * Helpfull [link](https://stackoverflow.com/questions/14912599/parsing-json-object-in-salesforce-apex)
 
+* To display results in a view, we need to create an apex form and call controller, then assign action and variable as below
+```java
+<apex:page controller="PositionsController">
+  <style type="text/css">
+      .card {
+          float: left;
+          height: 60px;
+      } </style>
+  
+  <center> <h1 style="font-size:16px; color:grey">List of Events</h1> 
+    <br /><br />
+  <apex:form > 
+      <apex:CommandButton value="Synch with Eventbrite" action="{!GetCandidatePositions}"/><br /><br />
+      <apex:outputText value="{!PositionsList}" escape="false"></apex:outputText>
+  </apex:form>
+  </center>
+</apex:page>
+```
+* Inside `PositionsController` define `PositionsList` string to concat results as 
+```java
+private String PositionsList;
+String positionString = ' ';
+positionString += '<td class=\'tr\'>'+ names.get('text') + '</td>';
+PositionsList = positionString;
+```
+
 

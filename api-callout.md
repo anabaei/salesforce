@@ -80,5 +80,6 @@ String positionString = ' ';
 positionString += '<td class=\'tr\'>'+ names.get('text') + '</td>';
 PositionsList = positionString;
 ```
-
+##### Derialization and Deserialization in Java. 
+ Serialization is a process of converting an object into a sequence of bytes which can be persisted to a disk or database or can be sent through streams like JSON format. The reverse process of creating object from sequence of bytes is called deserialization.
 

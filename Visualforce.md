@@ -48,13 +48,47 @@ https://ap1.salesforce.com/apex/mypage?id=743987234&foo=true
     </apex:pageBlockSection>
  </apex:pageBlock>
 ```
+* Blocksection is built as table
 ### <apex:outputField>
 * It displaying Data datas, boolean nice formats
 ```java
 <apex:pageBlock >
-    <apex:pageBlockSection title="List"> 
+    <apex:pageBlockSection title="List" columns="1"> 
        <apex:outputField value="{!Account.name_c}"/>
 ```
+### <apex:pageBlockSectionItem> 
+* number of columns can be chosen
+```java
+
+```
+### <apex:outputText>
+* allows more than one fields as output in one column as
+```java
+<apex:page standardController="Account">
+  <apex:pageBlock >
+    <apex:pageBlockSection title="List"> 
+        <apex:outputText value="{0}{1}">
+          <apex:param value="{!Account.Name}"/>
+          <apex:param value="{!Account.Type}"/>
+```
+* we can add labels to outputfields
+```java
+<apex:page standardController="Account">
+  <apex:pageBlock >
+    <apex:pageBlockSection title="List">
+      <apex:outputLabel value="Code & Labe: " />  
+        <apex:outputText value="{!Account.Name} ({!Account.Type})" />
+```
+* Add another column under blocksection as blocksectionItem
+```java
+<apex:pageBlockSectionItem >
+        <apex:outputText value="{0,date,full}">
+          <apex:param value="{!Account.createdDate}" />
+        </apex:outputText>
+</apex:pageBlockSectionItem>
+```
+
+
 
 
 

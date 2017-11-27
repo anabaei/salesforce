@@ -90,9 +90,18 @@ https://ap1.salesforce.com/apex/mypage?id=743987234&foo=true
 ### gen PDF
 * add renderAs="pdf" to `<apex:page controller..`
 
+#### Static Resources  
 
+setup-> static resources -> click new and give a zip file and make it public.
+now file is ready to use in our page
+```java
+<apex:stylesheet value="{!URLFOR($Resource.nameofit, 'css/main.css')}" />
+```
+We might have javascript in directory called js or images
 
-
-
+```java
+<apex:includeScript value="{!URLFOR($Resource.Site,'js/main.js')}" />
+<apex:image value="{!URLFOR($Resource.TheLogo, `img/logo.jpg')}" width="32-" height="240" />
+```
 
 

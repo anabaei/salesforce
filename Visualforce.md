@@ -87,6 +87,9 @@ https://ap1.salesforce.com/apex/mypage?id=743987234&foo=true
         </apex:outputText>
 </apex:pageBlockSectionItem>
 ```
+### gen PDF
+* add renderAs="pdf" to `<apex:page controller..`
+
 
 
 

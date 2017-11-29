@@ -84,6 +84,7 @@ PositionsList = positionString;
  Serialization is a process of converting an object into a sequence of bytes which can be persisted to a disk or database or can be sent through streams like JSON format. The reverse process of creating object from sequence of bytes is called deserialization.
 
 #### Mapping JSON Objects
+* If we have events:[ {name:{},id:X, date:x,..},{},{}]
 * Map a list of JSON object into a list as
 ```java
 List<Object> positions = (List<Object>) m.get('events');

@@ -16,4 +16,12 @@ public Contact getContactMethod1() {
     getContactMethod1(): {!contactMethod1.name}
 </apex:page>
 ```
+### Set permission to users
+* Subusers usually dont access to pages created by admin. To do that 
+- Go to Set permission and create a new one
+- Assign the licence which your target user carry on
+- After creating a set permission, go to edit 
+- Click on visualforce page access and select pages you want to allow users 
+- Done!
+
 

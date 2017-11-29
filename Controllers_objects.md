@@ -24,4 +24,16 @@ public Contact getContactMethod1() {
 - Click on visualforce page access and select pages you want to allow users 
 - Done!
 
+#### Create new object in Salesforce
+* here is an example of creating new Account 
+```java
+ Account newAccount = new Account (name = 'AcName',
+        BillingCity ='TestCity',
+        BillingCountry ='TestCountry',
+        BillingStreet ='TestStreet',
+        BillingPostalCode ='t3stcd3'
+        );
+        
+        insert newAccount;
+```
 

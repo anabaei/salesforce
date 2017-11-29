@@ -83,3 +83,14 @@ PositionsList = positionString;
 ##### Derialization and Deserialization in Java. 
  Serialization is a process of converting an object into a sequence of bytes which can be persisted to a disk or database or can be sent through streams like JSON format. The reverse process of creating object from sequence of bytes is called deserialization.
 
+#### Mapping JSON Objects
+* We map json objects into a pair of (string,object). Then to access the object call the string as 
+```java
+i.get('status')
+```
+* Objects can be nested so we again map them into pairs of string, objects. 
+* If there were repeated objects we can use for loop as below then map them
+```java
+ for (Object item : positions) {
+  Map<String, Object> i = (Map<String, Object>)item;
+```

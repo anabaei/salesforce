@@ -36,4 +36,13 @@ public Contact getContactMethod1() {
         
         insert newAccount;
 ```
-
+##### Bootstrap
+* In order to active bootstrap you need to add cdns into the page as 
+```java
+<apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" />
+<apex:stylesheet value="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"/>
+```
+* Also disable default stylesheet in apex:page
+```java
+<apex:page controller="Allorders" standardStylesheets="false" >
+```

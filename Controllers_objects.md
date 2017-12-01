@@ -25,7 +25,7 @@ public Contact getContactMethod1() {
 - Done!
 
 #### Create new object in Salesforce
-* here is an example of creating new Account 
+* here is an example of creating new Account [this](https://developer.salesforce.com/forums/?id=906F000000092OYIAY)
 ```java
  Account newAccount = new Account (name = 'AcName',
         BillingCity ='TestCity',
@@ -36,6 +36,10 @@ public Contact getContactMethod1() {
         
         insert newAccount;
 ```
+* Find a query from an object
+```java
+List<Case> lstCase = [select Accountid, Account.name, Account.site from Case where id=: Apexpages.currentPage().getParameters().get('id)];
+```
 ##### Bootstrap
 * In order to active bootstrap you need to add cdns into the page as 
 ```java
@@ -45,4 +49,26 @@ public Contact getContactMethod1() {
 * Also disable default stylesheet in apex:page
 ```java
 <apex:page controller="Allorders" standardStylesheets="false" >
+```
+#### Call JS function 
+```java
+<apex:page controller="calljavascript_cls" >
+<script>
+  function func()
+  {
+  alert('function calling');
+  }
+  </script>
+  <apex:outputText value="{!callfunc}" escape="false"></apex:outputText>
+ 
+</apex:page>
+-------- apex class --------------
+public class calljavascript_cls
+{
+public string callfunc{get;set;}
+public calljavascript_cls()
+{
+    callfunc='<script> func(); </script>';
+}
+}
 ```

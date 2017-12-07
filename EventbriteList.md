@@ -135,3 +135,22 @@ public class Eventslist {
   </center>
 </apex:page>
 ```
+
+* Check whether account already exist or not then create it
+```java
+public List<Campaign> c;
+public String a;
+public void createcam(){
+       a = '33301name';
+       c = [SELECT Id, Name FROM Campaign where Name =: a ]; 
+       if(c.size()<1)  {
+           Campaign new1 = new Campaign(Name= a, 
+                          Status = 'live'       
+                              );
+                insert new1;  
+       }
+   }
+```
+
+
+

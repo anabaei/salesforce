@@ -194,3 +194,4 @@ Set<String> sds = new Set<String>();
                sds.add(a);  
              }
 ```
+* The main reason that the trivial solution doesnt work because in trivial we say if it match then return yes otherwise no. Since it check charactor by charactor so by comparing partial characotrs we can not make sure these are identical. so we use not equal 

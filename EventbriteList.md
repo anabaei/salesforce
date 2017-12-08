@@ -158,5 +158,18 @@ for (Campaign it : c) {
                  
                 } 
 ```
-
+*Convert string to array of chars and compare them
+```java       String a = 'yes'; 
+              String[] ass = name.split('');
+              String[] bss = b.split('');
+                
+             for(integer ii=0; ii<ass.size();ii++)
+                {
+                    if(!b.contains(String.valueof(ass[ii])))
+                    {
+                     a = 'no';     
+                    }
+                    
+                }
+```
 

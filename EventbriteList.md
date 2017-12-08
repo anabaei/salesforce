@@ -172,4 +172,25 @@ for (Campaign it : c) {
                     
                 }
 ```
-
+### Mapping Events to campaign 
+* Go through all Events at A loop
+* Go through all campaigns at B loop inside A
+* Check one by one if exists save a temp variable `yes` otherwise `no`
+* Since this temp variable would be overriden in next loop inside B so it is better to insert this temp inside a Set or array. (set is an array unrepeatable). so if the set size is one so includes only no but if is 2 so it includes yes and we can find which one existed. 
+```java
+Set<String> sds = new Set<String>();
+             for (Campaign it : c) {
+                a = 'yes';
+                b = it.Name;
+                String[] ass = name.split('');
+                String[] bss = b.split('');  
+             for(integer ii=0; ii<ass.size();ii++)
+                {
+                    if(!b.contains(String.valueof(ass[ii])) && ii<bss.size())
+                    {
+                      a = 'no'; 
+                    }
+                }
+               sds.add(a);  
+             }
+```

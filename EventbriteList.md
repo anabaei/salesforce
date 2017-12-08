@@ -195,3 +195,10 @@ Set<String> sds = new Set<String>();
              }
 ```
 * The main reason that the trivial solution doesnt work because in trivial we say if it match then return yes otherwise no. Since it check charactor by charactor so by comparing partial characotrs we can not make sure these are identical. so we use not equal 
+
+### Split data and convert it to Data format for salesforce objects
+```java
+ temp = startdate.split('T');           
+ temp = temp[0].split('-');  
+ StartDate = date.parse(temp[1]+'/'+temp[2]+'/'+temp[0]); 
+```

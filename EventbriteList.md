@@ -151,6 +151,12 @@ public void createcam(){
        }
    }
 ```
-
+* Check an object like Campaign in salesforce and retrieve data attribute like 'Name' ftom it to compare 
+```java
+for (Campaign it : c) {
+                    if (it.Name == 'alafei') {positionString += '<td class=\'tr\'>no'+ it.Name +'</td>'; }
+                 
+                } 
+```
 
 

@@ -202,3 +202,16 @@ Set<String> sds = new Set<String>();
  temp = temp[0].split('-');  
  StartDate = date.parse(temp[1]+'/'+temp[2]+'/'+temp[0]); 
 ```
+### Catch DML Error by defining a rollback action 
+
+```java
+ Savepoint sp = Database.setSavepoint();
+            CampaignMember newt = new CampaignMember(CampaignId = '7011I000000d2P1', ContactId= idforcontact , Status='Opt-In');
+           try {
+            insert newt;
+           }
+             catch(dmlexception e) {
+             Database.rollback(sp);
+             }
+         }
+```

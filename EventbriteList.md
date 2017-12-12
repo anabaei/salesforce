@@ -215,3 +215,131 @@ Set<String> sds = new Set<String>();
              }
          }
 ```
+#### Eventbrite list to create campaign and contact only if not repeatet!
+* Inclucdes checking wheter exist or not and if not then save it
+```java
+public class Eventslist {
+    
+    public List<Campaign> c;
+    public Eventslist()
+    {
+         c = [SELECT Name FROM Campaign]; 
+    }
+
+    //private variable
+    private String Eventinfo;
+    private String name;
+    private String details;
+    private String startdate;
+    private String enddate;
+    private String status;
+    private String createdat;
+    private String urllink;
+    private String id;
+    List<object> findcamp;
+    
+    public String idString {get;set;}
+    public String a;
+    public String b;
+    List<String> fff;
+    
+    public String Getlists(){
+      return Eventinfo;
+    }    
+    //function called by view
+    public String GetEventinfo() { 
+
+
+        // Instantiate a new http object
+        Http h = new Http();
+        HttpRequest req = new HttpRequest();
+        req.setHeader('Authorization', 'bearer BOJPDFI7HSHDCV6WQZAL');
+        req.setEndpoint('https://www.eventbriteapi.com/v3/users/me/owned_events/?token=BOJPDFI7HSHDCV6WQZAL');
+        req.setMethod('GET');
+        HttpResponse res = h.send(req);
+        String responseJson = res.getBody();
+        List<String> thelist = new List<String>();
+         String loc = res.getHeader('Location'); // get location of the redirect
+         req = new HttpRequest();
+         req.setEndpoint('https://www.eventbriteapi.com/v3/users/me/owned_events/?token=BOJPDFI7HSHDCV6WQZAL');
+         req.setMethod('GET');
+         req.setHeader('Content-Type', 'application/json');
+         req.setHeader('Accept','application/json');
+         res = h.send(req);
+         Map<String, Object> m = (Map<String, Object>)JSON.deserializeUntyped(res.getBody());
+      
+         List<Object> positions = (List<Object>) m.get('events');
+         
+         String positionString = '<table class=\'table-bordered table-hover th\'>';
+         positionString += '<tr> <th class=\'tr\'>Event Name</th> <th class=\'tr\'>Start Date</th>  <th class=\'tr\'>End Date</th>  <th class=\'tr\'>Status</th>  <th class=\'tr\'>Created at</th>  <th class=\'tr\'>Link to Event</th><th class=\'tr\'>Contact List</th></tr>';
+        for (Object item : positions) {
+           Map<String, Object> i = (Map<String, Object>)item;
+                   Map<String, Object> names = (Map<String, Object>) i.get('name');
+                      
+                         name = String.valueof(names.get('text'));      
+                         Map<String, Object> starts = (Map<String, Object>) i.get('start'); 
+                           startdate = String.valueof(starts.get('local'));                        
+                         Map<String, Object> ends = (Map<String, Object>) i.get('end'); 
+                            enddate = String.valueof(ends.get('local'));
+                         createdat = String.valueof(i.get('created'));
+                         status = String.valueof(i.get('status'));
+                         urllink = String.valueof(i.get('url'));
+                         id = String.valueof(i.get('id'));
+               //////////////// Check campaign exists /////////////////
+
+           
+            Set<String> sds = new Set<String>();
+             for (Campaign it : c) {
+                a = 'yes';
+                b = it.Name;
+                String[] ass = name.split('');
+                String[] bss = b.split('');    
+             for(integer ii=0; ii<ass.size();ii++)
+                {
+                    if(!b.contains(String.valueof(ass[ii])) && ii<bss.size())
+                    {
+                      a = 'no';                         
+                    }
+                }
+               sds.add(a);  
+              
+             }
+            
+            if(sds.size()>1){
+               positionString += '<td><a href=\'https://c.na73.visual.force.com/apex/notsaveorders?Id='+ id +
+                  '&name='+ name +
+                  '&startdate='+startdate+
+                  '&enddate='+enddate+
+                  '&status='+status+
+                  '&createdat='+createdat+' \'>Campaign</a></td>';
+                
+            }
+            else
+            {
+                 positionString += '<td><a href=\'https://c.na73.visual.force.com/apex/notsaveorders?Id='+ id +
+                  '&name='+ name +
+                  '&startdate='+startdate+
+                  '&enddate='+enddate+
+                  '&status='+status+
+                  '&createdat='+createdat+' \'>New Campaign</a></td>'; 
+            }
+                           
+               positionString += '<td class=\'tr\'>'+  name + '</td>';
+               positionString += '<td class=\'tr\'>'+ startdate + '</td>';
+               positionString += '<td class=\'tr\'>'+ enddate + '</td>';
+               positionString += '<td class=\'tr\'>'+ status + '</td>';
+               positionString += '<td class=\'tr\'>'+ createdat + '</td>'; 
+              // positionString += '<td class=\'tr\'>'+ ends.get('local') + '</td>';
+               positionString += '<td><button><a href=\''+ urllink + '\'>Event</a></button></td>';
+               positionString += '<td><a href=\'https://c.na73.visual.force.com/apex/orders?Id='+ id +' \'>List</a></td></tr>';
+                      
+        }
+
+        positionString += '</table>';
+        Eventinfo = positionString;
+      //  System.debug('_____'+Eventinfo+'_______');
+     // creme();
+       return Eventinfo;
+    }
+}
+```

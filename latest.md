@@ -20,11 +20,12 @@ public class SaveCampagins {
     private String status;
     private String createdat;
     private String questionfor;
-    private String answersfor; 
+     public String answersfor; 
     private String cellphone;
     private String jobtitle;
     private String age;
     private String[] temp;
+    private String[] tempbd;
     private String[] tempenddate;
     private String[] tempmore;
     private Contact[] tempid;
@@ -34,7 +35,20 @@ public class SaveCampagins {
     private String contactemail;
     private String contactaffiliate;
     private String workphone;    
-   
+    private String mailhomeaddress;
+    private String mailhomeaddress2;
+    private String mailhomepo;
+    private String mailhomeregion;
+    private String mailhomecountry;
+    private String mailhomecity;
+    private String bd;
+    private Date bd2;
+    private Date bd3;
+    private String birthdate1;
+    private String blog;
+    private String website;
+    private String ticketname;
+    
     //public accessor
    // List<Contact> contacts = new List<Contact>();
     //function called by view
@@ -97,11 +111,24 @@ public class SaveCampagins {
                    //   Ordersinfo += '<td class=\'tr\'>'+ profile.get('last_name') + '</td>';
                   //    Ordersinfo += '<td class=\'tr\'>'+ profile.get('email') + '</td>';
                       email = String.valueOf(profile.get('email'));
+                      blog = String.valueOf(profile.get('blog'));
+                      age = String.valueOf(profile.get('age'));
+                      ticketname = String.valueOf(i.get('ticket_class_name'));
+            
                       phone = String.valueOf(profile.get('home_phone'));
                       cellphone = String.valueOf(profile.get('cell_phone'));
                       jobtitle= String.valueOf(profile.get('job_title'));
                       age = String.valueOf(profile.get('age'));
+                      suffix = String.valueOf(profile.get('suffix'));
+                      website = String.valueOf(profile.get('website'));
+                      
                       workphone = String.valueOf(profile.get('work_phone'));
+                      String tm1 = String.valueOf(profile.get('birth_date'));
+                 //     tempbd = tm1.split('-');
+                   //   bd = bd2.month()+'/'+bd2.day()+'/'+bd2.year(); 
+                   //   bd3 = date.parse(bd);
+                     //  bd = String.valueOf(bd.split('-'));
+                   //   tempbd = bd.split('-');
                    //   suffix = String.valueOf(profile.get('suffix'));
                    //   mobile = String.valueOf(profile.get('cell_phone'));
                      // birthdate = Date.valueOf(profile.get('birth_date'));
@@ -113,6 +140,20 @@ public class SaveCampagins {
                     
                      
                       
+                      Map<String, Object> addresses = (Map<String, Object>) profile.get('addresses');
+                   //  mailhomeaddress =  String.valueof(addresses);
+                     if (addresses != null){
+                        Map<String, Object> homeaddress = (Map<String, Object>) addresses.get('home'); 
+                         mailhomeaddress =  String.valueof(homeaddress.get('address_1'));
+                         mailhomeaddress2 =  String.valueof(homeaddress.get('address_2'));
+                         mailhomepo =  String.valueof(homeaddress.get('postal_code'));
+                         mailhomeregion =  String.valueof(homeaddress.get('region'));
+                         mailhomecountry =  String.valueof(homeaddress.get('country'));
+                         mailhomecity =  String.valueof(homeaddress.get('city'));
+                     }
+                          
+                     // mailhomeaddress =  homeaddress.get()
+            
                       List<Object> barcodes = (List<Object>) i.get('barcodes');
                       Map<String, Object> j = (Map<String, Object>)barcodes[0];
                //       Ordersinfo += '<td class=\'tr\'>'+ j.get('status') + '</td>';
@@ -122,11 +163,12 @@ public class SaveCampagins {
                  //     Ordersinfo += '<td class=\'tr\'>'+ base_price.get('display') + '</td>';
                       
                       
-                      
+                       answersfor = ' ';                      
                        List<Object> answers = (List<Object>) i.get('answers');
                           for (Object ans : answers) {
                            Map<String, Object> a1 = (Map<String, Object>)ans;
                           
+                             
                           if (a1.get('answer') == null)
                           {
                            
@@ -163,7 +205,7 @@ public class SaveCampagins {
         //    }
             
             ////// find campaigns ......
-            
+             
              tempcamid = [select id from Campaign where Name like: name limit 1 ];
            //   contactLastName = tempcamid.get(0).id;
             if (tempcamid.size() > 0){
@@ -181,12 +223,25 @@ public class SaveCampagins {
             }
             
             //String idforcam = tempcamid.get(0).id;
-            
+         //  bd2 = date.parse(tempbd[1]+'/'+tempbd[2]+'/'+tempbd[0]);
             ////// create contacts ......
             Contact new1 = new Contact(LastName = contactLastName,  Email = email,  HomePhone = phone
                                       ,MobilePhone = cellphone
                                       ,Title = jobtitle
                                       , phone = workphone
+                                       ,Department = bd
+                                       , Birthdate = date.parse('12/14/1999')
+                                       , MailingStreet = mailhomeaddress
+                                       , MailingCity = mailhomecity
+                                       , MailingState = mailhomeregion
+                                       , MailingCountry = mailhomecountry
+                                       , MailingPostalCode = mailhomepo
+                                       , Description = 'age: '+ age +', '+ 'ticket type: '+ ticketname  
+                                              + 'suffix: ' +', ' + suffix
+                                             
+                                              + 'website: ' +', ' + website
+                                              +' blog: ' + blog +', '
+                                              +' birthdate: ' + tm1 
                                       );
                                      
           
@@ -194,12 +249,15 @@ public class SaveCampagins {
             insert new1; 
              tempid = [select id from Contact where LastName Like: contactLastName limit 1]; 
              String idforcontact = tempid.get(0).id;
-             Savepoint sp = Database.setSavepoint();
+             Savepoint sp = Database.setSavepoint();  // '7011I000000d2Xl'
                 CampaignMember newt = new CampaignMember(CampaignId = idforcam, ContactId= idforcontact , Status='Opt-In',
                                                     answers__c = answersfor
                                                    );
+                                   
+                                             
                                try {
            							 insert newt;
+                                     
          						  }
          				      catch(dmlexception e) {
           				      System.debug(e);

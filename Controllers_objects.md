@@ -24,6 +24,12 @@ public Contact getContactMethod1() {
 - Click on visualforce page access and select pages you want to allow users 
 - Done!
 
+### Add customize attribute to object
+- Go to Setup, Build
+- Customize 
+- Select the object and add
+
+
 #### Create new object in Salesforce
 * here is an example of creating new Account [this](https://developer.salesforce.com/forums/?id=906F000000092OYIAY)
 ```java

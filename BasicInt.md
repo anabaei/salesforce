@@ -27,8 +27,8 @@ What they can do and what type of query they are able to run
 
 #### Reports Subscribers
 * First create a user on salesforce with salesforce platform licence. To do so 
-1- Setup> profiles> clone from salesforce platform licence and on editing check reports and folders 
-2- Create a user using same licence then go to reports and change folder of report shares
+1 - Setup> profiles> clone from salesforce platform licence and on editing check reports and folders 
+2 - Create a user using same licence then go to reports and change folder of report shares
 * On reports click on the icon infront of folder of reports and on drop down menu choose share with usres.
  
 

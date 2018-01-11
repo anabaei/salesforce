@@ -26,10 +26,10 @@ What they can do and what type of query they are able to run
 * Users can add custom fields to common data types
 
 #### Reports Subscribers
-* First create a user on salesforce with salesforce platform licence. To do so 
+We have to create a user on salesforce with salesforce platform licence. To do so 
 - Setup-> profiles-> clone from salesforce platform licence and on editing check reports and folders 
 - Create a user using same licence then go to reports and change folder of report shares
-* On reports click on the icon infront of folder of reports and on drop down menu choose share with usres.
+- On reports click on the icon infront of folder of reports and on drop down menu choose share with usres.
  
 
 

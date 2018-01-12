@@ -79,7 +79,8 @@ public calljavascript_cls()
 }
 ```
 ### Errors
- `Too many SOSQL `
+ ` Too many SOQL queries: 101 `
+ * The following error appears when you exceed the Execution Governors Limit (you can run up to a total 100 SOQL queries in a single call or context). Because Apex runs in a multitenant environment, the Apex runtime engine strictly enforces limits to ensure that runaway Apex code or processes don’t monopolize shared resources
 * In this case as errors imply we have to reduce the number of queris. If there is a loop and inside that we have queries then have to take out the loop from queries. To do so we get a query and save all inside a list, then convert list to a set as 
 ```java
 private Set<Contact> cantactSet;

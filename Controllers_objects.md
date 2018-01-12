@@ -78,3 +78,23 @@ public calljavascript_cls()
 }
 }
 ```
+### Errors
+ `Too many SOSQL `
+* In this case as errors imply we have to reduce the number of queris. If there is a loop and inside that we have queries then have to take out the loop from queries. To do so we get a query and save all inside a list, then convert list to a set as 
+```java
+private Set<Contact> cantactSet;
+private Contact[] allcontacts;
+
+      allcontacts = [select email,lastname,firstname,id from Contact];
+      cantactSet = new Set<Contact>();   
+      cantactSet.addAll(allcontacts);
+```
+Then inside the loop just need to go through the set and if condition met then break the loop and assign the value
+```java
+for(Contact conti: cantactSet){
+                   if(conti.LastName == contactLastName && conti.FirstName == contactFirstName )
+                   {   
+                     idforcontact = conti.id;
+                     break;   
+                   }
+```

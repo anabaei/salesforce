@@ -5,6 +5,7 @@
 * https://help.salesforce.com/articleView?id=000005207&type=1
 * https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_deploying_ant.htm
 * Tut:  https://www.youtube.com/watch?v=YW9aPrxvK3A
+* [Sandbox into pro](http://salesforce.vidyard.com/watch/yuOAaYF_-vtWigiqXxndVQ) 
 
 
 #### Controllers

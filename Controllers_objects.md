@@ -1,3 +1,12 @@
+### Enable development mode 
+* In quick search type `user` -> `edit` -> `enable development `
+
+### Moving from development to production 
+* https://help.salesforce.com/articleView?id=000005207&type=1
+* https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_deploying_ant.htm
+* Tut:  https://www.youtube.com/watch?v=YW9aPrxvK3A
+
+
 #### Controllers
 * To access objects from an standard controller and display them as customize data we use it as 
 ```java

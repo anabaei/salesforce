@@ -8,6 +8,39 @@
 * [Sandbox into pro](http://salesforce.vidyard.com/watch/yuOAaYF_-vtWigiqXxndVQ) 
 
 
+### Send reports 
+* To send reports as an excel file just run below at ReportExportController.apex class 
+```java
+public class ReportExportController implements System.Schedulable {
+
+    public String getOutput() {
+        return null;
+    }
+    
+    public void execute(SchedulableContext sc) {
+        ApexPages.PageReference report = new ApexPages.PageReference('/00O1N0000075HE0UAM?csv=1');
+        Messaging.EmailFileAttachment attachment = new Messaging.EmailFileAttachment();
+        attachment.setFileName('report.csv');
+        attachment.setBody(report.getContent());
+        attachment.setContentType('text/csv');
+        Messaging.SingleEmailMessage message = new Messaging.SingleEmailMessage();
+        message.setFileAttachments(new Messaging.EmailFileAttachment[] { attachment } );
+        message.setSubject('Report');
+        message.setPlainTextBody('The report is attached.');
+        message.setToAddresses( new String[] { 'anabaei@sfu.ca', 'amircmpt@gmail.com' } );
+        Messaging.sendEmail( new Messaging.SingleEmailMessage[] { message } );
+        
+    }
+    
+    public void doit(){
+    SchedulableContext sc = null;
+   // TheScheduleableClass tsc = new TheScheduleableClass();
+    execute(sc);
+    }
+}
+```
+* To create triggers to run it on batch use this [link](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_scheduler.htm)
+
 #### Controllers
 * To access objects from an standard controller and display them as customize data we use it as 
 ```java

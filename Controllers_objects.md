@@ -39,7 +39,7 @@ public class ReportExportController implements System.Schedulable {
     }
 }
 ```
-* To create triggers to run it on batch use this [link](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_scheduler.htm)
+* To create triggers to run it on batch use this [link](https://developer.salesforce.com/forums/?id=906F00000008n0zIAA)
 
 #### Controllers
 * To access objects from an standard controller and display them as customize data we use it as 

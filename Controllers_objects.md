@@ -142,3 +142,8 @@ for(Contact conti: cantactSet){
                      break;   
                    }
 ```
+### Batch
+* Loader: has to repeat methods and final method that we want to be repeated
+* Scheduler: this is a class that we schedul on specific time frame 
+* Controller: optional class - can be used to create a button to execute loader. 
+

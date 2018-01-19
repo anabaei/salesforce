@@ -145,6 +145,6 @@ for(Contact conti: cantactSet){
 ### Batch
 * Loader: has to repeat methods and final method that we want to be repeated
 * Scheduler: this is a class that we schedul on specific time frame 
-* Controller: optional class - can be used to create a button to execute loader. 
+* Controller: optional class - can be used to create a button to execute loader 
 * Bulkification: writing triggers to handle more than one record at a time
 

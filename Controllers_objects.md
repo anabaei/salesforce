@@ -1,6 +1,10 @@
 ### Enable development mode 
 * In quick search type `user` -> `edit` -> `enable development `
 
+#### Install MavensMate with Sublime 
+* After installation go to `MavensMate -> project -> new -> connect to salesforce`
+* Create new class `MavensMate ->  metadata -> new Class -> choose on templape `
+
 ### Moving from development to production 
 * https://help.salesforce.com/articleView?id=000005207&type=1
 * https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_deploying_ant.htm
@@ -147,4 +151,37 @@ for(Contact conti: cantactSet){
 * Scheduler: this is a class that we schedul on specific time frame 
 * Controller: optional class - can be used to create a button to execute loader 
 * Bulkification: writing triggers to handle more than one record at a time
+
+#### Triggers
+* Each object can be a trigger, so in salseforce by going to `setup -> customize -> lead(any other object) -> triggers -> new` then we have it inside canvas
+```java
+trigger HelloWorld on Lead (before update) {
+for (Lead l: Trigger.new) {
+  l.FirstName = 'amir';
+  l.LastName = 'naba';
+  }
+}
+```
+* To test this trigger works we need simply `updatng` a lead. So once we save the lead firstname and lastname affected as above
+* First line of trigger inlcudes the name, what object it is running and the event fires this trigger
+
+#### Test Classes
+* Writing above trigger in test class as 
+* in `mavensmads -> metadata -> new class -> choose the unit test template ` and create the name as `HelloWorldTest` like <trigger name> + "Test" and it produces as 
+ 
+```java
+@isTest
+private class HelloWorldTest {
+	@isTest static void test_method_one() {
+		// Implement test code
+	}
+	@isTest static void test_method_two() {
+		// Implement test code
+	}	
+}
+```
+* When these annotations `@isTest` tells Apex we run a test. 
+* Click on `MavensMate -> Unit Testing -> Open Apex Test Runner UI -> Select class to run `
+
+
 

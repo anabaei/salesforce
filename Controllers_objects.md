@@ -152,7 +152,7 @@ for(Contact conti: cantactSet){
 * Controller: optional class - can be used to create a button to execute loader 
 * Bulkification: writing triggers to handle more than one record at a time
 
-#### Triggers
+### Triggers
 * Each object can be a trigger, so in salseforce by going to `setup -> customize -> lead(any other object) -> triggers -> new` then we have it inside canvas
 ```java
 trigger HelloWorld on Lead (before update) {
@@ -165,7 +165,7 @@ for (Lead l: Trigger.new) {
 * To test this trigger works we need simply `updatng` a lead. So once we save the lead firstname and lastname affected as above
 * First line of trigger inlcudes the name, what object it is running and the event fires this trigger
 
-#### Test Classes
+### Test Classes
 * Writing above trigger in test class as 
 * in `mavensmads -> metadata -> new class -> choose the unit test template ` and create the name as `HelloWorldTest` like <trigger name> + "Test" and it produces as 
  

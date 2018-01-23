@@ -10,7 +10,7 @@
 * https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_deploying_ant.htm
 * Tut:  https://www.youtube.com/watch?v=YW9aPrxvK3A
 * [Sandbox into pro](http://salesforce.vidyard.com/watch/yuOAaYF_-vtWigiqXxndVQ) 
-
+* [Call out from batch](https://developer.salesforce.com/blogs/developer-relations/2010/02/spring-10-saw-the-general-availability-of-one-of-my-favorite-new-features-of-the-platform-the-apex-schedulerwith-the-apex-s.html)
 
 ### Send reports 
 * To send reports as an excel file just run below at ReportExportController.apex class 

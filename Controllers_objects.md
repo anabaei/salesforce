@@ -204,5 +204,31 @@ private class HelloWorldTest {
 * When these annotations `@isTest` tells Apex we run a test. 
 * Click on `MavensMate -> Unit Testing -> Open Apex Test Runner UI -> Select class to run `
 
+### Test Call out End poitn 
+Here is a simple of hiting end point 
+* First write a mock response end point as 
+```java
+public class hitMockEndoint implements HttpCalloutMock{
+    public HTTPResponse respond(HTTPRequest req) {
+            String fullJson = 'your Json Response';
+            HTTPResponse res = new HTTPResponse();
+            res.setHeader('Content-Type', 'text/json');
+            res.setBody(fullJson);
+            res.setStatusCode(200);
+            return res;
+        }
+}
+```
+* Then when our class and mehtod for test are `Hitendpnt.Info` we write actual test as 
+```java
+@isTest
+public class HitendpntTest { 
+    @isTest public Static void testhitentpoint(){
+        Test.setMock(HttpCalloutMock.class, new hitMockEndoint()); 
+        Hitendpnt.getInfo();
+    }
+}
+```
+* Then it passes the test! 
 
 

@@ -204,7 +204,7 @@ private class HelloWorldTest {
 * When these annotations `@isTest` tells Apex we run a test. 
 * Click on `MavensMate -> Unit Testing -> Open Apex Test Runner UI -> Select class to run `
 
-### Test Call out End poitn 
+### Test Call out End point 
 Here is a simple of hiting end point 
 * First write a mock response end point as 
 ```java

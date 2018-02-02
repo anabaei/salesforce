@@ -156,6 +156,22 @@ for(Contact conti: cantactSet){
 * Scheduler: this is a class that we schedul on specific time frame 
 * Controller: optional class - can be used to create a button to execute loader 
 * Bulkification: writing triggers to handle more than one record at a time
+* To run a sample in batch just define hello world class implements `Schedulable` interface as
+```java
+global class todo implements Schedulable{
+   // this method should be difned 
+    global void execute(System.SchedulableContext ctx){
+   System.debug('you');         
+       }
+    }
+```
+* Then in `Apex Code` window we can call it as 
+```java
+String cron = '0 45 10 * * ?';
+System.schedule('test events', cron,new todo());
+```
+Which runs at 10:45 am everyday/everymonth regardless of the year, also it create a Scheduled Jobs in salesforce with the name of `test events`
+
 
 ### Triggers
 * Each object can be a trigger, so in salseforce by going to `setup -> customize -> lead(any other object) -> triggers -> new` then we have it inside canvas

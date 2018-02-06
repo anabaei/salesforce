@@ -224,7 +224,7 @@ public class hitMockEndoint implements HttpCalloutMock{
 @isTest
 public class HitendpntTest { 
     @isTest public Static void testhitentpoint(){
-        Test.setMock(HttpCalloutMock.class, new hitMockEndoint()); 
+        System.Test.setMock(HttpCalloutMock.class, new hitMockEndoint()); 
         Hitendpnt.getInfo();
     }
 }

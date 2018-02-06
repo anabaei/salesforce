@@ -233,6 +233,8 @@ public class HitendpntTest {
 
 * Notice if you want to resemble the results so assign fullJson agt hitMockEndoint as your json replies something like
 ```java
+.
+.
  String fullJson = '{"created": "2017-03-31T16:44:10Z",' + 
             '"changed": "2017-05-11T00:35:20Z", ' + 
             '"capacity": 20, ' + 
@@ -242,4 +244,6 @@ public class HitendpntTest {
             '"listed": false, ' + 
             '"shareable": true, ' + 
             '"invite_only": false}' ;
+.
+.
 ```

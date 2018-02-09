@@ -254,7 +254,7 @@ String jason = '{ "bob": "bobby" }';
 Map<String, String> b = (Map<String,String>) JSON.deserialize(jason, Map<String,String>.class);
 ```
 * If there is type of `object` since apex doesnt recognize it so we shoud use as 
-```jaca
+```java
 String j = '{ "bob": "bobby" }';  
 Map<String, Object> c = (Map<String,Object>) JSON.deserializeUntyped(j);
 ```

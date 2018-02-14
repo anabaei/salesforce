@@ -258,4 +258,5 @@ Map<String, String> b = (Map<String,String>) JSON.deserialize(jason, Map<String,
 String j = '{ "bob": "bobby" }';  
 Map<String, Object> c = (Map<String,Object>) JSON.deserializeUntyped(j);
 ```
-
+### Bulkify Best Practice 
+* To avoid having DML inside a loop use bulkigy technique which best practice provided [here](https://developer.salesforce.com/page/Apex_Code_Best_Practices)

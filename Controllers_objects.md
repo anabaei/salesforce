@@ -260,3 +260,5 @@ Map<String, Object> c = (Map<String,Object>) JSON.deserializeUntyped(j);
 ```
 ### Bulkify Best Practice 
 * To avoid having DML inside a loop use bulkigy technique which best practice provided [here](https://developer.salesforce.com/page/Apex_Code_Best_Practices)
+### Asych with Apex queable and test
+* this [link](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_queueing_jobs.htm)

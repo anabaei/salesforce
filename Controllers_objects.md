@@ -258,6 +258,26 @@ Map<String, String> b = (Map<String,String>) JSON.deserialize(jason, Map<String,
 String j = '{ "bob": "bobby" }';  
 Map<String, Object> c = (Map<String,Object>) JSON.deserializeUntyped(j);
 ```
+* list of objects as 
+```java
+String item = '[{ '+
+'    "pagination": { '+
+'        "object_count": 37,'+
+'        "page_number": 1,'+
+'        "has_more_items": false '+
+'    }, ' +
+'    "pagination": { '+
+'        "object_count": 37,'+
+'        "page_number": 1,'+
+'        "has_more_items": false '+
+             '    }]';
+List<Object> listofobjects = (List<Object>) JSON.deserializeUntyped(item);
+             for(Object mems: listofobjects)
+            {
+                Map<String, object>  s = (Map<String, object>)mems;
+                System.debug(s.get('pagination'));   
+            }	     
+```
 ### Bulkify Best Practice 
 * To avoid having DML inside a loop use bulkigy technique which best practice provided [here](https://developer.salesforce.com/page/Apex_Code_Best_Practices)
 ### Asych with Apex queable and test

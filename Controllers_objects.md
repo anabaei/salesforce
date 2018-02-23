@@ -203,6 +203,7 @@ private class HelloWorldTest {
 ```
 * When these annotations `@isTest` tells Apex we run a test. 
 * Click on `MavensMate -> Unit Testing -> Open Apex Test Runner UI -> Select class to run `
+* Test as an [example](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_testing_example.htm)
 
 ### Test Call out End point 
 Here is a simple of hiting end point 

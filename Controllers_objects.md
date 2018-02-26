@@ -150,6 +150,7 @@ for(Contact conti: cantactSet){
 * this [link](https://salesforce.stackexchange.com/questions/3486/testing-httpcallout-with-httpcalloutmock-and-unittest-created-data)
 ###### Webservice callout from Scheduled Apex  
 * this [link](http://amitsalesforce.blogspot.ca/2017/08/webservice-callout-from-scheduled-apex.html)
+* Callout from scheduled Apex not supported use this [link](https://salesforcespace.blogspot.ca/2016/04/webservice-callout-from-scheduled-apex.html) Queaboe works 
 
 ### Batch
 * Loader: has to repeat methods and final method that we want to be repeated

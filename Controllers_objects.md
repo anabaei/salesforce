@@ -44,6 +44,8 @@ public class ReportExportController implements System.Schedulable {
 }
 ```
 * To create triggers to run it on batch use this [link](https://developer.salesforce.com/forums/?id=906F00000008n0zIAA)
+#### Test Case for reports
+* this [link](https://salesforce.stackexchange.com/questions/57220/test-class-not-covering-the-execute-method)
 
 #### Controllers
 * To access objects from an standard controller and display them as customize data we use it as 

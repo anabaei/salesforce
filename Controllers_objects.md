@@ -282,6 +282,9 @@ List<Object> listofobjects = (List<Object>) JSON.deserializeUntyped(item);
                 System.debug(s.get('pagination'));   
             }	     
 ```
+### SQL Queries not covered
+* In test cases if there are some queries inside the function it can not call them because test cases should have their own data as this [link](https://salesforce.stackexchange.com/questions/159976/soql-query-is-not-working-in-test-class-coverage/159979) explains 
+
 ### Bulkify Best Practice 
 * To avoid having DML inside a loop use bulkigy technique which best practice provided [here](https://developer.salesforce.com/page/Apex_Code_Best_Practices)
 ### Asych with Apex queable and test

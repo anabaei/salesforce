@@ -44,8 +44,10 @@ public class ReportExportController implements System.Schedulable {
 }
 ```
 * To create triggers to run it on batch use this [link](https://developer.salesforce.com/forums/?id=906F00000008n0zIAA)
-#### Test Case for reports
-* this [link](https://salesforce.stackexchange.com/questions/57220/test-class-not-covering-the-execute-method)
+#### Tests Case for reports
+* This [link](https://salesforce.stackexchange.com/questions/57220/test-class-not-covering-the-execute-method)
+#### SQL Queries not covered
+* In test cases if there are some queries inside the function it can not call them because test cases should have their own data as this [link](https://salesforce.stackexchange.com/questions/159976/soql-query-is-not-working-in-test-class-coverage/159979) explains 
 
 #### Controllers
 * To access objects from an standard controller and display them as customize data we use it as 
@@ -174,8 +176,106 @@ String cron = '0 45 10 * * ?';
 System.schedule('test events', cron,new todo());
 ```
 Which runs at 10:45 am everyday/everymonth regardless of the year, also it create a Scheduled Jobs in salesforce with the name of `test events`
+#### Batch in steps 
+* Having a schedule batch needs to implement `schedulable` interface as
+```java
+global class delete_all_campaign_members implements Schedulable {
 
+     global void execute(System.SchedulableContext ctx){
+      delete_all_campaign_members_batch  sched = new delete_all_campaign_members_batch();
+         sched.execute(null);
+     }   
+}
+```
+* Then to write a batch we can have 
+```java
+public class delete_all_campaign_members_batch implements Schedulable, Database.AllowsCallouts, Database.Batchable<sObject> {
+    public void execute(SchedulableContext SC) {
+      Database.executebatch(new delete_all_campaign_members_batch());
+   }
+   
+ public Iterable<sObject> start(Database.Batchablecontext BC){
+       // write the code to run here 
+       
+          List<contact> ls = [select id from contact];       
+     return ls;    
+ }
+    public void execute(Database.BatchableContext BC, List<sObject> scope){      
+    }
+  public void finish(Database.BatchableContext info){
+        
+    }
+}
+```
+* The test code would be like 
+```java
+@isTest
+public class delete_all_campaign_membersTest {
 
+    @isTest public static void testexecutemehtod(){
+      System.Test.setMock(HttpCalloutMock.class, new hitMockEndPoint()); 
+     delete_all_campaign_members abs= new delete_all_campaign_members();
+     // for batch it would be identical except above line would be like below 
+     // delete_all_campaign_members_batch abs= new delete_all_campaign_members_batch();
+      string cron = '0 10 5 5 * ?';   
+      System.Test.setMock(HttpCalloutMock.class, new hitMockEndPoint());   
+      String jobId = System.schedule('myJobTestJobName', cron, abs);
+      abs.execute(null);     
+    }
+}
+```
+*OR We can write codes in execute method, then it would run in size of scope below we have example of emails Schedule a little different and would be like
+```java
+global class sendReportsbyEmail implements Schedulable{
+    global void execute(SchedulableContext sc) 
+    {        
+        AssignEmailsAndReports instance1 = new AssignEmailsAndReports();
+        instance1.query = 'select Id from Account limit 1';
+		integer myBatchSize = 1;
+		ID batchprocessid = Database.executeBatch(instance1, myBatchSize);
+    }    
+}
+```
+* Actual batch class would be like 
+```java
+global class AssignEmailsAndReports implements Database.Batchable<sObject>, Database.AllowsCallouts, Database.Stateful {
+ public string query;
+ global Database.QueryLocator start(Database.BatchableContext BC){
+     String query = 'SELECT Id from campaign limit 1';
+    /// by changing the limit you would have repeatation 
+        return Database.getQueryLocator(query);
+   }
+  global void execute(Database.BatchableContext BC, List<sObject> scope) {
+        System.debug('size= '+scope.size());
+        ApexPages.PageReference report = new ApexPages.PageReference('/00O1I000006T6LG?csv=1');
+        Messaging.EmailFileAttachment attachment = new Messaging.EmailFileAttachment();
+        attachment.setFileName('report.csv');
+       try {attachment.setBody(report.getContent());
+          Messaging.SingleEmailMessage message = new Messaging.SingleEmailMessage(); attachment.setContentType('text/csv'); message.setFileAttachments(new Messaging.EmailFileAttachment[] { attachment } );message.setSubject('Report'); message.setPlainTextBody('Report info from Production SF');message.setToAddresses( new String[] {'anabaei@sfu.ca', 'dleeg@sfu.ca'  } ); Messaging.sendEmail( new Messaging.SingleEmailMessage[] { message } );
+        } catch(exception e){}
+  }
+  global void finish(Database.BatchableContext BC){
+  }
+}
+```
+* The test cases would be assigning the execute method as
+```java
+@isTest
+public class AssignEmailsAndReportsTest {
+    @isTest public static void test1(){
+        AssignEmailsAndReports instance1 = new AssignEmailsAndReports();
+        List<Campaign> actual = [SELECT Name,id,eventbriteid__c,repeatedmems__c FROM Campaign];
+        instance1.execute(null, actual);
+    }
+    // the second test is for covering the first part which is START
+    @isTest public static void test2(){
+           AssignEmailsAndReports instncevar = new AssignEmailsAndReports();
+           ID batchprocessid = Database.executeBatch(instncevar);
+    }
+    
+}
+```
+* But schedulel test is identical with last test we had for deleting campaign members 
 ### Triggers
 * Each object can be a trigger, so in salseforce by going to `setup -> customize -> lead(any other object) -> triggers -> new` then we have it inside canvas
 ```java
@@ -282,8 +382,7 @@ List<Object> listofobjects = (List<Object>) JSON.deserializeUntyped(item);
                 System.debug(s.get('pagination'));   
             }	     
 ```
-### SQL Queries not covered
-* In test cases if there are some queries inside the function it can not call them because test cases should have their own data as this [link](https://salesforce.stackexchange.com/questions/159976/soql-query-is-not-working-in-test-class-coverage/159979) explains 
+
 
 ### Bulkify Best Practice 
 * To avoid having DML inside a loop use bulkigy technique which best practice provided [here](https://developer.salesforce.com/page/Apex_Code_Best_Practices)

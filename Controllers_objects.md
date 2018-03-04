@@ -1,4 +1,4 @@
-[DML Database vs DML](#dml-database-vs-dml)
+[DML Database vs DML](#Dml-database-vs-dml)
 [create an anchor](#anchors-in-markdown)
 
 ### Enable development mode 
@@ -394,7 +394,7 @@ List<Object> listofobjects = (List<Object>) JSON.deserializeUntyped(item);
 ### Asych with Apex queable and test
 * this [link](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_queueing_jobs.htm)
 
-### dml-database-vs-dml
+### Dml-database-vs-dml
 ### anchors-in-markdown
 
 

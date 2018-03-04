@@ -1,5 +1,5 @@
-[DML Database vs DML](#Dml-database-vs-dml)
-[create an anchor](#anchors-in-markdown)
+[DML Database vs DML](#dml-database-vs-dml)
+
 
 ### Enable development mode 
 * In quick search type `user` -> `edit` -> `enable development `
@@ -395,6 +395,15 @@ List<Object> listofobjects = (List<Object>) JSON.deserializeUntyped(item);
 * this [link](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_queueing_jobs.htm)
 
 ### Dml-database-vs-dml
-### anchors-in-markdown
-
-
+* In DML if there is an error the whole transaction will fail but with database dml we can assign to skip the ones that are fail and proceess further.
+```java
+List<contact> ins // assign them 
+insert ins // return fail if only one not procees, not partial insertion allows 
+Database.insert(ins, false) // it process with partial insertion  
+```
+#### update 
+* The signature is like
+```java
+public static Database.SaveResult update(sObject record to Update, Boolean allOrNone);
+```
+* If value of allOrNoe is false, then if one record fails remainder of operations still succeed and the result can find which one was updated.  

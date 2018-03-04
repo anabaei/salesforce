@@ -1,7 +1,9 @@
+[DML Database vs DML](#DML Database vs DML)
+
 ### Enable development mode 
 * In quick search type `user` -> `edit` -> `enable development `
 
-[create an anchor](#anchors-in-markdown)
+
 
 #### Install MavensMate with Sublime 
 * After installation go to `MavensMate -> project -> new -> connect to salesforce`
@@ -81,7 +83,6 @@ public Contact getContactMethod1() {
 - Go to Setup, Build
 - Customize 
 - Select the object and add
-#anchors-in-markdown
 
 #### Create new object in Salesforce
 * here is an example of creating new Account [this](https://developer.salesforce.com/forums/?id=906F000000092OYIAY)
@@ -152,7 +153,7 @@ for(Contact conti: cantactSet){
                      break;   
                    }
 ```
-# anchors-in-markdown
+
 ###### http callout [error](https://help.salesforce.com/articleView?id=000079772&type=1)
 * this [link](https://salesforce.stackexchange.com/questions/3486/testing-httpcallout-with-httpcalloutmock-and-unittest-created-data)
 ###### Webservice callout from Scheduled Apex  
@@ -391,3 +392,8 @@ List<Object> listofobjects = (List<Object>) JSON.deserializeUntyped(item);
 * To avoid having DML inside a loop use bulkigy technique which best practice provided [here](https://developer.salesforce.com/page/Apex_Code_Best_Practices)
 ### Asych with Apex queable and test
 * this [link](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_queueing_jobs.htm)
+
+### DML Database vs DML
+
+
+

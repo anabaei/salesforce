@@ -1,4 +1,4 @@
-[DML Database vs DML](#dml-database-vs-DML)
+[DML Database vs DML](#Dml-Database-vs-DML)
 [create an anchor](#anchors-in-markdown)
 
 ### Enable development mode 

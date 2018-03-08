@@ -1,6 +1,6 @@
 * [DML Database vs DML](#dml-database-vs-dml)
-* [SOSL SF Object Search Language](#SOSL)
-* [SOQL SF Object query Language](#SOQL)
+* [SOSL SF Object Search Language](#sosl)
+* [SOQL SF Object query Language](#soql)
 
 ### Enable development mode 
 * In quick search type `user` -> `edit` -> `enable development `
@@ -409,7 +409,7 @@ public static Database.SaveResult update(sObject record to Update, Boolean allOr
 ```
 * If value of allOrNoe is false, then if one record fails remainder of operations still succeed and the result can find which one was updated.  
 
-### SOSL
+### sosl
 * It has ability to search a particulare string across the multiple object and it is a programming way of performing a text base search.
 To construct text-based search queries. Places we use SOSL: SOAP or REST calls, Apex statements, Visualforce controllers and getter methods and Schema Explorer.
 * First example of SOL finds all campaign names which has ab in their NAME and return list of their name,id's
@@ -421,7 +421,7 @@ To construct text-based search queries. Places we use SOSL: SOAP or REST calls, 
 
 
 
-#### SOQL
+#### soql
 * We use it to fetch the object records from one object at a time and it is the equivalent of a SELECT SQL statement searching databases
 
 

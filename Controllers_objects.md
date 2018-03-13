@@ -30,7 +30,7 @@
  m..getValue('amir');
 ```
 ### Casting
-* below we cast from object to map<string, object> as 
+* Below we have a list of objects 'actual' which each object is a hash map, after assigning email then to retreive data we need to use casting as:
 ```java
 List<object> actual = new List<object>{};
 Map<String, Object> names = new Map<String, Object>{};

@@ -22,7 +22,9 @@
 ### HashMap
 * Almost identical with java 
 ```java
- Map<String, Integer> m = new HashMap<String, Integer>();
+ Map<String, Integer> m = new HashMap<String, Integer>(); // in java
+ Map<String, Integer> m = new (Map<String, Integer>){}; // in SF
+ 
  m.put('amir', 1);
  m.getKey(1);
  m..getValue('amir');

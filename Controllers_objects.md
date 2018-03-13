@@ -30,13 +30,14 @@
  m..getValue('amir');
 ```
 ### Casting
-* Below we have a list of objects 'actual' which each object is a hash map, after assigning email then to retreive data we need to use casting as:
+* Below we have a list of objects `actual` which each object is a hash map, after assigning email then to retreive data we need to use casting as:
 ```java
 List<object> actual = new List<object>{};
 Map<String, Object> names = new Map<String, Object>{};
 names.put('email', 'amircmpt@gmail.com');
 actual.add(names);
 Map<String, Object> d = (Map<String, Object>)actual[0]; // casting happen here!
+d.get('email');
 ```
 
 ### Send reports 

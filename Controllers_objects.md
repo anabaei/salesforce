@@ -29,6 +29,15 @@
  m.getKey(1);
  m..getValue('amir');
 ```
+### Casting
+* below we cast from object to map<string, object> as 
+```java
+List<object> actual = new List<object>{};
+Map<String, Object> names = new Map<String, Object>{};
+names.put('email', 'amircmpt@gmail.com');
+actual.add(names);
+Map<String, Object> d = (Map<String, Object>)actual[0]; // casting happen here!
+```
 
 ### Send reports 
 * To send reports as an excel file just run below at ReportExportController.apex class 

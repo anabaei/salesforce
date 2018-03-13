@@ -49,6 +49,8 @@ public class ReportExportController implements System.Schedulable {
     }
 }
 ```
+* You may need change the settings as [well](https://developer.salesforce.com/forums/?id=906F00000008xsLIAQ)
+
 * To create triggers to run it on batch use this [link](https://developer.salesforce.com/forums/?id=906F00000008n0zIAA)
 #### Tests Case for reports
 * This [link](https://salesforce.stackexchange.com/questions/57220/test-class-not-covering-the-execute-method)

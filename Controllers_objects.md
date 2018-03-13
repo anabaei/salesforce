@@ -18,6 +18,16 @@
 * [Sandbox into pro](http://salesforce.vidyard.com/watch/yuOAaYF_-vtWigiqXxndVQ) 
 * [Call out from batch](https://developer.salesforce.com/blogs/developer-relations/2010/02/spring-10-saw-the-general-availability-of-one-of-my-favorite-new-features-of-the-platform-the-apex-schedulerwith-the-apex-s.html)
 
+
+### HashMap
+* Almost identical with java 
+```java
+ Map<String, Integer> m = new HashMap<String, Integer>();
+ m.put('amir', 1);
+ m.getKey(1);
+ m..getValue('amir');
+```
+
 ### Send reports 
 * To send reports as an excel file just run below at ReportExportController.apex class 
 ```java

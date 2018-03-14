@@ -448,9 +448,7 @@ To construct text-based search queries. Places we use SOSL: SOAP or REST calls, 
 #### soql
 * We use it to fetch the object records from one object at a time and it is the equivalent of a SELECT SQL statement searching databases
 
-
-
-
+##### passing params into. schedulable [class](https://salesforce.stackexchange.com/questions/14634/passing-parameter-into-schedulable-class)
 
 
 

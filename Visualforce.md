@@ -105,4 +105,23 @@ We might have javascript in directory called js or images
 <apex:image value="{!URLFOR($Resource.TheLogo, `img/logo.jpg')}" width="32-" height="240" />
 ```
 
-
+### Show value hide null
+* if we want to show a string only when the value of input is not null.
+```java
+/// this just return all inputs unconditionally 
+ <apex:inputtext value="{!userinput}">
+           <apex:actionsupport event="onclick" rerender="display" />
+       </apex:inputtext> 
+       
+       <apex:outputpanel id="display">
+        <apex:outputtext value="The name entered is {!userinput}" />
+      </apex:outputpanel>  
+ //// this version just check if it isn not null then renders it 
+  <apex:inputtext value="{!userinput}">
+           <apex:actionsupport event="onclick" rerender="display" />
+       </apex:inputtext> 
+       
+       <apex:outputpanel id="display">
+        <apex:outputtext value="The name entered is {!userinput}" rendered="{!userinput != null}"/>
+      </apex:outputpanel>  
+```

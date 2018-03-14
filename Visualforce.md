@@ -106,7 +106,7 @@ We might have javascript in directory called js or images
 ```
 
 ### Show value hide null
-* if we want to show a string only when the value of input is not null.
+* if we want to show a string only when the value of input is not null from [this link](https://developer.salesforce.com/forums/?id=906F0000000AaNeIAK)
 ```java
 /// this just return all inputs unconditionally 
  <apex:inputtext value="{!userinput}">

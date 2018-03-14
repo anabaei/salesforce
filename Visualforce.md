@@ -11,6 +11,7 @@ As
 * There are standard controller and also we can have customize controllers
 * Standard controller of Account is called "Account 
 * Objects are accessed by `!{Object.Field}` like `{!Account.Name}`
+* [An example](http://www.forcetree.com/2009/07/getter-and-setter-methods-what-are-they.html)
 ### Access to Controllers
 
 ```java

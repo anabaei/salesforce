@@ -125,3 +125,6 @@ We might have javascript in directory called js or images
         <apex:outputtext value="The name entered is {!userinput}" rendered="{!userinput != null}"/>
       </apex:outputpanel>  
 ```
+
+### Input from visualforce to controller 
+* This is a good example [link](https://developer.salesforce.com/forums/?id=9060G000000XiNZQA0)

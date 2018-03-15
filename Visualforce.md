@@ -1,3 +1,54 @@
+
+## React And Salesforce 
+* Here is a simple visualforce page 
+```java
+<apex:page docType="html-5.0" sidebar="false">
+  <!-- Begin Default Content REMOVE THIS -->
+     <meta charset="utf-8"/>
+     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+     <meta name="viewport" content="width=device-width, initial-scale=1"/>
+     <script src="//cdnjs.cloudflare.com/ajax/libs/react/0.14.0-alpha1/react.min.js"/> 
+     <script src="//cdnjs.cloudflare.com/ajax/libs/react/0.14.0-alpha1/JSXTransformer.js"/>
+     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"/>
+
+     <script type="text/jsx">
+          var Rep = React.createClass({
+               render: function() {
+                    return(
+                         <div>
+                              <iframe width="400" height="300" src=""></iframe>     
+                         </div>
+                    );
+               }
+          });
+          var RecipeBook = React.createClass({
+               render: function() {
+                    return (
+                         <div>
+                              <div>
+                                   Hello, world! I am a RecipeBook.
+                                   <h4> My first REACT </h4> 
+                              </div>
+                              <Rep/>
+                         </div>
+                    );
+               }
+          });
+          React.render(
+               <RecipeBook/>,
+               document.getElementById('app-container')
+          );
+     </script>
+<html>
+  <body>
+     <div id="app-container"> </div>
+     <div>
+          <h2>hello</h2>
+     </div>
+  </body>
+</html>
+</apex:page>
+```
 * [React & salesforce](https://www.salesforce.com/video/304788/)
 ### Visualforce 
 * Salesfoce is mvc model framework

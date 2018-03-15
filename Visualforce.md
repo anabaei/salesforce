@@ -50,6 +50,7 @@
 </apex:page>
 ```
 * [React & salesforce](https://www.salesforce.com/video/304788/)
+* [React with salesforce tut](https://www.youtube.com/watch?v=1Ynd9qOxiHM)
 ### Visualforce 
 * Salesfoce is mvc model framework
 * Between these two tags we can add other attributes

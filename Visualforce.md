@@ -65,6 +65,9 @@ As
 * Standard controller of Account is called "Account 
 * Objects are accessed by `!{Object.Field}` like `{!Account.Name}`
 * [An example](http://www.forcetree.com/2009/07/getter-and-setter-methods-what-are-they.html)
+
+### Visulaforce and JavaScript RemotAccess
+* This [link](https://developer.salesforce.com/docs/atlas.en-us.pages.meta/pages/pages_js_remoting_example.htm)
 ### Access to Controllers
 
 ```java

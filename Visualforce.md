@@ -206,3 +206,25 @@ We might have javascript in directory called js or images
               <apex:selectoption itemLabel="Co-President" itemValue="Co-President"></apex:selectoption>
 </apex:selectList>
 ```
+#### Dynamic Selection
+* Selection from visualforce and controller 
+```java
+<apex:selectList value="{!countries}" multiselect="false">
+            <apex:selectOptions value="{!items}"/>
+   </apex:selectList><p/>
+ ```  
+ * And in controller 
+ ```java
+  public String items;
+  public String countries { get; set; }
+  
+   public List<SelectOption> getItems() {
+            List<SelectOption> options = new List<SelectOption>();
+            options.add(new SelectOption('US','US'));
+            options.add(new SelectOption('CANADA','Canada'));
+            options.add(new SelectOption('MEXICO','Mexico'));
+            return options;
+        }
+        
+ ```
+ * And the selected value is saved into countries variable

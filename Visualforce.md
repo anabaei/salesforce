@@ -184,3 +184,18 @@ We might have javascript in directory called js or images
 
 ### Input from visualforce to controller 
 * This is a good example [link](https://developer.salesforce.com/forums/?id=9060G000000XiNZQA0)
+
+### Date 
+* To pass date from visualforce to controller we have input like
+```java
+<input type="date" name="selected_date" value="{!selected_date}" > </input>
+```
+* Inside controller then we define a set getter with that variabla and inside the action that is invoked we define as
+```java
+ public String selected_date { get; set; }
+ .
+ ..
+ ...
+ selected_date = Apexpages.currentPage().getParameters().get('selected_date');
+```
+

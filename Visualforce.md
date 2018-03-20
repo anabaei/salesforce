@@ -198,4 +198,11 @@ We might have javascript in directory called js or images
  ...
  selected_date = Apexpages.currentPage().getParameters().get('selected_date');
 ```
-
+### Selection List
+* from this [link](https://developer.salesforce.com/forums/?id=906F000000096olIAA)
+```java
+<apex:selectList multiselect="false" size="1">
+              <apex:selectoption itemLabel="President" itemValue="President"></apex:selectoption>
+              <apex:selectoption itemLabel="Co-President" itemValue="Co-President"></apex:selectoption>
+</apex:selectList>
+```

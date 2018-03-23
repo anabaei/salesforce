@@ -1,3 +1,7 @@
+
+### VisualForce pages
+* Lightining components only use server side controllers so you dont need to write controllers for them only visualforce pages requires controller
+
 * [DML Database vs DML](#dml-database-vs-dml)
 * [SOSL SF Object Search Language](#sosl)
 * [SOQL SF Object query Language](#soql)
@@ -307,6 +311,26 @@ public class AssignEmailsAndReportsTest {
 ```
 * But schedulel test is identical with last test we had for deleting campaign members 
 ### Triggers
+* Triggers allows us to write custom action before or after events to record in SF like validation methods. Triggers can be defined for standard objects like Accounts and contacts and some standard child objects. SF automatically fires active triggers 
+```java
+trigger TriggerName on ObjectName (trigger_events) {
+   code_block
+}
+```
+```java
+trigger HelloWorldTrigger on Account (before insert) {
+	System.debug('Hello World!');
+}
+```
+* Also we can use `context variable` to do DML on all the records that were inserted. `Trigger.old` does the same just for old SObject 
+```java
+trigger HelloWorldTrigger on Account (before insert) {
+    for(Account a : Trigger.New) {
+        a.Description = 'New description';
+    }   
+}
+```
+* Then if we create any account then it would have a description like above.
 * Each object can be a trigger, so in salseforce by going to `setup -> customize -> lead(any other object) -> triggers -> new` then we have it inside canvas
 ```java
 trigger HelloWorld on Lead (before update) {
@@ -415,7 +439,41 @@ List<Object> listofobjects = (List<Object>) JSON.deserializeUntyped(item);
 
 
 ### Bulkify Best Practice 
-* To avoid having DML inside a loop use bulkigy technique which best practice provided [here](https://developer.salesforce.com/page/Apex_Code_Best_Practices)
+* To avoid having DML inside a loop use bulkigy technique which best practice provided [here](https://developer.salesforce.com/page/Apex_Code_Best_Practices). Query limits, which are 100 SOQL queries for synchronous Apex or 200 for asynchronous Apex.The DML statement limit is 150 calls.
+#### Bulk Trigger Design Patterns
+* It is suggest use Bulks in triggers to have better performance, less server resources, and are less likely to exceed platform limits or governor limits
+#### Avoid hitting query limits
+* Below code exceeds query limits since there is DML inside for loop as an Inefficient SOQL query 
+```java
+trigger SoqlTriggerNotBulk on Account(after update) {   
+    for(Account a : Trigger.New) {
+        Opportunity[] opps = [SELECT Id,Name,CloseDate FROM Opportunity WHERE AccountId=:a.Id];
+    }
+}
+```
+* Perform SOQL query once get the accounts and their related opportunities.
+```java
+trigger SoqlTriggerBulk on Account(after update) {  
+    List<Account> acctsWithOpps = 
+        [SELECT Id,(SELECT Id,Name,CloseDate FROM Opportunities) 
+         FROM Account WHERE Id IN :Trigger.New];  
+    for(Account a : acctsWithOpps) {  // Iterate over the returned accounts  
+        Opportunity[] relatedOpps = a.Opportunities;  
+        // Do some other processing
+    }
+}
+```
+* Also we can reduce above example like below. Get the related opportunities for the accounts in this trigger and iterate over those records.
+```java
+trigger SoqlTriggerBulk on Account(after update) { 
+    for(Opportunity opp : [SELECT Id,Name,CloseDate FROM Opportunity 
+        WHERE AccountId IN :Trigger.New]) { 
+        // Do some other processing
+    }
+}
+```
+*
+
 ### Asych with Apex queable and test
 * this [link](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_queueing_jobs.htm)
 

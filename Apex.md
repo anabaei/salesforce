@@ -439,7 +439,7 @@ List<Object> listofobjects = (List<Object>) JSON.deserializeUntyped(item);
 
 
 ### Bulkify Best Practice 
-* To avoid having DML inside a loop use bulkigy technique which best practice provided [here](https://developer.salesforce.com/page/Apex_Code_Best_Practices). Query limits, which are 100 SOQL queries for synchronous Apex or 200 for asynchronous Apex.The DML statement limit is 150 calls.
+* To avoid having DML inside a loop use bulkigy technique which best practice provided [here](https://developer.salesforce.com/page/Apex_Code_Best_Practices). Query limits, which are `100` SOQL queries for synchronous Apex or `200 `for asynchronous Apex.The DML statement limit is `150` calls. To avoid DML limits we assign all result inside a list and then one DML like [this](https://trailhead.salesforce.com/modules/apex_triggers/units/apex_triggers_bulk)
 #### Bulk Trigger Design Patterns
 * It is suggest use Bulks in triggers to have better performance, less server resources, and are less likely to exceed platform limits or governor limits
 #### Avoid hitting query limits

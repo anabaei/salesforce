@@ -1,4 +1,35 @@
 
+## VisualForce
+* Is a web framework than is hosted on force platform 
+### Variables
+* Regular variable called visualforce expressions are written in `{! }` and is case-insesitive and spaces are ignored
+* Global variable are written like `$User` which has information about logged in users `{! $GlobalName.fieldName}` as `{! $User.FirstName }` 
+
+```java
+<p>The year today is {! YEAR(TODAY()) }</p>
+<p>Tomorrow will be day number  {! DAY(TODAY() + 1) }</p>
+<p>Let's find a maximum: {! MAX(1,2,3,4,5,6,5,4,3,2,1) } </p>
+<p>The square root of 49 is {! SQRT(49) }</p>
+<p>Is it true?  {! CONTAINS('salesforce.com', 'force.com') }</p>
+```
+### Conditional
+```java
+<p>{! IF( DAY(TODAY()) < 15, 'Before the 15th', 'The 15th or after') }</p>
+```
+
+## Static Resources
+* Static resources allows you to deploy references like Stylesheet, Javascript or images in visualforce pages
+* Static resources are referenced by global variables as `$Resource` or used as params in `URLFOR()`
+* Setup-> Static Resources -> new -> upload file -> named `jquery` then inside visualforce you can access it via `{! $Resource.anyname }`
+* If we needed to have more resource in one file we can use URLFOR as below
+```java
+<apex:stylesheet value="{!URLFOR($Resource.jQueryMobile,'jquery.mobile-1.4.5/jquery.mobile-1.4.5.css')}" />
+<apex:includeScript value="{!URLFOR($Resource.jQueryMobile,'jquery.mobile-1.4.5/jquery.mobile-1.4.5.js')}"/>
+// then to show heart and eye icons from that we can have as belows 
+<apex:image alt="eye" title="eye" url="{!URLFOR($Resource.jQueryMobile, 'jquery.mobile-1.4.5/images/icons-png/eye-black.png')}"/>
+<apex:image alt="heart" title="heart" url="{!URLFOR($Resource.jQueryMobile, 'jquery.mobile-1.4.5/images/icons-png/heart-black.png')}"/>
+```
+
 ## React And Salesforce 
 * Here is a simple visualforce page 
 ```java

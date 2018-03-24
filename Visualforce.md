@@ -23,6 +23,7 @@
 * If we needed to have more resource in one file, then upload zip file and use `URLFOR()` as below
 ```java
 <apex:stylesheet value="{!URLFOR($Resource.name_of_zip_file,'relativeAddressToEahFile')}" />
+// upload jQueryMobile.zip file
 <apex:stylesheet value="{!URLFOR($Resource.jQueryMobile,'jquery.mobile-1.4.5/jquery.mobile-1.4.5.css')}" />
 <apex:includeScript value="{!URLFOR($Resource.jQueryMobile,'jquery.mobile-1.4.5/jquery.mobile-1.4.5.js')}"/>
 // then to show heart and eye icons from that we can have as belows 

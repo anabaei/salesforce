@@ -26,9 +26,7 @@
 // upload jQueryMobile.zip file
 <apex:stylesheet value="{!URLFOR($Resource.jQueryMobile,'jquery.mobile-1.4.5/jquery.mobile-1.4.5.css')}" />
 <apex:includeScript value="{!URLFOR($Resource.jQueryMobile,'jquery.mobile-1.4.5/jquery.mobile-1.4.5.js')}"/>
-// then to show heart and eye icons from that we can have as belows 
-<apex:image alt="eye" title="eye" url="{!URLFOR($Resource.jQueryMobile, 'jquery.mobile-1.4.5/images/icons-png/eye-black.png')}"/>
-<apex:image alt="heart" title="heart" url="{!URLFOR($Resource.jQueryMobile, 'jquery.mobile-1.4.5/images/icons-png/heart-black.png')}"/>
+
 ```
 
 ## React And Salesforce 

@@ -16,7 +16,7 @@ What they can do and what type of query they are able to run
 ### Contacts
 * Employee of the each company(Account) you work with
 ### Leads
-* potential prospects who are not yet ready to buy
+* Leads are people and companies that you’ve identified as potential customers
 ### Opportunites 
 * Opportunities are deals in progress
 * Opportubities can have stages baed on probablity of each

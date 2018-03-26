@@ -17,7 +17,7 @@ What they can do and what type of query they are able to run
 * A certain report that allow measurement by creating new ones we have different types of reports and share it
 
 ### Opportunites : Track opportunites 
-* Associated with contacts and accounts you can add / remove directly from accounts 
+* Associated with contacts. Opportunities are the lead that coverted to customers and has steps as Prospecting, Developing, Negotiation/Review, Closed/Won, Closed/Lost
 ------------
 ------------
 

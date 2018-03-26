@@ -11,13 +11,24 @@ What they can do and what type of query they are able to run
 6. *App* provides rapid development and deployment extending CRM 
 7. *IoT* is event processing engine that connects products and devices to salesforce and gain vivid pircutre of product usage
 
+### Accounts
+*  Customers or individuals you do business with it can be Bussiness or person accounts
+### Contacts
+* Employee of the each company(Account) you work with
+### Leads
+* potential prospects who are not yet ready to buy
+### Opportunites 
+* Opportunities are deals in progress
+* Opportubities can have stages baed on probablity of each
+
 ### Campaign: a tool to track teams
 * A tool to track teams with leads, contracts, accounts, tasks, activitis and files and track team actions
 ### Report : generate any data we need to review 
 * A certain report that allow measurement by creating new ones we have different types of reports and share it
 
-### Opportunites : Track opportunites 
-* Associated with contacts. Opportunities are the lead that coverted to customers and has steps as Prospecting, Developing, Negotiation/Review, Closed/Won, Closed/Lost
+
+
+
 ------------
 ------------
 

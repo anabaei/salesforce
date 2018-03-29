@@ -42,6 +42,46 @@ We have to create a user on salesforce with salesforce platform licence. To do s
 - Create a user using same licence then go to reports and change folder of report shares
 - On reports click on the icon infront of folder of reports and on drop down menu choose share with usres.
  
+## Security
+* Assiging a licence determines which profiles available for each user. Also selecting profiles for each user allowing to set minimum persmissions and access settings
+* We can't delete a user, but can `Deactive` so it can't login. It is in `Users->Edit>-Active Box`. Not allowing deactive you can `freez` a user as `User page->freeze`
+* `setup->Passowrd policies`
+* `Set IP address` if for whole org then they still can log in outside of range need to answer challenge questiions. If `set IP address`is for a singl profile, then all users of that profile are locked out. `Setup -> Network Access or Profiles`
+* Restrict login access by profile. `Setup->profiles->Login Hours`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

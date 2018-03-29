@@ -50,9 +50,9 @@ We have to create a user on salesforce with salesforce platform licence. To do s
 * Restrict login access by profile. `Setup->profiles->Login Hours`
 * User's `profile` determines the objects they can access. profiles uses for minimum limitation and permission sets for more
 * `Permission Sets` grant additional permissions to user. `setup -> Permission Sets -> new -> license --None- ` 
-* `Field permission` In some cases, you want users to have access to an object, but limit their access to individual fields. 
-Field settings can be applied either by modifying profiles or permission sets or from the Field Accessibility menu in Setup.
-* To do so before you start, enable the enhanced profile user interface `setup -> Management Settings -> enable Enhanced Profile User`
+* `Field permission`: first do `setup -> Management Settings -> enable Enhanced Profile User`. In some cases, you want users to have access to an object, but limit their access to individual fields. 
+
+
 
 
 

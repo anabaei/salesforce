@@ -83,7 +83,8 @@ SOSL within multiple objects. You can add which fields like by adding `IN email 
 * There are two automation tools: Process Builder and Cloud Flow Designer. Process builder you build processes and with Cloud Flow Designe you build flows when users inputs.
 * `Setup > Process Builder > save > Add Object (add trigger) > save >  Add Criteria > save` Or you can create Schedule as `Under Scheduled Actions> Set Schedule > Add Action > Create a Record> Task > Save`
 
-
+## Static Resource
+* `setup> static > new> upload and save as mm` thne inside VF page you have `<apex:stylesheet value="{!URLFOR($Resource.mm2)}" />` then you have your stylesheet in VF. for images we have `<apex:image url="{!$Resource.mmm} />` directly embed into VF page.  
 
 
 

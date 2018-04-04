@@ -116,7 +116,7 @@ As
 https://ap1.salesforce.com/apex/mypage?id=743987234&foo=true
 ```
 And to access them just write 
-```
+```java
 <div> the id is: {!$CurrentPage.parameters.id} </div>
 <div> foo is: {!$CurrentPage.parameters.foo} </div>
 ```

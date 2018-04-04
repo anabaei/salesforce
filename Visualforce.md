@@ -263,3 +263,8 @@ We might have javascript in directory called js or images
         
  ```
  * And the selected value is saved into countries variable
+
+## Create a VF link button
+* If you want have a button link for each contact then create a visualforce page and just add standardcontroller="contact"
+* Then in `setup>customize>contact>Buttons, Links, and Actions> new > content source = selectvisualforce> save ` then in `setup>customize>contat>layout>button> add what you just create`
+

@@ -88,7 +88,11 @@ SOSL within multiple objects. You can add which fields like by adding `IN email 
 * `Setup > Process Builder > save > Add Object (add trigger) > save >  Add Criteria > save` 
 * It tells if some conditions meet like updating some fields, automatically update some others 
 #### Cloud Flow Designer
-* It helps to users be guided through their experiences in the page
+* It is shortcut to create for example an account from home page from [here](https://trailhead.salesforce.com/modules/business_process_automation/units/flow). You define screen and then create records to make flow
+* first enable it from `setup> Automation >Enable Lightning runtime`
+* To create flow `setup>flow>new> drag screen into canvas> define names, fields with labels` Then drag `record create> name and assign variable accountid` then connect then save then active it.
+* To add it to home page or make it Look Like Lightning `setup>builder>Lightning App Builde> new>Home Page>Clone Salesforce Default Page>drag flow to place`
+
 
 ## Static Resource
 * `setup> static > new> upload and save as mm` thne inside VF page you have `<apex:stylesheet value="{!URLFOR($Resource.mm2)}" />` then you have your stylesheet in VF. for images we have `<apex:image url="{!$Resource.mmm} />` directly embed into VF page.  

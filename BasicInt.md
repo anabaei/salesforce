@@ -80,8 +80,15 @@ SOSL within multiple objects. You can add which fields like by adding `IN email 
 * To optimize SOSL define synonyme groups in `Setup> Synonyms> SelectSynonyms`
 
 ## Lightning Flow
-* There are two automation tools: Process Builder and Cloud Flow Designer. Process builder you build processes and with Cloud Flow Designe you build flows when users inputs.
-* `Setup > Process Builder > save > Add Object (add trigger) > save >  Add Criteria > save` Or you can create Schedule as `Under Scheduled Actions> Set Schedule > Add Action > Create a Record> Task > Save`
+* Create program with UML. There are two automation tools: Process Builder and Cloud Flow Designer. Process builder you build processes and with Cloud Flow Design you build flows when users inputs.
+
+* You can create Schedule as `Under Scheduled Actions> Set Schedule > Add Action > Create a Record> Task > Save`
+#### Process Builder
+* [here](https://trailhead.salesforce.com/modules/business_process_automation/units/process_builder)
+* `Setup > Process Builder > save > Add Object (add trigger) > save >  Add Criteria > save` 
+* It tells if some conditions meet like updating some fields, automatically update some others 
+#### Cloud Flow Designer
+* It helps to users be guided through their experiences in the page
 
 ## Static Resource
 * `setup> static > new> upload and save as mm` thne inside VF page you have `<apex:stylesheet value="{!URLFOR($Resource.mm2)}" />` then you have your stylesheet in VF. for images we have `<apex:image url="{!$Resource.mmm} />` directly embed into VF page.  

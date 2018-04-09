@@ -13,3 +13,4 @@
 Then in layout `add customer signed date> save`
 * Now add action to publisher as `Create > Global Actions > Publisher Layouts> global layout> drag new contact> save`
 * Group publisher by default inherites the global layout( like what we have in chatters) to customize it `setup>group layout> edit>quick action> override publisher`
+* An `approval process` is an automated process your organization can use to approve records in Salesforce. 

@@ -519,5 +519,17 @@ colors.add('test');
 ```
 upsert sObjectList Account.Fields.MyExternalId;
 ```
+* Apex contains the built-in Database class, which provides methods that perform
+* if set to false if error occurs the successful record will be commited and no exception thrown
+```java
+Database.insert(recordList, false);
+// best practice is 
+Database.SaveResult[] srList = Database.insert(conList, false);
+for (Database.SaveResult sr : srList) {
+    if (sr.isSuccess()) {
+    .....
+    }
+```
+* As from [here](https://trailhead.salesforce.com/trails/force_com_dev_beginner/modules/apex_database/units/apex_database_dml)
 
 

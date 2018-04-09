@@ -514,6 +514,10 @@ List<String> colors = new List<String>();
 colors.add('test');
 ```
 * We can cast general sObjects 
-
+* DML `merge` operation can merge up to three scobjects into one and delete the rest
+* DML `upsert` can be in a fiels as well like 
+```
+upsert sObjectList Account.Fields.MyExternalId;
+```
 
 

@@ -524,7 +524,7 @@ upsert sObjectList Account.Fields.MyExternalId;
 ```java
 Database.insert(recordList, false);
 // best practice is 
-Database.SaveResult[] srList = Database.insert(conList, false);
+Database.SaveResult[] srList = Database.insert(conList, false); // if it was delete, then we had Database.DeleteResult[] srList
 for (Database.SaveResult sr : srList) {
     if (sr.isSuccess()) {
     .....

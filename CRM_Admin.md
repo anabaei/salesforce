@@ -1,7 +1,7 @@
 
 ## CPQ
 * Configure, Price Quote. CPQ generates a pdf based on price and basic info 
-* CPQ can create on opportunities
+* CPQ is created on opportunities
 ## Chatter
 * Change chatter setting by `setup> Chatter Settings> edit > Select Allow Records in Groups (1) and Enable Unlisted Groups (2)`
 * Create public group `chatter tab> Groups> new> save`

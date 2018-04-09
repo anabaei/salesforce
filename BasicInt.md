@@ -106,8 +106,10 @@ SOSL within multiple objects. You can add which fields like by adding `IN email 
 ## Object-specific actions
 * Differences between global actions and Object-specific actions. Object-specific actions can update records and create records that are automatically associated with related information. Also to make them visible into mobile app, we dont add them into layout we just make available to users
 
-
-
+## Compact layout 
+* When opening a record in SF mobile app, you can see highlights from fields which we call them compact layout.
+* Create a layout: `object managment settings for contacts> compact layout>new` 
+* Assign it : System use default layouts unless we tell `object management> compact layout > click on a compact> compact layout assignment > select primary layout> save`
 
 
 

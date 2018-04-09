@@ -100,6 +100,9 @@ SOSL within multiple objects. You can add which fields like by adding `IN email 
 ## Static Resource
 * `setup> static > new> upload and save as mm` thne inside VF page you have `<apex:stylesheet value="{!URLFOR($Resource.mm2)}" />` then you have your stylesheet in VF. for images we have `<apex:image url="{!$Resource.mmm} />` directly embed into VF page. 
 
+
+# Mobile apps
+* After creating users can download them from app store
 ## Create Global Action
 * `setup>Global Actions>new> select object> select which tabs to display> assign predefined options > save`
 * Global actions let users create records, but the new record has no relationship with other records. And they’re called global actions because they can be put anywhere actions are supported—on record detail pages, but also places like the feed or Chatter groups.

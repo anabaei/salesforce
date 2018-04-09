@@ -105,13 +105,14 @@ SOSL within multiple objects. You can add which fields like by adding `IN email 
 * Global actions let users create records, but the new record has no relationship with other records. And they’re called global actions because they can be put anywhere actions are supported—on record detail pages, but also places like the feed or Chatter groups.
 ## Object-specific actions
 * Differences between global actions and Object-specific actions. Object-specific actions can update records and create records that are automatically associated with related information. Also to make them visible into mobile app, we dont add them into layout we just make available to users
-
 ## Compact layout 
 * When opening a record in SF mobile app, you can see highlights from fields which we call them compact layout.
 * Create a layout: `object managment settings for contacts> compact layout>new` 
 * Assign it : System use default layouts unless we tell `object management> compact layout > click on a compact> compact layout assignment > select primary layout> save`
-
-
+## Navigation Mobile
+* To access visualforce pages in mobile app we need creating tabs
+* To change the navigation menu `setup>Salesforce Navigation> save`
+* More on mobile app dev is [here](https://trailhead.salesforce.com/trails/salesforce1_mgmt/modules/salesforce1_rollout)
 
 
 

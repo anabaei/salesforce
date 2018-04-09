@@ -8,4 +8,8 @@
 * Enable chatter email `setup> Email Settings> change > save`
 * `Feed Tracking` Automatically announce any changes to records. 
 * Enable and Customize feild tracking `setup> Feed Tracking> select Contact> enable feed tracking> up to 20 feilds> save`
-
+* Chatter publisher includes the standard actions Post, File, Link, Poll, and Question.
+* Add action then create action `setip>chatter settings>edit>Enable action in publisher> save` then add create `setup> global actions>new> create record, contract, typ: new[record], nameit> save` 
+Then in layout `add customer signed date> save`
+* Now add action to publisher as `Create > Global Actions > Publisher Layouts> global layout> drag new contact> save`
+* Group publisher by default inherites the global layout( like what we have in chatters) to customize it `setup>group layout> edit>quick action> override publisher`

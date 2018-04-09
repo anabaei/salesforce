@@ -531,5 +531,11 @@ for (Database.SaveResult sr : srList) {
     }
 ```
 * As from [here](https://trailhead.salesforce.com/trails/force_com_dev_beginner/modules/apex_database/units/apex_database_dml)
-
+* To change the date we have `System.Today().addYears(-4)` or `System.Today().addDays(+2)` when type is `Date`
+* To active triggers after writing them `setup>apex triggers> edit> active`
+* To Test Triggers in init test put the DML between two main function `Test.StartTest()` and `Test.StopTest()` as [here](https://trailhead.salesforce.com/trails/force_com_dev_beginner/modules/apex_testing/units/apex_testing_triggers)
+* Difference between triggers old and new: `Trigger.new` : Returns a list of the new versions of the sObject records. Note that this sObject list is only available in insert and update triggers, and the records can only be modified in before triggers.
+ `Trigger.old` : Returns a list of the old versions of the sObject records. Note that this sObject list is only available in update and delete triggers
+ 
+ 
 

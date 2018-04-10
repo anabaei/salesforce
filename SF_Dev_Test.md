@@ -26,7 +26,8 @@ In this abstraction, objects are our database tables. The fields on those object
 #### common issues
 * Controllers vs extensions [answer](https://developer.salesforce.com/docs/atlas.en-us.pages.meta/pages/pages_controller_def.htm)
 * System Mode vs User mode
-* With/without sharing and how that's enforced up an execution context
+* With/without sharing and how that's enforced up an execution context: 
+without sharing is default and uses only when we have a global class.  With sharing means inherit rules and permissions from current user 
 * Best testing practices (design and annotations)
 * The order of execution 
 * Schema and Database classes

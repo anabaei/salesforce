@@ -10,6 +10,9 @@ What they can do and what type of query they are able to run
 5. *Community* cloud fasts colaboration between customers and partners and partners
 6. *App* provides rapid development and deployment extending CRM 
 7. *IoT* is event processing engine that connects products and devices to salesforce and gain vivid pircutre of product usage
+### Agile
+* Agile project management is an iterative approach to managing software development projects that focuses on continuous releases and incorporating customer feedback with every iteration
+
 
 ### Accounts
 *  Customers or individuals you do business with it can be Bussiness or person accounts

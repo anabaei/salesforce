@@ -87,12 +87,13 @@ SOSL within multiple objects. You can add which fields like by adding `IN email 
 * [here](https://trailhead.salesforce.com/modules/business_process_automation/units/process_builder)
 * `Setup > Process Builder > save > Add Object (add trigger) > save >  Add Criteria > save` 
 * It tells if some conditions meet like updating some fields, automatically update some others 
-#### Cloud Flow Designer
+#### Cloud Work Flow Designer
 * It is shortcut to create for example an account from home page from [here](https://trailhead.salesforce.com/modules/business_process_automation/units/flow). You define screen and then create records to make flow
 * first enable it from `setup> Automation >Enable Lightning runtime`
 * To create flow `setup>flow>new> drag screen into canvas> define names, fields with labels` Then drag `record create> name and assign variable accountid` then connect then save then active it.
 * To add it to home page or make it Look Like Lightning `setup>builder>Lightning App Builde> new>Home Page>Clone Salesforce Default Page>drag flow to place`
 * You can add flow into process designs. Some advantages is for example in process builder, you can’t grab the ID of the created record and use it elsewhere but you can do so in a flow.
+* Workflow only can Create, Update, Email and outbound messages 
 ### Approvals
 * Create email template `setup>template>select html> select one letterhead(if dont have create)>`
 * start approval `setup> approval process> opportunity> Create New Approval Process | Use Jump Start Wizard> ` then define `Initial Submission Actions ` and `Final Approval Actions` and ``

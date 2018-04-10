@@ -89,7 +89,9 @@ SOSL within multiple objects. You can add which fields like by adding `IN email 
 #### Process Builder
 * [here](https://trailhead.salesforce.com/modules/business_process_automation/units/process_builder)
 * `Setup > Process Builder > save > Add Object (add trigger) > save >  Add Criteria > save` 
-* It tells if some conditions meet like updating some fields, automatically update some others 
+* Process Builder is workflow tool and tells if some conditions meet like updating some fields, automatically update some others. For example if a company you work for change its location and you want a way to automatically update addresses of all people
+* You first create a process and then select the object on which the process runs. You also make sure the process kicks off whenever a record is edited or created
+
 #### Cloud Work Flow Designer
 * It is shortcut to create for example an account from home page from [here](https://trailhead.salesforce.com/modules/business_process_automation/units/flow). You define screen and then create records to make flow
 * first enable it from `setup> Automation >Enable Lightning runtime`

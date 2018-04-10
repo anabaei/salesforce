@@ -24,7 +24,7 @@ In this abstraction, objects are our database tables. The fields on those object
 * For each account up to 5 people can have access with different roles and different level of access to each account and it's opportunities and cases
 
 #### common issues
-* Controllers vs extensions
+* Controllers vs extensions [answer](https://developer.salesforce.com/docs/atlas.en-us.pages.meta/pages/pages_controller_def.htm)
 * With/without sharing and how that's enforced up an execution context
 * Best testing practices (design and annotations)
 * The order of execution 

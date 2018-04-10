@@ -101,6 +101,11 @@ SOSL within multiple objects. You can add which fields like by adding `IN email 
 ## Static Resource
 * `setup> static > new> upload and save as mm` thne inside VF page you have `<apex:stylesheet value="{!URLFOR($Resource.mm2)}" />` then you have your stylesheet in VF. for images we have `<apex:image url="{!$Resource.mmm} />` directly embed into VF page. 
 
+## Schema Builder
+* Schema Builder is a tool that lets you visualize and edit your data model. It shows field values, required fields, and how objects are related, by displaying lookup and master-detail relationships
+* Also we can manage permission for custom fields directly `right click on field> manage permission` 
+* We can create objects here as well by draging from left side bar and can add fields to object by draging them into object
+
 
 # Mobile apps
 * After creating users can download them from app store
@@ -119,6 +124,9 @@ SOSL within multiple objects. You can add which fields like by adding `IN email 
 * More on mobile app dev is [here](https://trailhead.salesforce.com/trails/salesforce1_mgmt/modules/salesforce1_rollout)
 
 
+
+
+* In account settings we should allow users to relate a contact to multiple accounts.
 
 
 

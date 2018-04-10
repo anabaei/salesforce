@@ -23,3 +23,14 @@ In this abstraction, objects are our database tables. The fields on those object
 #### Account Team
 * For each account up to 5 people can have access with different roles and different level of access to each account and it's opportunities and cases
 
+#### common issues
+* Controllers vs extensions
+* With/without sharing and how that's enforced up an execution context
+* Best testing practices (design and annotations)
+* The order of execution 
+* Schema and Database classes
+* Knowing when to use workflows/Process Builder/triggers/formula fields
+* security is enforced across different types of object relationships
+* Know the different types of orgs
+* Different ways to move metadata from one org to another.
+* Schema Builder

@@ -21,3 +21,7 @@ Then in layout `add customer signed date> save`
 * Dashboard is a visual display and has 1:1 relation with report. However we can use single report for multiple dashboard. and multiple dashboard components can display as one dashboard page layout.
 * Dashboard like reports are stored in folder which determines who can access.
 * Each dashboard has running users and he is the one who controlls accessing others regardless of other's roles and profile settings
+* Embed reports or dashboard into chatter to enable it `setup>feed tracking> enable checkbox` and `setup>Reports and Dashboard Settings> enable snapshot` and `Setup -> Chatter -> Feed tracking>dashboard>enable feed tracking and all 5 boxes` then if you go to snapshot you would have drop down to post component as snapshot as well
+* install this app for more report [options](https://trailhead.salesforce.com/modules/reports_dashboards/units/reports_dashboards_appexchange) 
+Then inside the salesforce adoption dashboards you have three new dashboards
+

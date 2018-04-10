@@ -25,6 +25,7 @@ In this abstraction, objects are our database tables. The fields on those object
 
 #### common issues
 * Controllers vs extensions [answer](https://developer.salesforce.com/docs/atlas.en-us.pages.meta/pages/pages_controller_def.htm)
+* System Mode vs User mode
 * With/without sharing and how that's enforced up an execution context
 * Best testing practices (design and annotations)
 * The order of execution 

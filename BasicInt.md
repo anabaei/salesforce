@@ -31,9 +31,6 @@ What they can do and what type of query they are able to run
 ### Connect to Oracle 
 * Install the app from [here](https://trailhead.salesforce.com/projects/quickstart-lightning-connect/steps/quickstart-lightning-connect1)
 
-
-
-------------
 ------------
 
 * Users can track activities by runing queries with their emails, accounts tasks and dates  etc they call it campaign
@@ -102,10 +99,16 @@ SOSL within multiple objects. You can add which fields like by adding `IN email 
 * Workflow only can Create, Update, Email and outbound messages but processes allow us to do a lot more, such as creating a record, launching a flow, posting to Chatter, quick actions (global actions), submit for approval and updating records.
 ### Approvals
 * Create email template `setup>template>select html> select one letterhead(if dont have create)>`
-* start approval `setup> approval process> opportunity> Create New Approval Process | Use Jump Start Wizard> ` then define `Initial Submission Actions ` and `Final Approval Actions` and ``
+* start approval `setup> approval process> opportunity> Create New Approval Process | Use Jump Start Wizard> ` then define `Initial Submission Actions ` and `Final Approval Actions`
 
 ## Custom Metadata
-* custom metadata types let you use records to configure your app without worrying about migrating those records to other orgs. So in custom setting you should create same metadata in dev environment then to sandbox and then in production but with custom metadata we can use packages to transfer them.  
+* Custom metadata types let you use records to configure your app without worrying about migrating those records to other orgs. So in custom setting you should create same metadata in dev environment then to sandbox and then in production but with custom metadata we can use packages to transfer metadata, records and some functions
+* Create an app to define which vacation is available for each account tier need to develop and deploy to production env. 
+* Create a metadata `setup> Custom Metadata Types> new` then create custom fields and in details page `manage name` add records
+* In Test you should add `@IsTest(SeeAllData=true) ` to read metadata as well
+* You can use custom metadata relationship to connect with other metadatas and as connected table among two entities
+
+
 
 ## Static Resource
 * `setup> static > new> upload and save as mm` thne inside VF page you have `<apex:stylesheet value="{!URLFOR($Resource.mm2)}" />` then you have your stylesheet in VF. for images we have `<apex:image url="{!$Resource.mmm} />` directly embed into VF page. 
@@ -113,7 +116,7 @@ SOSL within multiple objects. You can add which fields like by adding `IN email 
 ## Schema Builder
 * Schema Builder is a tool that lets you visualize and edit your data model. It shows field values, required fields, and how objects are related, by displaying lookup and master-detail relationships
 * Also we can manage permission for custom fields directly `right click on field> manage permission` 
-* We can create objects here as well by draging from left side bar and can add fields to object by draging them into object
+* We can create objects here as well by draging from left side bar and can add fields to object by draging them into object a good [source](https://trailhead.salesforce.com/trails/force_com_dev_intermediate/modules/custom_metadata_types/units/custom_metadata_types_create_md_relationships)
 
 # Mobile apps
 * After creating users can download them from app store

@@ -33,13 +33,13 @@ In this abstraction, objects are our database tables. The fields on those object
 * Schema and Database classes
 * Knowing when to use workflows/Process Builder/triggers/formula fields
 * security is enforced across different types of object relationships
-* Know the different types of orgs
-* `Production, Development and Testing environments `
-* `Production has four types of licence which you can go up and down: Group, professional, enterprise and unlimited`
-* `Force.com will either run on top of Enterprise or Unlimited Edition`
-* `developer and sandbox editions not allow to convert to production` 
-* `if we dont need CRM functionality then we can sign up for force.com seperately`
-* ` developing environment use for developing and testing apps. developing can be done either in brower based ide or in force.com ide which is eclipse `
+> Know the different types of orgs
+>> `Production, Development and Testing environments `
+>> `Production has four types of licence which you can go up and down: Group, professional, enterprise and unlimited`
+>> `Force.com will either run on top of Enterprise or Unlimited Edition`
+>> `developer and sandbox editions not allow to convert to production` 
+>> `if we dont need CRM functionality then we can sign up for force.com seperately`
+>> ` developing environment use for developing and testing apps. developing can be done either in brower based ide or in force.com ide which is eclipse `
  
  
 * Different ways to move metadata from one org to another.

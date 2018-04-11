@@ -104,6 +104,9 @@ SOSL within multiple objects. You can add which fields like by adding `IN email 
 * Create email template `setup>template>select html> select one letterhead(if dont have create)>`
 * start approval `setup> approval process> opportunity> Create New Approval Process | Use Jump Start Wizard> ` then define `Initial Submission Actions ` and `Final Approval Actions` and ``
 
+## Custom Metadata
+* 
+
 ## Static Resource
 * `setup> static > new> upload and save as mm` thne inside VF page you have `<apex:stylesheet value="{!URLFOR($Resource.mm2)}" />` then you have your stylesheet in VF. for images we have `<apex:image url="{!$Resource.mmm} />` directly embed into VF page. 
 

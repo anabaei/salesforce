@@ -107,8 +107,7 @@ SOSL within multiple objects. You can add which fields like by adding `IN email 
 * Create a metadata `setup> Custom Metadata Types> new` then create custom fields and in details page `manage name` add records
 * In Test you should add `@IsTest(SeeAllData=true) ` to read metadata as well
 * You can use custom metadata relationship to connect with other metadatas and as connected table among two entities
-
-
+* We can create objects here as well by draging from left side bar and can add fields to object by draging them into object a good [source](https://trailhead.salesforce.com/trails/force_com_dev_intermediate/modules/custom_metadata_types/units/custom_metadata_types_create_md_relationships)
 
 ## Static Resource
 * `setup> static > new> upload and save as mm` thne inside VF page you have `<apex:stylesheet value="{!URLFOR($Resource.mm2)}" />` then you have your stylesheet in VF. for images we have `<apex:image url="{!$Resource.mmm} />` directly embed into VF page. 
@@ -116,7 +115,6 @@ SOSL within multiple objects. You can add which fields like by adding `IN email 
 ## Schema Builder
 * Schema Builder is a tool that lets you visualize and edit your data model. It shows field values, required fields, and how objects are related, by displaying lookup and master-detail relationships
 * Also we can manage permission for custom fields directly `right click on field> manage permission` 
-* We can create objects here as well by draging from left side bar and can add fields to object by draging them into object a good [source](https://trailhead.salesforce.com/trails/force_com_dev_intermediate/modules/custom_metadata_types/units/custom_metadata_types_create_md_relationships)
 
 # Mobile apps
 * After creating users can download them from app store

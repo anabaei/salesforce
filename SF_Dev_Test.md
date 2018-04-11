@@ -33,7 +33,7 @@ In this abstraction, objects are our database tables. The fields on those object
 * Schema and Database classes
 * Knowing when to use workflows/Process Builder/triggers/formula fields
 * security is enforced across different types of object relationships
-> Know the different types of orgs
+ Know the different types of orgs
 >> * `Production, Development and Testing environments who develop in force.com and publish on appexchange `
 >> * `Production has four types of licence which you can go up and down: Group, professional, enterprise and unlimited`
 >> * `Force.com will either run on top of Enterprise or Unlimited Edition`

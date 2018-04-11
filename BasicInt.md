@@ -28,7 +28,8 @@ What they can do and what type of query they are able to run
 * A tool to track teams with leads, contracts, accounts, tasks, activitis and files and track team actions
 ### Report : generate any data we need to review 
 * A certain report that allow measurement by creating new ones we have different types of reports and share it
-
+### Connect to Oracle 
+* Install the app from [here](https://trailhead.salesforce.com/projects/quickstart-lightning-connect/steps/quickstart-lightning-connect1)
 
 
 

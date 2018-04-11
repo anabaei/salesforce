@@ -34,13 +34,17 @@ In this abstraction, objects are our database tables. The fields on those object
 * Knowing when to use workflows/Process Builder/triggers/formula fields
 * security is enforced across different types of object relationships
 > Know the different types of orgs
->> * `Production, Development and Testing environments `
+>> * `Production, Development and Testing environments who develop in force.com and publish on appexchange `
 >> * `Production has four types of licence which you can go up and down: Group, professional, enterprise and unlimited`
 >> * `Force.com will either run on top of Enterprise or Unlimited Edition`
 >> * `developer and sandbox editions not allow to convert to production` 
 >> * `if we dont need CRM functionality then we can sign up for force.com seperately`
 >> * ` developing environment use for developing and testing apps. developing can be done either in brower based ide or in force.com ide which is eclipse `
- 
+>> * Developer Edition: `a partner to developer on force.com and publish on appexchange. Has 2 CRM and 3 force.com licence and 5 MB `
+>> * Partner Developer Edition ` have a developers team bigger than 2 and require a master environment to manage all the source cod each developer has it's owen developer edition and Free for enrolled partners. 20 crm and force.com licence `
+>> * Sandox: `is ideal for your production org only and not for commercially distribution or publishing on app exchange`
+>> * Testing: `developer edition transfer to sandbox and then test it there, sandbox is a copy of production sf`
+
  
 * Different ways to move metadata from one org to another.
 * Schema Builder

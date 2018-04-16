@@ -22,6 +22,9 @@ When you ask how many customers bought this product this year? it means have to 
 * 1- `Center of Excellence`: different group work togather to ensure changes support bussiness requirements and allow them be updated with changes 
 * 2- `Release Management`: By using backlog list we can prioritize the tasks and share with everyone 
 * 3- `Design Standards`: follow standards in developing like having description field for all objects
+* Ant migration is like change set but in terminal environment and requires setting username/password on local disk
+* In change set you can only move metadata between sandbox and production, they are cloud based and not ideal when usign version control
+* Ant is easy to script with Ant(java) you can retrive metadata and deploy to any organazation easily by [this](https://trailhead.salesforce.com/modules/alm_deployment/units/alm_migrate) 
 ### Application Life Cycle
 * Development LifeCycle:
 * 1- Release Manager: is charge of pulling changes from version control

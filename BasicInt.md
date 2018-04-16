@@ -36,8 +36,13 @@ When you use `insert`, `update` and `upsert` statement, salesforce perform the f
 Date myDate = Date.newInstance(1960, 2, 17);
 Date newDate = mydate.addDays(2);
 ```
-* #### DateTime, Time, ID. Object, Integer: 32-bit , Long: 64-bit number with mn -2^63, Double: same as long just can have decimal point 
+```java
+Integer.valueOf('123');
+a.toString();
 
+```
+* #### Blob, DateTime, Time, ID. Object, Integer: 32-bit , Long: 64-bit number with mn -2^63, Double: same as long just can have decimal point 
+* Blob: A collection of binary data stored as a single object and is used to save crypto class objects. Whcih are used for secuting content in integration with AWS or Google.
 
 ### Accounts
 *  Customers or individuals you do business with it can be Bussiness or person accounts
@@ -156,8 +161,6 @@ SOSL within multiple objects. You can add which fields like by adding `IN email 
 * To access visualforce pages in mobile app we need creating tabs
 * To change the navigation menu `setup>Salesforce Navigation> save`
 * More on mobile app dev is [here](https://trailhead.salesforce.com/trails/salesforce1_mgmt/modules/salesforce1_rollout)
-
-
 * In account settings we should allow users to relate a contact to multiple accounts.
 
 

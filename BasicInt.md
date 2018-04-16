@@ -12,17 +12,25 @@ What they can do and what type of query they are able to run
 7. *IoT* is event processing engine that connects products and devices to salesforce and gain vivid pircutre of product usage
 
 ### Admin Change management from Sandbox
+When you ask how many customers bought this product this year? it means have to use process builder or create classes to address it. So you have to build, test and then deploy. It is called application lifecycle management or change management
 * Four stages for change sets: `Authorize Deployment`, `Create outbound change set`, `upload from sandbox`, `review inbound changes`
-* When ask how many customers bought this product this year? it means have to use process builder. So you have to build, test and then deploy the process. It is called application lifecycle management or change management
-* Change set sends the new modifications from sandbox to your production or target org. 
-* If you have several sandboz or refresh sandbox on regulare bases, then create a developer template in production then assign it to individual who wants to develop in sandbox env as `new user> deactive production> active sandbox`
+* Change set sends the new modifications from sandbox to your production 
+* If you have several sandboxes or refreshing sandbox on regulare bases, then have to create a developer template in production then assign it to individual who wants to develop in sandbox as `new user> deactive production> active sandbox`
 * Quick Deployment roll out your customizations to production faster by running tests as part of validations and skipping tests in your deployments(to save time). Validation is a tool to check the result of deployment component
-* `Test levels` enable you to choose which tests are run in a validation or deployment
-* Three parts of governance to manage changes:
+* `Test levels` enable you to choose which tests are run in a validation or deployment(we use default)
+* Three parts of governance to `Manage Changes`:
 1- `Center of Excellence`: different group work togather to ensure changes support bussiness requirements and allow them be updated with changes 
 2- `Release Management`: By using backlog list we can prioritize the tasks and share with everyone 
 3- `Design Standards`: follow standards in developing like having description field for all objects
-
+### Application Life Cycle
+* Development LifeCycle:
+1- Release Manager: is charge of pulling changes from version control
+2- Product Manager: provides the business requirements of apps and features and work with development to address them.
+3- Sofware Developer: Develops new functionality in sandbox
+4- Quality engineer: Test new functionality 
+5- Administrator: perform admin task in production 
+* Anytime you deploy new change sets, create back up all metadata first and have a backup plan, creaet a profile to lock users and just allow acceptance users to test data
+* Metadata type is a representation of configuration and customization in salesforce in XML format
 ### Agile
 * Agile project management is an iterative approach to managing software development projects that focuses on continuous releases and incorporating customer feedback with every iteration
 ### Trigger

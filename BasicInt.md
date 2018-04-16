@@ -12,7 +12,24 @@ What they can do and what type of query they are able to run
 7. *IoT* is event processing engine that connects products and devices to salesforce and gain vivid pircutre of product usage
 ### Agile
 * Agile project management is an iterative approach to managing software development projects that focuses on continuous releases and incorporating customer feedback with every iteration
-
+### Trigger
+When you use `insert`, `update` and `upsert` statement, salesforce perform the following events in order: 
+* Before salesforce executes events, browser runs javascript validation if record contains any picklist, if so check the valuses
+* Loads the new record field values and overwrites the old values
+* If the request came from standard UI edit page, sf check 
+ 1- Valid field formats
+ 2- Maximum field length
+ * Run user defined validation rules 
+ * Now execute all `before` Triggers
+ * Save th record to database, but doesnt commit yet
+ * Execute all `after` Triggers
+ * Execute assignemtn rule
+ * Execute workflow rules
+ * If the reocrd was updated in workflow, fires before and after update triggers one more time
+ * Execute process
+ * Execute flows
+ * Executes Criteria Based Sharing evaluation
+ * Commits all DML operations to the database
 
 ### Accounts
 *  Customers or individuals you do business with it can be Bussiness or person accounts

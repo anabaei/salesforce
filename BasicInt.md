@@ -30,6 +30,15 @@ When you use `insert`, `update` and `upsert` statement, salesforce perform the f
  * Execute flows
  * Executes Criteria Based Sharing evaluation
  * Commits all DML operations to the database
+### Data Type
+#### Date
+* from [here](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_date.htm#apex_methods_system_date)
+```java
+Date myDate = Date.newInstance(1960, 2, 17);
+Date newDate = mydate.addDays(2);
+```
+* #### DateTime, Time, ID. Object, Integer: 32-bit , Long: 64-bit number with mn -2^63, Double: same as long just can have decimal point 
+
 
 ### Accounts
 *  Customers or individuals you do business with it can be Bussiness or person accounts

@@ -31,7 +31,6 @@ When you use `insert`, `update` and `upsert` statement, salesforce perform the f
  * Executes Criteria Based Sharing evaluation
  * Commits all DML operations to the database
 ### Data Type
-#### Date
 * from [here](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_date.htm#apex_methods_system_date)
 ```java
 Date myDate = Date.newInstance(1960, 2, 17);

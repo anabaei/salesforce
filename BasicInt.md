@@ -19,16 +19,16 @@ When you ask how many customers bought this product this year? it means have to 
 * Quick Deployment roll out your customizations to production faster by running tests as part of validations and skipping tests in your deployments(to save time). Validation is a tool to check the result of deployment component
 * `Test levels` enable you to choose which tests are run in a validation or deployment(we use default)
 * Three parts of governance to `Manage Changes`:
-1- `Center of Excellence`: different group work togather to ensure changes support bussiness requirements and allow them be updated with changes 
-2- `Release Management`: By using backlog list we can prioritize the tasks and share with everyone 
-3- `Design Standards`: follow standards in developing like having description field for all objects
+* 1- `Center of Excellence`: different group work togather to ensure changes support bussiness requirements and allow them be updated with changes 
+* 2- `Release Management`: By using backlog list we can prioritize the tasks and share with everyone 
+* 3- `Design Standards`: follow standards in developing like having description field for all objects
 ### Application Life Cycle
 * Development LifeCycle:
-1- Release Manager: is charge of pulling changes from version control
-2- Product Manager: provides the business requirements of apps and features and work with development to address them.
-3- Sofware Developer: Develops new functionality in sandbox
-4- Quality engineer: Test new functionality 
-5- Administrator: perform admin task in production 
+* 1- Release Manager: is charge of pulling changes from version control
+* 2- Product Manager: provides the business requirements of apps and features and work with development to address them.
+* 3- Sofware Developer: Develops new functionality in sandbox
+* 4- Quality engineer: Test new functionality 
+* 5- Administrator: perform admin task in production 
 * Anytime you deploy new change sets, create back up all metadata first and have a backup plan, creaet a profile to lock users and just allow acceptance users to test data
 * Metadata type is a representation of configuration and customization in salesforce in XML format
 ### Agile

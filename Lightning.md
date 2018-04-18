@@ -9,14 +9,12 @@
 * To add attribute we can have as below where v is refering to view attribute
 ```javascript
 <aura:component >
- <aura:attribute name="cases" type="Case[]" />  <!-- type of collection of case records -->
-    
-    <!-- Handler specifies an action: -->
-    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
-    
-    <!-- iterate component to iterate through the collection, v.cases sayign get data from above and assign a variable name for each case as -->
+ <aura:attribute name="cases" type="Case[]" />  // type of collection of case records     
+  // Handler specifies an action:
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />  
+  // iterate component to iterate through the collection, v.cases sayign get data from above and assign a variable name for each case as 
     <aura:iteration items="{!v.cases}" var="case" >
-        <!-- show to display each case, we could use outputtext component as well. here each record is a variable from our iteration. -->
+  // show to display each case, we could use outputtext component as well. here each record is a variable from our iteration 
        <div>
         <force:recordView recordId="{!case.Id}" type="FULL" /> 
        </div>

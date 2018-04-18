@@ -3,23 +3,70 @@
 * You can customize using users from lightening by assiging permission set or by changing in their custom profiles 
 * It uses javascript in client side and apex in server side to retrive data
 * Kanban view allows you to drag, drop elements 
-* Choose the domain: `setup>mydomain`
+* Choose the domain: `setup>mydomain` and set the domain to deploy to users as `setup>domain>click on your domain>finsh up deploy to users`
 * Add lightening inspector from google chrome store to inspect lightening 
 * Each component has cmp file like view, css file and js controller file. To see components we have to create app and then use `<c:componentname anyattribute! />` then save and have preview click
 * To add attribute we can have as below where v is refering to view attribute
-```java
+```javascript
 <aura:component >
- <aura:attribute name="whome" type="string" default="hello!" />
- <h1> {!v.whome} world</h1>
+ <aura:attribute name="cases" type="Case[]" />  <!-- type of collection of case records -->
+    
+    <!-- Handler specifies an action: -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <!-- iterate component to iterate through the collection, v.cases sayign get data from above and assign a variable name for each case as -->
+    <aura:iteration items="{!v.cases}" var="case" >
+        <!-- show to display each case, we could use outputtext component as well. here each record is a variable from our iteration. -->
+       <div>
+        <force:recordView recordId="{!case.Id}" type="FULL" /> 
+       </div>
+        
+    </aura:iteration>
 </aura:component >
 ```
+* In controller we need to have async process to touch server side action, so after we call it we use a callback to receive response and if successfull send it back to aura:component 
+In OpenCaseController.js we have 
+```javascript
+({
+	doInit : function(component, event, helper) {
+	
+        var action = component.get("c.getCaseDB");
+        console.log('calling out');
+        action.setCallback(this, function(response){
+            var state = response.getState();
+            if(component.isValid() && state == "SUCCESS"){
+                console.log('success');
+                component.set("v.cases", response.getReturnValue());
+               }
+        });
+        $A.enqueueAction(action);
+	}
+})
+```
+
+### Server Side Action Controller
+It is OpenCasesApexController class
+```java
+public with sharing class OpenCasesApexController {
+@AuraEnabled
+ public static List<Case> getCasesDB() {
+   return [SOQL Query goes here];
+  }
+}
+```
+* It should be static and uses public or general modifier
+* Then add controller to `<aura:component  controller="OpenCasesApexController">`
+
+#### With Sharing
+* This key word allows organization enforce security policies for record access concerns
+
 * Lightening controller from [here](https://trailhead.salesforce.com/modules/lex_dev_lc_basics/units/lex_dev_lc_basics_controllers)
 #### UI Components
 * By adding `...force.com/auradocs/reference.app` to access documentation
 * At any component if you see this `change={"!c.oninchange"}` it means by chaning it call a funciton in controller 
 
 ## Lightning Flow
-* Create program with UML. There are two automation tools: Process Builder and Cloud Flow Designer. Process builder you build processes and with Cloud Flow Design you build flows when users inputs.
+* Create program with UML. There are two automation tools: Process Builder and Cloud Flow Designer. Process builder you build processes and with Cloud Flow Design you build flows when users inputs
 
 * You can create Schedule as `Under Scheduled Actions> Set Schedule > Add Action > Create a Record> Task > Save`
 #### Process Builder

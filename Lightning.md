@@ -7,6 +7,8 @@
 * Add lightening inspector from google chrome store to inspect lightening 
 * Each component has cmp file like view, css file and js controller file. To see components we have to create app and then use `<c:componentname anyattribute! />` then save and have preview click
 ### Controller and Data
+* There is one component `OpenCases.cmp` and its controller and a server side controller name `getCaseDb`
+OpenCases.cmp is
 ```javascript
 <aura:component >
  <aura:attribute name="cases" type="Case[]" />  // type of collection of case records     

@@ -6,13 +6,17 @@
 * Choose the domain: `setup>mydomain`
 * Add lightening inspector from google chrome store to inspect lightening 
 * Each component has cmp file like view, css file and js controller file. To see components we have to create app and then use `<c:componentname anyattribute! />` then save and have preview click
-* To add attribute we can have as 
+* To add attribute we can have as below where v is refering to view attribute
 ```java
 <aura:component >
  <aura:attribute name="whome" type="string" default="hello!" />
  <h1> {!v.whome} world</h1>
 </aura:component >
 ```
+#### UI Components
+* By adding `...force.com/auradocs/reference.app` to access documentation
+* At any component if you see this `change={"!c.oninchange"}` it means by chaning it call a funciton in controller 
+
 
 ## Lightning Flow
 * Create program with UML. There are two automation tools: Process Builder and Cloud Flow Designer. Process builder you build processes and with Cloud Flow Design you build flows when users inputs.

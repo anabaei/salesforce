@@ -11,6 +11,26 @@ What they can do and what type of query they are able to run
 6. *App* provides rapid development and deployment extending CRM 
 7. *IoT* is event processing engine that connects products and devices to salesforce and gain vivid pircutre of product usage
 
+## HTTPRequest
+*
+```java
+ Http h = new Http();
+ HttpResponse res = h.send(req);
+         String loc = res.getHeader('Location'); // get location of the redirect
+         req = new HttpRequest();
+         req.setEndpoint('https://www.eventbriteapi.com/v3/users/me/owned_events/?token=7HZG7FTKQ4UMA7BOVIVV&page='+pagen);
+         req.setMethod('GET');
+         req.setHeader('Content-Type', 'application/json');
+         req.setHeader('Accept','application/json');
+         res = h.send(req);
+```
+### Deserialize
+* It converts a text(json) into objects as we recevive httprequest result we have to use it to convert to objects as
+```java
+Map<String, Object> m = (Map<String, Object>)JSON.deserializeUntyped(res.getBody());
+             Map<String, Object> paginations = (Map<String, Object>) m.get('pagination');
+```
+
 ### Admin Change management from Sandbox
 When you ask how many customers bought this product this year? it means have to use process builder or create classes to address it. So you have to build, test and then deploy. It is called application lifecycle management or change management
 * Four stages for change sets: `Authorize Deployment`, `Create outbound change set`, `upload from sandbox`, `review inbound changes`

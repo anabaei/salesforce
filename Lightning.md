@@ -18,7 +18,6 @@
 * By adding `...force.com/auradocs/reference.app` to access documentation
 * At any component if you see this `change={"!c.oninchange"}` it means by chaning it call a funciton in controller 
 
-
 ## Lightning Flow
 * Create program with UML. There are two automation tools: Process Builder and Cloud Flow Designer. Process builder you build processes and with Cloud Flow Design you build flows when users inputs.
 

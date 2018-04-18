@@ -13,6 +13,7 @@
  <h1> {!v.whome} world</h1>
 </aura:component >
 ```
+* Lightening controller from [here](https://trailhead.salesforce.com/modules/lex_dev_lc_basics/units/lex_dev_lc_basics_controllers)
 #### UI Components
 * By adding `...force.com/auradocs/reference.app` to access documentation
 * At any component if you see this `change={"!c.oninchange"}` it means by chaning it call a funciton in controller 

@@ -6,7 +6,7 @@
 * Choose the domain: `setup>mydomain` and set the domain to deploy to users as `setup>domain>click on your domain>finsh up deploy to users`
 * Add lightening inspector from google chrome store to inspect lightening 
 * Each component has cmp file like view, css file and js controller file. To see components we have to create app and then use `<c:componentname anyattribute! />` then save and have preview click
-* To add attribute we can have as below where v is refering to view attribute
+### Controller and Data
 ```javascript
 <aura:component >
  <aura:attribute name="cases" type="Case[]" />  // type of collection of case records     

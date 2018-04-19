@@ -24,12 +24,13 @@ What they can do and what type of query they are able to run
          req.setHeader('Accept','application/json');
          res = h.send(req);
 ```
-### Deserialize
+### Serialize (stringify) 
 * It converts a text(json) into objects as we recevive httprequest result we have to use it to convert to objects as
 ```java
 Map<String, Object> m = (Map<String, Object>)JSON.deserializeUntyped(res.getBody());
              Map<String, Object> paginations = (Map<String, Object>) m.get('pagination');
 ```
+* The `JSON.stringify()` method converts a JavaScript value Objects to a JSON string.
 
 ### Admin Change management from Sandbox
 When you ask how many customers bought this product this year? it means have to use process builder or create classes to address it. So you have to build, test and then deploy. It is called application lifecycle management or change management

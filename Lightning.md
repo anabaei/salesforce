@@ -145,12 +145,37 @@ Markup : <details>
       ````
 </details>
  <details>
-           <summary>test.app</summary>
+           <summary>campingListItemController.app</summary>
 	
 	```java
-	 <aura:application extends="force:slds" >
-            <c:campingListItem />
-         </aura:application> 
+	 ({
+	packItem : function(component, event, helper) {
+         
+         var a = component.get("v.item");
+         a.Packed__c = true;
+         component.set("v.item",a); 
+        
+         var btnClicked = event.getSource();
+         btnClicked.set("v.disabled",true);
+    },
+    clickCreateItem : function(component, event, helper) {
+    
+            var validExpense = component.find('expenseform').reduce(function (validSoFar, inputCmp) {
+            // Displays error messages for invalid fields
+            inputCmp.showHelpMessageIfInvalid();
+            return validSoFar && inputCmp.get('v.validity').valid;
+        }, true);
+        // If we pass error checking, do some real work
+        if(validExpense){
+            // Create the new expense
+            var newExpense = component.get("v.newItem");
+            console.log("Create newItem: " + JSON.stringify(newExpense));
+           // helper.createExpense(component, newExpense);
+        }
+        
+        
+    }
+     })
  </details>  
   
 	 

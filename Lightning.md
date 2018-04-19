@@ -171,11 +171,18 @@ This is an example of form passing info to jscontroller
             var newExpense = component.get("v.newItem");
             console.log("Create newItem: " + JSON.stringify(newExpense));
            // helper.createExpense(component, newExpense);
-        }
-        
-        
+	   // to push and display in v.item 
+	   var campings = component.get("v.items");
+             campings.push(item);
+             component.set("v.items",campings);
+	     // reset the input form feilds with below values 
+             component.set("v.newItem",{ 'sobjectType': 'Camping_Item__c','Name': '','Quantity__c': 0,
+                                       'Price__c': 0,'Packed__c': false }); 
+	   
+        }   
     }
      })
+     
  </details>  
   
  Form [example](https://trailhead.salesforce.com/modules/lex_dev_lc_basics/units/lex_dev_lc_basics_forms)

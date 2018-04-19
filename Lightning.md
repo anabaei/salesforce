@@ -65,6 +65,13 @@ public with sharing class OpenCasesApexController {
 * By adding `...force.com/auradocs/reference.app` to access documentation
 * At any component if you see this `change={"!c.oninchange"}` it means by chaning it call a funciton in controller 
 
+#### SLDS 
+* To have Salesforce Lightning Design System in app, we need to define it when creating an app as
+```javascript
+<aura:application extends="force:slds">
+```
+* Form [example](https://trailhead.salesforce.com/modules/lex_dev_lc_basics/units/lex_dev_lc_basics_forms)
+
 ## Lightning Flow
 * Create program with UML. There are two automation tools: Process Builder and Cloud Flow Designer. Process builder you build processes and with Cloud Flow Design you build flows when users inputs
 

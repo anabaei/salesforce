@@ -70,6 +70,17 @@ public with sharing class OpenCasesApexController {
 ```javascript
 <aura:application extends="force:slds">
 ```
+* An example of a form working 
+Markup : <details>
+           <summary>test.app</summary>
+	
+	```java
+	 <aura:application extends="force:slds" >
+            <c:campingListItem />
+         </aura:application>
+
+         </details>
+	 
 * Form [example](https://trailhead.salesforce.com/modules/lex_dev_lc_basics/units/lex_dev_lc_basics_forms)
 
 ## Lightning Flow

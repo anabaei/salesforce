@@ -70,8 +70,8 @@ public with sharing class OpenCasesApexController {
 ```javascript
 <aura:application extends="force:slds">
 ```
-
-Markup : <details>
+This is an example of form passing info to jscontroller 
+ <details>
            <summary>test.app</summary>
 	
 	```java

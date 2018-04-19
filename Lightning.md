@@ -79,7 +79,69 @@ Markup : <details>
             <c:campingListItem />
          </aura:application>
 
-         </details>
+Markup : <details>
+           <summary>campingListItem.cmp</summary>
+	
+	```java
+	 <aura:component >
+	<!-- PAGE HEADER -->
+    <lightning:layout class="slds-page-header slds-page-header--object-home">
+        <lightning:layoutItem >
+            <lightning:icon iconName="standard:scan_card" alternativeText="My Expenses"/>
+        </lightning:layoutItem>
+        <lightning:layoutItem padding="horizontal-small">
+            <div class="page-section page-header">
+                <h1 class="slds-text-heading--label">Expenses</h1>
+                <h2 class="slds-text-heading--medium">My Expenses</h2>
+            </div>
+        </lightning:layoutItem>
+    </lightning:layout>
+    <!-- / PAGE HEADER -->
+    <aura:attribute name="items" type="Camping_Item__c[]"/>
+     <aura:attribute name="newItem" type="Camping_Item__c" default="{ 'sobjectType': 'Camping_Item__c',
+                        'Quantity__c': 0, 'Price__c': 0  }" />                                                   
+       <!-- CREATE NEW EXPENSE FORM -->
+        <form class="slds-form--stacked">          
+            <lightning:input aura:id="expenseform" label="Expense Name"
+                             name="expensename"
+                             value="{!v.newItem.Name}"
+                             required="true"/> 
+             <lightning:input aura:id="expenseform" label="Expense Name"
+                             name="expensename"
+                             value="{!v.newItem.Quantity__c}"
+                             step="1" 
+                             required="true"/>
+             <lightning:input aura:id="expenseform" label="Expense Name"
+                             name="expensename"
+                             value="{!v.newItem.Price__c}"
+                             required="true"/>
+             <lightning:input aura:id="expenseform" label="Expense Name"
+                             name="expensename"
+                             value="{!v.newItem.Packed__c}"
+                             required="true"/>
+           
+            <lightning:button label="Create Expense" 
+                              class="slds-m-top--medium"
+                              variant="brand"
+                              onclick="{!c.clickCreateItem}"/>
+        </form>
+        <!-- / CREATE NEW EXPENSE FORM -->   
+     <aura:attribute name="item" type="Camping_Item__c" default="{'sObjectType':'Camping_Item__c',
+                                                                'Quantity__c':10,
+                                                                'Price__c':100,
+                                                                'Packed__c':false}"/> 
+    
+    <p>Price:
+        <ui:outputCurrency value="{!v.item.price__c}"/>
+    </p>
+     <lightning:formattedNumber value="{!v.item.price__c }" style="currency"/>
+     <lightning:formattedNumber value="{!v.item.Quantity__c}" />
+     <lightning:input type="toggle"                            
+                         label="Packed"                           
+                         name="Packed"                         
+                         checked="{!v.item.Packed__c}" /> 
+    <lightning:button label="Packed!" onclick="{!c.packItem}"/>
+     </aura:component>	 
 	 
 * Form [example](https://trailhead.salesforce.com/modules/lex_dev_lc_basics/units/lex_dev_lc_basics_forms)
 

@@ -186,6 +186,8 @@ This is an example of form passing info to jscontroller
  </details>  
   
  Form [example](https://trailhead.salesforce.com/modules/lex_dev_lc_basics/units/lex_dev_lc_basics_forms)
+### Server side saving
+* 
 
 ## Lightning Flow
 * Create program with UML. There are two automation tools: Process Builder and Cloud Flow Designer. Process builder you build processes and with Cloud Flow Design you build flows when users inputs

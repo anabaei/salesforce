@@ -77,10 +77,13 @@ Markup : <details>
 	```java
 	 <aura:application extends="force:slds" >
             <c:campingListItem />
-         </aura:application>
-   <summary>campingListItem.cmp</summary>
-	```
-	 <aura:component >
+         </aura:application> 
+   </details>
+
+Markup : <details>
+            <summary>campingListItem.cmp</summary>
+	
+	 ```<aura:component >
 	<!-- PAGE HEADER -->
     <lightning:layout class="slds-page-header slds-page-header--object-home">
         <lightning:layoutItem >
@@ -140,10 +143,7 @@ Markup : <details>
     <lightning:button label="Packed!" onclick="{!c.packItem}"/>
      </aura:component>	 
       ````
-dsds
-
-Markup : <details>
-           <summary>test.app</summary>
+</details>
   
   
 	 

@@ -78,11 +78,8 @@ Markup : <details>
 	 <aura:application extends="force:slds" >
             <c:campingListItem />
          </aura:application>
-
-Markup : <details>
-           <summary>campingListItem.cmp</summary>
-	
-	```java
+   <summary>campingListItem.cmp</summary>
+	```
 	 <aura:component >
 	<!-- PAGE HEADER -->
     <lightning:layout class="slds-page-header slds-page-header--object-home">
@@ -142,6 +139,13 @@ Markup : <details>
                          checked="{!v.item.Packed__c}" /> 
     <lightning:button label="Packed!" onclick="{!c.packItem}"/>
      </aura:component>	 
+      ````
+dsds
+
+Markup : <details>
+           <summary>test.app</summary>
+  
+  
 	 
 * Form [example](https://trailhead.salesforce.com/modules/lex_dev_lc_basics/units/lex_dev_lc_basics_forms)
 

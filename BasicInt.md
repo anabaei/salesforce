@@ -192,8 +192,10 @@ SOSL within multiple objects. You can add which fields like by adding `IN email 
 * More on mobile app dev is [here](https://trailhead.salesforce.com/trails/salesforce1_mgmt/modules/salesforce1_rollout)
 * In account settings we should allow users to relate a contact to multiple accounts.
 
-
-
+## Packaging
+* To go to app then `setup>app menue`
+* To create namespace to allow customers to see the packages you created  and add apps into them later `setup>packages> edit developer> continue`
+* To Create app in classic: `setup > apps > Quick Start> ` 
 
 
 

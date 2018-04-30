@@ -61,6 +61,35 @@ In this abstraction, objects are our database tables. The fields on those object
 * No inherited security 
 * Roll up summay not allows for parents and child can be standard object
 
+### Avoid Hitting Governor limits
+#### using limits systems
+```java
+System.debug('1. Number of Queries used in this Apex code so far: ' + Limits.getQueries());
+System.debug('2. Number of rows queried in this Apex code so far: ' + Limits.getDmlRows());
+System.debug('3. Number of DML statements used so far: ' +  Limits.getDmlStatements());   
+System.debug('4. Amount of CPU time (in ms) used so far: ' + Limits.getCpuTime());
+Or 
+System.debug('Total Number of SOQL Queries allowed in this Apex code context: ' +  Limits.getLimitQueries());
+Or
+if (opptqueryresult.size() + Limits.getDMLRows() > Limits.getLimitDMLRows())
+```
+#### Use @future 
+* Beside, bulkifying your helper methods we can use asynch functions. But no more than 10 future methods in single apex transaction and no more than 200 in 24 hours. Future mehtods can not take sObjects or objects as arguments. Can not use in visualforce controllers. 
+#### One Trigger per object
+* Single apex trigger for one object. 
+#### Using collection and streaming
+* If there are two queries on forexample opportuniyu make them one like `select id from opp where a in b and from account where id in c`
+like [this](https://developer.salesforce.com/page/Apex_Code_Best_Practices)
+
+
+
+
+
+
+
+
+
+
 
 
 

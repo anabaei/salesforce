@@ -174,7 +174,7 @@ SOSL within multiple objects. You can add which fields like by adding `IN email 
 
 ## Schema Builder
 * Schema Builder is a tool that lets you visualize and edit your data model. It shows field values, required fields, and how objects are related, by displaying lookup and master-detail relationships
-* Also we can manage permission for custom fields directly `right click on field> manage permission` 
+* Also we can manage permission for custom fields directly `right click on field> manage permission` [link](http://www.infallibletechie.com/2013/10/schema-builder.html)
 
 # Mobile apps
 * After creating users can download them from app store

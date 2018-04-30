@@ -48,3 +48,20 @@ In this abstraction, objects are our database tables. The fields on those object
  
 * Different ways to move metadata from one org to another.
 * Schema Builder
+
+## Relationships on Objects in SF
+### Master-Details Relationship
+* Child record must have a parent
+* Child record must not be standard object
+* Cascade record level security from parent to child
+* Cascade record deletion if parent deleted 
+* Roll up summary field is available in parent for example how many child has this parent 
+### Lookup Relationship
+* Relationship is optional for childs
+* No inherited security 
+* Roll up summay not allows for parents and child can be standard object
+
+
+
+
+

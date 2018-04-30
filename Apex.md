@@ -23,6 +23,19 @@
 * [Sandbox into pro](http://salesforce.vidyard.com/watch/yuOAaYF_-vtWigiqXxndVQ) 
 * [Call out from batch](https://developer.salesforce.com/blogs/developer-relations/2010/02/spring-10-saw-the-general-availability-of-one-of-my-favorite-new-features-of-the-platform-the-apex-schedulerwith-the-apex-s.html)
 
+### Passing params to Controller from URL
+* In controller construct you can define 
+```java
+name = ApexPages.currentPage().getParameters().get('name');
+```
+* And inside the visualforce page we can get url like
+```java
+{!$CurrentPage.parameters.name}
+```
+* which is actually pagerefernce like this:
+```java
+PageReference pageRef = ApexPages.currentPage();
+```
 
 ### HashMap
 * Almost identical with java 

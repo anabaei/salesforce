@@ -1,4 +1,5 @@
 ## Lightning Basic
+* It is an eventdriven architecture and included responsive design. It doesnt work with existing VF and not uses XML as dataformat
 * Lightning Experience is a modern user interface, while it doesnt hava features like `fead and publisher` or `clean button` or `javascript button` or `customizing objects` but it has more features from [here](https://trailhead.salesforce.com/modules/lex_migration_introduction/units/lex_migration_introduction_rightforme) 
 * You can customize using users from lightening by assiging permission set or by changing in their custom profiles 
 * It uses javascript in client side and apex in server side to retrive data

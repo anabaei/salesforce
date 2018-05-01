@@ -196,6 +196,13 @@ We might have javascript in directory called js or images
 <apex:image value="{!URLFOR($Resource.TheLogo, `img/logo.jpg')}" width="32-" height="240" />
 ```
 
+### Merge Syntax
+* In this way we show 
+```java
+{!Object.nameofAPI}
+```
+
+
 ### Show value hide null
 * if we want to show a string only when the value of input is not null from [this link](https://developer.salesforce.com/forums/?id=906F0000000AaNeIAK)
 ```java
@@ -215,6 +222,13 @@ We might have javascript in directory called js or images
        <apex:outputpanel id="display">
         <apex:outputtext value="The name entered is {!userinput}" rendered="{!userinput != null}"/>
       </apex:outputpanel>  
+```
+### Field Set
+* First define `field set` in each object and then assign some fields to it. Then use `<apex:repeat` tag 
+```java
+<apex:repeat value="{!$ObjectType.Account.FieldState.New_set}" var="field" />
+  <apex:outputField value="{!Account[field]}" />
+</apex:repeat>
 ```
 
 ### Input from visualforce to controller 

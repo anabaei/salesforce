@@ -12,6 +12,8 @@
 <p>The square root of 49 is {! SQRT(49) }</p>
 <p>Is it true?  {! CONTAINS('salesforce.com', 'force.com') }</p>
 ```
+
+
 ### Conditional
 ```java
 <p>{! IF( DAY(TODAY()) < 15, 'Before the 15th', 'The 15th or after') }</p>
@@ -203,6 +205,7 @@ We might have javascript in directory called js or images
 ```
 
 
+
 ### Show value hide null
 * if we want to show a string only when the value of input is not null from [this link](https://developer.salesforce.com/forums/?id=906F0000000AaNeIAK)
 ```java
@@ -230,7 +233,15 @@ We might have javascript in directory called js or images
   <apex:outputField value="{!Account[field]}" />
 </apex:repeat>
 ```
-
+### Input form 
+* Exactly above just change the outputfield with inputfield and wrap it `<apex:form>` 
+```java
+<apex:form>
+<apex:repeat value="{!$ObjectType.Account.FieldState.New_set}" var="field" />
+  <apex:inputField value="{!Account[field]}" />
+</apex:repeat>
+</apex:form>
+```
 ### Input from visualforce to controller 
 * This is a good example [link](https://developer.salesforce.com/forums/?id=9060G000000XiNZQA0)
 

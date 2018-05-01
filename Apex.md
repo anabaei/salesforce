@@ -36,6 +36,12 @@ name = ApexPages.currentPage().getParameters().get('name');
 ```java
 PageReference pageRef = ApexPages.currentPage();
 ```
+### Merge Field Syntax
+* You can merge fields to address parents in vf pages. like in a contact you can have `Account.Name` or in an account have ` Opportunity.Account.CreatedBy.Phone`
+
+### Forms 
+* You can download unmanaged packages and modify it( managed packages are not modifiable)
+* or you can create a visualforce page using apex and controller
 
 ### HashMap
 * Almost identical with java 

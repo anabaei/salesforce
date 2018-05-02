@@ -75,6 +75,19 @@ When you use `insert`, `update` and `upsert` statement, salesforce perform the f
  * Execute flows
  * Executes Criteria Based Sharing evaluation
  * Commits all DML operations to the database
+##### Hello world trigger
+* On any object create new trigger. 
+Every trigger uses trigger loop. In fact, Trigger.new is a list of records that entering our trigger.
+```java
+trigger HelloWorld on Lead (before update) {
+for(Lead l: Trigger.new){  //trigger loop 
+   l.firstname = 'hello';
+   }
+}
+```
+Because it is before event, so there is no need to save, it would eventually saved. But if it was after event, we needed to save it explicitly 
+
+ 
 ### Data Type
 * from [here](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_date.htm#apex_methods_system_date)
 ```java
@@ -197,6 +210,10 @@ SOSL within multiple objects. You can add which fields like by adding `IN email 
 * To go to app then `setup>app menue`
 * To create namespace to allow customers to see the packages you created  and add apps into them later `setup>packages> edit developer> continue`
 * To Create app in classic: `setup > apps > Quick Start> ` 
+
+### Integration with Force
+* Event drive behaviour with outbound messaging send notification to SOAP servers based on what we define
+* `Create > Workflow Rules> New role on anyobject > set criteria > Add workflow action > new outbound message > pick fields to cross`
 
 
 

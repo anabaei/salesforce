@@ -7,6 +7,10 @@
 * looking at data in Salesforce, you might think that you're looking at a user interface sitting on top of a relational database. But what you’re actually looking at is an abstraction of the database driven by the platform’s metadata-aware architecture.
 In this abstraction, objects are our database tables. The fields on those objects are columns, and records are rows in the database.
 
+* Leads - People who you could potential do business yet, but have not qualified them. Unsure if they're going to buy from you. People you don't have a relationship with yet
+* Contact - Someone you have a business relationship with, someone you know. Possibly has bought from you in the past
+* Account - A business entity. Contacts work for Accounts
+* Opportunities - Sales events related to an Account and one or more Contacts
 
 
 ### Accounts 

@@ -154,6 +154,10 @@ We have to create a user on salesforce with salesforce platform licence. To do s
 ## Validatation
 * Validation rules verify that data entered by users in records meet standards. You can create validation rules for objects, fields, campaign members, or case milestones. In lightening `setup>object manager> Account> Validation Rule> LEN( AccountNumber) != 8 ` or date  must be in curret year`YEAR( My_Date__c ) <> YEAR ( TODAY() )` more example from [link](https://trailhead.salesforce.com/trails/force_com_dev_beginner/modules/point_click_business_logic/units/validation_rules)
 
+## Many to Many Relation
+* `Master detail` make one to many relationship. So we have to create an associatied table among two tables and create two master details in that associated table as resource from [here](https://developer.salesforce.com/docs/atlas.en-us.fundamentals.meta/fundamentals/adg_relationships_many_relationship.htm)
+
+
 ## DE
 * Apex is a strongly typed, object-oriented language that allows developers to execute flow and transaction-control statements on the Lightning Platform platform server, in conjunction with calls to the Lightning Platform APIs. Example of sending email [code](https://trailhead.salesforce.com/modules/developer_console/units/developer_console_source_code)
 * Execute classes Anonymous as `Debug | Open Execute Anonymous Window`

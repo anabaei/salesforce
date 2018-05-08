@@ -225,8 +225,38 @@ SOSL within multiple objects. You can add which fields like by adding `IN email 
 
 
 ## scheduling
+* why Schedulign jobs? they are usefull for sending emails, data snapchots, expensive caculation (like running on night), Accounting. 
+* Only `100` scheduled apex jobs at one time per org are allowed.
+* Triggers, queueable jobs and scheduling are three different tools for 
 
-
+#### Cron Expression
+* It is a system that identify time as below where function1 implements schedulable interface
+```java
+public static string cronexpression = '0 0 13 1 * ?';
+System.schedule('test', cronexpression, new funciton1());
+```
+It means it runs at 13 on first day of any month regardless of the year.
+* Below send an email as `sendingemailfle ins = new sendingemailfle();
+   List<String> a = new List<String>();
+   a.add('anabaei@sfu.ca');
+   ins.sendnow('ss',a);`
+```java
+public class sendingemailfle {
+ public void sendnow(String message, List<String> a)
+   {
+       List<String> contactstosend = new List<String>();
+       contactstosend.add('anabaei@sfu.ca');
+      // contactstosend.addAll(contactIDs);
+       Messaging.SingleEmailMessage email = new  Messaging.SingleEmailMessage();
+       email.setToAddresses(contactstosend);
+       email.setPlainTextBody('DS');
+       email.setSubject('SS'); 
+       List<Messaging.Email> emailstosend = new List<Messaging.Email>();
+       emailstosend.add(email);
+       Messaging.sendEmail(emailstosend);
+   }
+}
+```
 
 
 

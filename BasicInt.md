@@ -1,6 +1,6 @@
 
 * [Scheduling](#scheduling)
-[ss](Dml-database-vs-dml)
+
 
 What they can do and what type of query they are able to run
 ### Admin
@@ -225,7 +225,7 @@ SOSL within multiple objects. You can add which fields like by adding `IN email 
 
 
 ## scheduling
-### Dml-database-vs-dml
+
 
 
 

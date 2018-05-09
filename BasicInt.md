@@ -276,7 +276,7 @@ global class welcome implements Database.Batchable<sObject>
 }
 ```
 * To make a batch file an schedulable file, just implement schedule interface and add execute welcome message on top as you see 
-[](https://user-images.githubusercontent.com/7471619/39826567-fc14147a-5369-11e8-8279-b30746a81e6c.png)
+![dd](https://user-images.githubusercontent.com/7471619/39826567-fc14147a-5369-11e8-8279-b30746a81e6c.png)
 ----------
 
 * Below send an email as `sendingemailfle ins = new sendingemailfle();

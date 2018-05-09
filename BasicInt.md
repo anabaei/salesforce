@@ -279,7 +279,8 @@ global class welcome implements Database.Batchable<sObject>
 ![dd](https://user-images.githubusercontent.com/7471619/39826567-fc14147a-5369-11e8-8279-b30746a81e6c.png)
 ### Testing a batch 
 ![1](https://user-images.githubusercontent.com/7471619/39826787-bc56fa9a-536a-11e8-9a3e-4ccae6ec44a7.png)
-![2]()
+Assign Template 
+![2](https://user-images.githubusercontent.com/7471619/39829003-e638fd0c-5371-11e8-9c69-12889cf065c8.png)
 
 
 ----------

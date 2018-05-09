@@ -244,7 +244,7 @@ global class thefunction implements Schedulable{
 }
 ```
 ## Batch
-* It is capable to run even milions of records. It can be use in Billing customers, complex math calculations, mass conversion of records, mass callouts to outside APIs 
+* High volume processing is possible on salesforce in Batch jobs.  It is capable to run even milions of records. It can be use in Billing customers, complex math calculations, mass conversion of records, mass callouts to outside APIs 
 * Each batch job has three parts `sart`, `execute` and `finish`
 * Only 5 batch jobs per org running simultaneously and if use Apex flex queue we can have up to 100 batch jobs to be enqueued
 * By built in function we can pass any instance of executeable batch as 

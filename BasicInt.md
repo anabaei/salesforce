@@ -228,14 +228,50 @@ SOSL within multiple objects. You can add which fields like by adding `IN email 
 * why Schedulign jobs? they are usefull for sending emails, data snapchots, expensive caculation (like running on night), Accounting. 
 * Only `100` scheduled apex jobs at one time per org are allowed.
 * Triggers, queueable jobs and scheduling are three different tools for 
-
-#### Cron Expression
+* a resource from [here](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_scheduler.htm)
+##### Cron Expression
 * It is a system that identify time as below where function1 implements schedulable interface
 ```java
 public static string cronexpression = '0 0 13 1 * ?';
-System.schedule('test', cronexpression, new funciton1());
+System.schedule('test', cronexpression, new thefunction());
 ```
-It means it runs at 13 on first day of any month regardless of the year.
+* It means it runs at 13 on first day of any month regardless of the year. `thefunction` is as below which has to have schedulable interface in it
+```java
+global class thefunction implements Schedulable{
+    global void execute(SchedulableContext SC) {
+      System.debug('done it');
+   }
+}
+```
+## Batch
+* It is capable to run even milions of records. It can be use in Billing customers, complex math calculations, mass conversion of records, mass callouts to outside APIs 
+* Each batch job has three parts `sart`, `execute` and `finish`
+* Only 5 batch jobs per org running simultaneously and if use Apex flex queue we can have up to 100 batch jobs to be enqueued
+* By built in function we can pass any instance of executeable batch as 
+```java
+Database.executeBatch(new Welcome());
+```
+By running above it immediately create a batch job in salesforce queue and salesforce attempt to executed asap and run.  
+```java
+global class welcome implements Database.Batchable<sObject>
+{
+ String query = 'SELECT id, Name from Contact';
+  
+  // this indicate what the scope of data are in this batch
+  global Database.QueryLocator start(Database.BatchableContext BC)
+  {
+    return Database.getQueryLocator(query);
+  }
+  
+  global void execute(Database.BatchableContext BC, List<Contact> contacts)
+  {
+   System.
+  }
+}
+```
+
+----------
+
 * Below send an email as `sendingemailfle ins = new sendingemailfle();
    List<String> a = new List<String>();
    a.add('anabaei@sfu.ca');
@@ -257,9 +293,6 @@ public class sendingemailfle {
    }
 }
 ```
-
-
-
 
 
 

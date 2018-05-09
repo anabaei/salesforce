@@ -257,19 +257,26 @@ global class welcome implements Database.Batchable<sObject>
 {
  String query = 'SELECT id, Name from Contact';
   
-  // this indicate what the scope of data are in this batch
+  // this indicate what the scope of our data are in relation to the batch
   global Database.QueryLocator start(Database.BatchableContext BC)
   {
     return Database.getQueryLocator(query);
   }
-  
+  // in mandatory execute part, sf passes batchable context which is some info about job and a list of sobjects. 
   global void execute(Database.BatchableContext BC, List<Contact> contacts)
   {
    System.
   }
+  // small to do things here, like some kind of error handling mechanism
+  global void finish(Database.BatchableContext BC)
+  {
+   // To do 
+  }
+  
 }
 ```
-
+* To make a batch file an schedulable file, just implement schedule interface and add execute welcome message on top as you see 
+[]()
 ----------
 
 * Below send an email as `sendingemailfle ins = new sendingemailfle();
@@ -292,6 +299,26 @@ public class sendingemailfle {
        Messaging.sendEmail(emailstosend);
    }
 }
+```
+* To send mass emails we have 
+```java
+  public void sendmassemail(List<Contact> contacts)
+   {
+       
+       List<Contact> contactsToUpdate = new List<Contact>();
+       List<Id> contactid = new List<Id>();
+       for (Contact contact:contacts)
+       {
+           contactid.add(contact.id);
+          
+        //   contact.Welcome_Email__c = Datetime.now();
+           contactsToUpdate.add(contact);
+       }
+       Messaging.MassEmailMessage massEmail = new Messaging.MassEmailMessage();
+       massEmail.setTargetObjectIds(contactid);
+    //   massEmail.setTemplateId(getwelcomeTemplateId());
+       Boolean allorNone = true; // it tells if we should continue message delivery if encounter an error or halt. here it says we should halt if anything goes wrong
+   }
 ```
 
 

@@ -1,3 +1,5 @@
+
+
 ## Lightning Basic
 * It is an eventdriven architecture and included responsive design. It doesnt work with existing VF and not uses XML as dataformat
 * Lightning Experience is a modern user interface, while it doesnt hava features like `fead and publisher` or `clean button` or `javascript button` or `customizing objects` but it has more features from [here](https://trailhead.salesforce.com/modules/lex_migration_introduction/units/lex_migration_introduction_rightforme) 
@@ -43,6 +45,16 @@ In OpenCaseController.js we have
         $A.enqueueAction(action);
 	}
 })
+```
+## JavaScript
+* We define controller as an Js object having functions as property js [resource](http://3dmdesign.com/development/javascript-variables-and-anonymous-objects) 
+```javascript
+handleClick : function(component, event, helper) {
+		var btnClicked = event.getSource();         // the button
+        var btnMessage = btnClicked.get("v.label"); // the button's label
+        console.log(" " + btnMessage);
+        component.set("v.message", btnMessage);     // update our message 
+	}
 ```
 
 ### Server Side Action Controller

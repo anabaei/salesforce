@@ -49,12 +49,13 @@ In OpenCaseController.js we have
 ## JavaScript
 * We define controller as an Js object having functions as property js [resource](http://3dmdesign.com/development/javascript-variables-and-anonymous-objects) 
 ```javascript
-handleClick : function(component, event, helper) {
+({ handleClick : function(component, event, helper) {
 		var btnClicked = event.getSource();         // the button
         var btnMessage = btnClicked.get("v.label"); // the button's label
         console.log(" " + btnMessage);
         component.set("v.message", btnMessage);     // update our message 
 	}
+})	
 ```
 
 ### Server Side Action Controller

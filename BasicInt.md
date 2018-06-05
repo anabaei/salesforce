@@ -1,6 +1,6 @@
 
 * [Scheduling](#scheduling)
-
+* [Custom fields not showing in Report](https://success.salesforce.com/apex/answers?id=90630000000D4YnAAK)
 
 What they can do and what type of query they are able to run
 ### Admin

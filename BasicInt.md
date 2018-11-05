@@ -52,6 +52,15 @@
  
  </details>
 
+<details>
+	<summary> Error headers </summart>	
+
+* This common errors may occur 
+```javascript
+Error: Can't set headers after they are sent
+```
+Due to having extra back slash`/` at the end of hrefs ( so leave the hrefs without `/` at the end)
+</details>
 
 What they can do and what type of query they are able to run
 ### Admin

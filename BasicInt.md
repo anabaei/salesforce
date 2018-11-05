@@ -15,7 +15,7 @@
       username: 'axxxxxxxxx.ca',  
       password: 'Mxxxxxx'
  ```
- Then we can use it as a call in node as 
+ * Remember: passowrd is your password like Mah..+security Token.  To get your security token go to `your name > My Settings > Personal` and reset my Security Token. Then in email you get `Oxxxxxxxxx` and append it to your login password as password!
  
  ```javascript
  const jsforce = require('jsforce');

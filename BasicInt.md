@@ -2,6 +2,55 @@
 * [Scheduling](#scheduling)
 * [Custom fields not showing in Report](https://success.salesforce.com/apex/answers?id=90630000000D4YnAAK)
 
+<details> 
+ <summary> API Connection  </summary>
+ 
+ * To get token and secret keys you should in classis view go `setup> search for apps > create > edit|new > select enable Auth2` Then you should see the API OAuth Settings as Consumer Key, consumer secret and callback url which are clientid, clientsecret and redirect url in each fetch request as
+ ```javascript
+      loginUrl : 'https://login.salesforce.com/',
+      clientId : 'xxxxxxxxxxxxA',
+      clientSecret : '8xxxxxxxxxxxxx4',
+      redirectUri : 'https://salesforceapisfu.herokuapp.com/',
+      username: 'axxxxxxxxx.ca',  
+      password: 'Mxxxxxx'
+ ```
+ Then we can use it as a call in node as 
+ 
+ ```javascript
+ const jsforce = require('jsforce');
+ const conn = new jsforce.Connection({
+	   loginUrl : 'https://login.salesforce.com/',
+	   clientId :  config.pro.clientId,
+	   clientSecret :  config.pro.cliendSecret,
+	   redirectUri : 'https://salesforceapisfu.herokuapp.com/' 
+  });
+ ```
+ Then inside each call we have 
+ 
+ ```javascript
+ 
+ 	conn.login(config.pro.username, config.pro.password, function(err, userInfo) {
+	 conn.sobject("Contact").create({
+	 	FirstName: 'aaa',
+	 	LastName:  'cccc', //.. req.body.LastName,
+	// 	Email: 'amds@gmail.com', // req.body.email,
+	// 	Title: 'ss'//, req.body.title,
+	// 	//  birthday__c: req.body.birthdate,
+	// 	//  Phone:  req.body.home_phone,
+	// 	//  MailingStreet: req.body.mailing_address,
+	// 	 //AssistantPhone: req.body.mobile
+	//   }, function (err, ret) { if (err || !ret.success)
+	// 	 { return console.error(err, ret); } console.log("Created contact: " + ret.name);});
+	 console.log(userInfo);
+	 console.log(err);
+	 
+   });
+ ```
+ 
+ 
+ </details>
+
+
 What they can do and what type of query they are able to run
 ### Admin
 * What is Saleforce cloud? Cloud is a particular name that salesforce uses as a service, a software as a service (SAAS). It means a product that salesforce offers online without the need to mainain your own computer server or install. There are 7 salesforce cloud.

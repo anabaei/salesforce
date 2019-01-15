@@ -52,7 +52,7 @@
  
  </details>
  <details>
-	<summary> Deactive Email notification receiving </summart>
+	<summary> Deactive Email notification receiving </summary>
 	
 * In order to deactive email receving 
 ```java

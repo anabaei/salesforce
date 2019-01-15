@@ -51,6 +51,17 @@
  
  
  </details>
+ <details>
+	<summary> Deactive Email notification receiving </summart>
+	
+* In order to deactive email receving 
+```java
+Setup -> Email Administration -> Deliveablility 
+then select Access leve to no access 
+```
+ </details>	
+	
+
 
  <details>
 	<summary> Error headers </summart>	

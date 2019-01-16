@@ -16,7 +16,8 @@ setup -> lightning app builder -> new ( everything basic)
 
 </details>
 
-* How to [publish](https://developer.salesforce.com/index.php?title=Publish_Your_First_App_with_AppExchange_Checkout&oldid=49366#Partner_With_Salesforce) 
+* How to [publish](https://developer.salesforce.com/index.php?title=Publish_Your_First_App_with_AppExchange_Checkout&oldid=49366#Partner_With_Salesforce)  
+* Answer questions at [community](https://success.salesforce.com/successHome)
 
 ### VisualForce pages
 * Lightining components only use server side controllers so you dont need to write controllers for them only visualforce pages requires controller

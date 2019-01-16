@@ -1,7 +1,7 @@
 
 
 <details>
-	<summary> Visualforce page to App Builder </summary>
+	<summary> Add page to App Builder </summary>
 
 
 * In order to add a visualforce page to an app, you need to go 

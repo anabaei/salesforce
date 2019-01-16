@@ -1,4 +1,22 @@
 
+
+<details>
+	<summary> Visualforce page to App Builder </summary>
+
+
+* In order to add a visualforce page to an app, you need to go 
+```java
+setup -> visualforce pages -> check the box (access via visualforce pages) 
+```
+* Then if you go 
+```java
+setup -> lightning app builder -> new ( everything basic)  
+```
+* Then in left column if you drag and drop a visualforce page, it drops the last one you edited from visualforce pages automatically
+
+</details>
+
+
 ### VisualForce pages
 * Lightining components only use server side controllers so you dont need to write controllers for them only visualforce pages requires controller
 

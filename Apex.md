@@ -17,6 +17,7 @@ setup -> lightning app builder -> new ( everything basic)
 </details>
 
 * How to [publish](https://developer.salesforce.com/index.php?title=Publish_Your_First_App_with_AppExchange_Checkout&oldid=49366#Partner_With_Salesforce)  
+* To publush you app you need to go [https://partners.salesforce.com/](https://partners.salesforce.com/)
 * Answer questions at [community](https://success.salesforce.com/successHome)
 
 ### VisualForce pages

@@ -22,6 +22,12 @@ setup -> lightning app builder -> new ( everything basic)
 * Answer questions at [community](https://success.salesforce.com/successHome)
 </details>
 
+<details>
+	<summary> </summary>
+	
+* Read csv form visualforce page as [link](http://www.sfdcpoint.com/salesforce/import-csv-file-using-apex-visualforce/)	
+</details>
+
 ### VisualForce pages
 * Lightining components only use server side controllers so you dont need to write controllers for them only visualforce pages requires controller
 

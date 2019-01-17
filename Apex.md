@@ -3,7 +3,6 @@
 <details>
 	<summary> Add page to App Builder </summary>
 
-
 * In order to add a visualforce page to an app, you need to go 
 ```java
 setup -> visualforce pages -> check the box (access via visualforce pages) 
@@ -15,10 +14,13 @@ setup -> lightning app builder -> new ( everything basic)
 * Then in left column if you drag and drop a visualforce page, it drops the last one you edited from visualforce pages automatically
 
 </details>
+<details>
+	<summary> Publish apps  </summary>
 
 * How to [publish](https://developer.salesforce.com/index.php?title=Publish_Your_First_App_with_AppExchange_Checkout&oldid=49366#Partner_With_Salesforce)  
 * To publish your app first you need to go [https://partners.salesforce.com/](https://partners.salesforce.com/) and link your organization using same authentications you need to connect 
 * Answer questions at [community](https://success.salesforce.com/successHome)
+</details>
 
 ### VisualForce pages
 * Lightining components only use server side controllers so you dont need to write controllers for them only visualforce pages requires controller

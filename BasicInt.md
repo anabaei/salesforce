@@ -100,22 +100,18 @@ then select Access leve to no access
   <!-- End Default Content REMOVE THIS -->
 </apex:page>
  ```
- * 
+ * Controller with name `EventbriteAttendees_controller`
  ```java
  public with sharing class EventbriteAttendees_controller {
 
-
-  public List<String> chtmp { get; set; }
-  
+  public List<String> chtmp { get; set; }  
   public List<String> name { get; set; }
   public Integer num { get; set; }
   public String headers { get; set; }
   public String questions { get; set; }
-  
   public String ss { get; set; }
   public String ss2 { get; set; }
   public String ss3 { get; set; }
-  
   public Blob csvFileBody{get;set;}
   public string csvAsString{get;set;}
   

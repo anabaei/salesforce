@@ -64,8 +64,107 @@ then select Access leve to no access
  <details> 
 	<summary> Read CSV files </summary>
 
-
+ * To access a custom object that you created, you should first create one tab and related to that object.  
  * not bad this [link](https://salesforce.stackexchange.com/questions/123969/reading-csv-file-using-visaulforce-page)
+ * With a basic version if our object is `eventbriteList__c` then you have at views 
+ ```java
+ <apex:page controller="EventbriteAttendees_controller">
+<apex:includeScript value="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+<apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" />
+<apex:stylesheet value="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"/>
+  <!-- Begin Default Content REMOVE THIS -->
+   <div class="col-12 alert alert-warning">
+     <h3> file  {!num} </h3>
+     <p> {!name}  </p>
+   </div>
+    <apex:form >
+        <apex:pagemessages />
+         <div class="col-12 alert alert-warning">
+        <apex:pageBlock >
+            <apex:pageBlockSection columns="4"> 
+                  <apex:inputFile value="{!csvFileBody}"  filename="{!csvAsString}"/>
+                  <apex:commandButton value="Import EventBrite Attendees" action="{!importCSVFile}" />
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        </div>
+        <apex:pageBlock >
+           <apex:pageblocktable value="{!accList}" var="acc">
+              <apex:column value="{!acc.order_id__c}" />
+           <!--    <apex:column value="{!acc.AccountNumber}" />
+              <apex:column value="{!acc.Type}" />
+              <apex:column value="{!acc.Accountsource}" />
+              <apex:column value="{!acc.Industry }" />  -->
+        </apex:pageblocktable>
+     </apex:pageBlock>
+   </apex:form>
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>
+ ```
+ * 
+ ```java
+ public with sharing class EventbriteAttendees_controller {
+
+
+  public List<String> chtmp { get; set; }
+  
+  public List<String> name { get; set; }
+  public Integer num { get; set; }
+  public String headers { get; set; }
+  public String questions { get; set; }
+  
+  public String ss { get; set; }
+  public String ss2 { get; set; }
+  public String ss3 { get; set; }
+  
+  public Blob csvFileBody{get;set;}
+  public string csvAsString{get;set;}
+  
+  public String[] csvall{get;set;}
+  public String[] csvFileHeaders{get;set;}
+  public String[] csvFileTemp{get;set;}
+  public String[] csvFileParts{get;set;}
+  public String[] csvFileLines{get;set;}
+  public String[] questionslist {get;set;}
+  public List<EventbriteList__c> acclist{get;set;}
+   
+  public EventbriteAttendees_controller()
+  {
+    csvFileLines = new String[]{};
+    acclist = New List<EventbriteList__c>(); 
+  }
+  public void importCSVFile()
+  {
+  
+       try{
+           csvAsString = csvFileBody.toString();
+           chtmp = csvAsString.split('\n');
+           num = chtmp.size();
+           csvall = csvAsString.split(',');
+            name = csvall;
+            
+           csvFileHeaders = csvAsString.split(',');
+             csvFileLines = chtmp;
+
+           for(Integer i=1;i<csvFileLines.size();i++)
+           {
+               EventbriteList__c accObj = new EventbriteList__c();
+                  
+               string[] csvRecordData = csvFileLines[i].split(',');
+              
+                accObj.order_id__c = csvRecordData[0] ;                                                                                   
+               acclist.add(accObj);   
+           }
+        insert acclist;
+        }
+        catch (Exception e)
+        {
+            ApexPages.Message errorMessage = new ApexPages.Message(ApexPages.severity.ERROR,'An error has occured while importin data Please make sure input csv file is correct');
+            ApexPages.addMessage(errorMessage);
+        }  
+  }
+}
+ ```
+ 
  </details> 
 
  <details>

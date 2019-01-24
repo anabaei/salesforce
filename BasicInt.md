@@ -65,7 +65,7 @@ then select Access leve to no access
 	<summary> Read CSV files </summary>
 
  * To access a custom object that you created, you should first create one tab and related to that object.  
- * not bad this [link](https://salesforce.stackexchange.com/questions/123969/reading-csv-file-using-visaulforce-page)
+ * not bad this [link](https://salesforce.stackexchange.com/questions/123969/reading-csv-file-using-visaulforce-page) also this guy did [the same](https://github.com/kuhinoor/Test/blob/5797107baca2d01e0da5a0b5583383f60e557fb0/classes/importDataFromCSVController.cls)
  * With a basic version if our object is `eventbriteList__c` then you have at views 
  ```java
  <apex:page controller="EventbriteAttendees_controller">

@@ -61,7 +61,11 @@ then select Access leve to no access
 ```
  </details>	
 	
+<details> 
+	<summary> Read CSV files </summart>
 
+* not bad this [link](https://salesforce.stackexchange.com/questions/123969/reading-csv-file-using-visaulforce-page)
+</details> 
 
  <details>
 	<summary> Error headers </summart>	

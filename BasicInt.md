@@ -162,6 +162,12 @@ then select Access leve to no access
  ```
  
  </details> 
+ 
+ <details> 
+	<summary> Testing Controller </summary>	
+
+* This [link](https://github.com/MarketoSFDC/jenkinsTest/blob/b22acd67c353ba1cccba475a07c07443c6cc2a11/classes/CustomerCommunicationControllerTest.cls) is for an example of testing controller
+</details>
 
  <details>
 	<summary> Error headers </summart>	

@@ -233,6 +233,7 @@ then select Access leve to no access
          insert acclist;
     }
 ```
+* In fact at above, we get some keys and its values like eventids or firstNames and save into the object EventbriteList__c, but also for some cases(like questions) we read the key and its value and combine togather put it as question1. 
 </details>	
 
 

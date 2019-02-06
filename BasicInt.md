@@ -168,6 +168,73 @@ then select Access leve to no access
 
 * This [link](https://github.com/MarketoSFDC/jenkinsTest/blob/b22acd67c353ba1cccba475a07c07443c6cc2a11/classes/CustomerCommunicationControllerTest.cls) is for an example of testing controller
 </details>
+<details>
+	<summary> Hit EndPoints </summary>
+
+* At view you need to create html event as to call controller 
+```java
+ <apex:pageBlock >
+          <apex:pageBlockSection columns="4"> 
+                  <apex:commandButton value="Import" action="{!hittheserver}" />
+         </apex:pageBlockSection>   
+</apex:pageBlock >	 
+```
+* Below when you get call, hit the end point, get data and save into objects for salesforce (here as )
+```java
+  public void hittheserver()
+    {    
+         Http h = new Http();
+         HttpRequest req = new HttpRequest();
+         req.setMethod('GET');
+         req.setEndpoint('https://www.sfu.ca/~jtoering/eventbrite/eventBriteEvents.json');
+         HttpResponse res = h.send(req);
+         List<Object> m = (List<Object>)JSON.deserializeUntyped(res.getBody()); // if the json is like array of objects the type also could be List<String, Object>
+       
+       // Here we read a list one by one and call attributes 
+       for (Object item : m) 
+       {
+       Map<String, Object> i = (Map<String, Object>)item;
+                // String  name = String.valueof(names.get('text'));
+               String eventid = (String) i.get('eventId');
+               String eventName = (String) i.get('eventName');
+               /// sometimes the attributes own is another nested string object like below
+               // Map<String, Object> names = (Map<String, Object>) i.get('eventId');
+               // Each attendee data is another list we need go through
+                List<Object> attendeeData = (List<Object>) i.get('attendeeData');
+                for (Object attendees : attendeeData) 
+                {
+                    Map<String, Object> j = (Map<String, Object>)attendees;
+                    Integer Order = (Integer) j.get('Order #');
+                    String OrderDate = (String) j.get('Order Date');
+                    String FirstName = (String) j.get('First Name');
+                    String LastName = (String) j.get('Last Name');
+                    Set<String> keyValues = j.keySet(); // get set of keys in a set 
+	            // Create instance of salesforce object
+                    EventbriteList__c accObj = new EventbriteList__c(); 
+                    accObj.eventId__c = eventid;  
+                    accObj.FirstName__c = FirstName;
+                    accObj.LastName__c = LastName;
+                    accObj.order_id__c = String.valueOf(Order); // in order to change the type of a value we use like this
+                    
+                    // convert a set into list of string
+                    List<String> listStrings = new List<String>(keyValues);
+                   
+		    // read keys and values of a list(set) in below 
+                      for (Integer k=11; k < listStrings.size(); k++) 
+                    {
+                      System.debug(listStrings[k]+ ' '+k);    // key
+                      String value = String.valueOf((Object) j.get(listStrings[k])); // get the value of that key and convert it to object type 
+                        // combine value and key and assignt it to Quesiton1 if index is 11!
+                         if(k == 11){accObj.Question1__c = listStrings[k] + value;} 
+                    }
+                acclist.add(accObj);
+             }
+          }
+         insert acclist;
+    }
+```
+</details>	
+
 
  <details>
 	<summary> Error headers </summart>	

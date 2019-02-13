@@ -203,7 +203,11 @@ eve.functionName(); // to cover that function in that class
 // to assign an object with attributes to a class
 EventbriteList__c accObj = new EventbriteList__c(order_id__c='33333'); 
 eve.accObj.order_id__c = 'sss';
+
+Map<Integer, String> m1 = new Map<Integer, String>();
+m1.put(1, 'First item');
 ```
+* And you can find more map command from [linke](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_map.htm)
 * Use try catch as
 ```java
 try {} catch (Exception e) {
@@ -212,7 +216,6 @@ try {} catch (Exception e) {
     System.assert(success);
  }
 ```
-
 
 </details>
 <details>

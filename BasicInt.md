@@ -167,6 +167,41 @@ then select Access leve to no access
 	<summary> Testing Controller </summary>	
 
 * This [link](https://github.com/MarketoSFDC/jenkinsTest/blob/b22acd67c353ba1cccba475a07c07443c6cc2a11/classes/CustomerCommunicationControllerTest.cls) is for an example of testing controller
+* How to write a test ?
+#### Title
+* Start with @isTest followed by `global with sharing class controllerNameTest` as
+```java
+@isTest global with sharing class EventbriteAttendees_controllerTest 
+```
+#### variables
+* Define variables on top and also assign with value to the ones which were defined at constructor 
+```java
+ static String str = 'Order #,Order Date,First Name,Last Name,Email,Quantity';
+ public static String[] csvFileLines;
+ public static String[] chtmp;
+```
+* Then define the class instance and assign those variables to the instance in functions 
+```java
+EventbriteAttendees_controller eve = new EventbriteAttendees_controller(); 
+EventbriteList__c accObj = new EventbriteList__c(order_id__c='11'); 
+eve.accObj.order_id__c = '12';
+```
+* To check results 
+```java
+System.assertEquals(null, controller.importCSVFile());
+```
+#### Functions
+* Inside function put commands between `try` and `catch` as
+```java
+try {
+... do stuff
+} catch (Exception e) {
+    success = false;
+} finally {
+    System.assert(success);
+ }
+```
+
 </details>
 <details>
 	<summary> Hit EndPoints </summary>

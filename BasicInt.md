@@ -191,16 +191,28 @@ eve.accObj.order_id__c = '12';
 System.assertEquals(null, controller.importCSVFile());
 ```
 #### Functions
-* Inside function put commands between `try` and `catch` as
+* For each function in class define a static function starting with `static testMethod`
 ```java
-try {
-... do stuff
-} catch (Exception e) {
+static testMethod void testFindAll()
+```
+* Inside function create new instance of class and call the function, put commands between `try` and `catch` as
+```java
+EventbriteAttendees_controller eve = new EventbriteAttendees_controller(); 
+eve.functionName(); // to cover that function in that class
+
+// to assign an object with attributes to a class
+EventbriteList__c accObj = new EventbriteList__c(order_id__c='33333'); 
+eve.accObj.order_id__c = 'sss';
+```
+* Use try catch as
+```java
+try {} catch (Exception e) {
     success = false;
 } finally {
     System.assert(success);
  }
 ```
+
 
 </details>
 <details>

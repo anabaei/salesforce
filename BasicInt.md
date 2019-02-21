@@ -540,6 +540,13 @@ global class thefunction implements Schedulable{
    }
 }
 ```
+<details>
+	<summary> Test class </summary>
+
+* Annotation `@isTest` means test context. In this way, you can exclude it from your org’s code size limit of `6 MB`.	
+* 	
+</details>
+
 ## Batch
 * High volume processing is possible on salesforce in Batch jobs.  It is capable to run even milions of records. It can be use in Billing customers, complex math calculations, mass conversion of records, mass callouts to outside APIs 
 * Each batch job has three parts `sart`, `execute` and `finish`
@@ -575,13 +582,7 @@ global class welcome implements Database.Batchable<sObject>
 * To make a batch file an schedulable file, just implement schedule interface and add execute welcome message on top as you see 
 ![dd](https://user-images.githubusercontent.com/7471619/39826567-fc14147a-5369-11e8-8279-b30746a81e6c.png)
 
-<details>
-	<summary> Test class </summary>
-
-* Annotation `@isTest` means test context. In this way, you can exclude it from your org’s code size limit of `6 MB`.	
-* 	
-</details>	
-
+	
 ### Testing a batch 
 ![1](https://user-images.githubusercontent.com/7471619/39826787-bc56fa9a-536a-11e8-9a3e-4ccae6ec44a7.png)
 Assign Template 

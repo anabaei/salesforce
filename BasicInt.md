@@ -296,9 +296,8 @@ try {} catch (Exception e) {
 </details>	
 
 
- <details>
-	<summary> Error headers </summart>	
-
+<details>
+	<summary> Error headers </summary>	
 
  * This common errors may occur 
 ```javascript
@@ -306,7 +305,7 @@ Error: Can't set headers after they are sent
 ```
  Due to having extra back slash`/` at the end of hrefs ( so leave the hrefs without `/` at the end)
 
- </details>
+</details>
 <details>
 	<summary> Batch jobs </summary>
 

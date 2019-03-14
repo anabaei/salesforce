@@ -307,6 +307,18 @@ Error: Can't set headers after they are sent
  Due to having extra back slash`/` at the end of hrefs ( so leave the hrefs without `/` at the end)
 
  </details>
+<details>
+	<summary> Batch jobs </summary>
+
+* Whatever you want to accomplish won't work in single thread because it is limited to 	`50,000` threads only and you may need 200 soql queries but you limited to `100` SOQL queries. So we need to break them into smaller chunks that can be processed so we need `Batch Apex' which has three parts
+```java
+Loader: class load to execute repeat methods and final method 
+Scheduler: schedulable class that sets up query and batch process
+Controller: (optional) 
+```
+* 
+</details>
+
 
 What they can do and what type of query they are able to run
 ### Admin
@@ -555,19 +567,6 @@ global class thefunction implements Schedulable{
 * Annotation `@isTest` means test context. In this way, you can exclude it from your org’s code size limit of `6 MB`.	
 * 	
 </details>
-
-<details>
-	<summary> Batch jobs </summary>
-
-* Whatever you want to accomplish won't work in single thread because it is limited to 	`50,000` threads only and you may need 200 soql queries but you limited to `100` SOQL queries. So we need to break them into smaller chunks that can be processed so we need `Batch Apex' which has three parts
-```java
-Loader: class load to execute repeat methods and final method 
-Scheduler: schedulable class that sets up query and batch process
-Controller: (optional) 
-```
-* 
-</details>
-
 
 ## Batch
 * High volume processing is possible on salesforce in Batch jobs.  It is capable to run even milions of records. It can be use in Billing customers, complex math calculations, mass conversion of records, mass callouts to outside APIs 

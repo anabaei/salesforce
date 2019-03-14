@@ -3,6 +3,15 @@
 * [Custom fields not showing in Report](https://success.salesforce.com/apex/answers?id=90630000000D4YnAAK)
 
 <details> 
+ <summary> Install Environment </summary>
+
+* Install [Java JDK](https://www.oracle.com/technetwork/java/javase/downloads/index.html) first
+* Install Eclips for java developers and go to Eclipise/help/Install Software/ and follow it [force](https://developer.salesforce.com/docs/atlas.en-us.eclipse.meta/eclipse/ide_install.htm) and then selectAll until step 4. Beauty of Eclipse is that everytime it runs then it ask where you wanna run your project then you can have different workspaces using different Eclpise on the same machine. 
+* After than you need to connect your salesforce to Eclpise. 
+</details>
+	
+
+<details> 
  <summary> API Connection with Nodejs </summary>
  
  * Use [jsforce](https://jsforce.github.io/document/) package 

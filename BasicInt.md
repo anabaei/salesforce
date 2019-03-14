@@ -556,6 +556,19 @@ global class thefunction implements Schedulable{
 * 	
 </details>
 
+<details>
+	<summary> Batch jobs </summary>
+
+* Whatever you want to accomplish won't work in single thread because it is limited to 	`50,000` threads only and you may need 200 soql queries but you limited to `100` SOQL queries. So we need to break them into smaller chunks that can be processed so we need `Batch Apex' which has three parts
+```java
+Loader: class load to execute repeat methods and final method 
+Scheduler: schedulable class that sets up query and batch process
+Controller: (optional) 
+```
+* 
+</details>
+
+
 ## Batch
 * High volume processing is possible on salesforce in Batch jobs.  It is capable to run even milions of records. It can be use in Billing customers, complex math calculations, mass conversion of records, mass callouts to outside APIs 
 * Each batch job has three parts `sart`, `execute` and `finish`

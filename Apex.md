@@ -1,6 +1,19 @@
 
 
 <details>
+	<summary> Publish </summary>
+	
+* How to [publish](https://developer.salesforce.com/index.php?title=Publish_Your_First_App_with_AppExchange_Checkout&oldid=49366#Partner_With_Salesforce)
+* To publish your app first you need to go https://partners.salesforce.com/ and link your organization using same authentications you need to connect
+
+
+* How to [publish](https://developer.salesforce.com/index.php?title=Publish_Your_First_App_with_AppExchange_Checkout&oldid=49366#Partner_With_Salesforce)  
+* To publish your app first you need to go [https://partners.salesforce.com/](https://partners.salesforce.com/) and link your organization using same authentications you need to connect 
+* Answer questions at [community](https://success.salesforce.com/successHome)
+</details>
+
+
+<details>
 	<summary> Add page to App Builder </summary>
 
 * In order to add a visualforce page to an app, you need to go 
@@ -15,12 +28,55 @@ setup -> lightning app builder -> new ( everything basic)
 
 </details>
 <details>
-	<summary> Publish apps  </summary>
+	<summary> Execution Governors Limits </summary>
+	
+* Query limits and if you exceeds these numbers it would fail
+```java
+SOQL- 100   to each given thread you can have 100 queries
+DML- 150    update and insert 
+Max records - 50,000
+```
+```java
+Execution time limit 
+10,000 millisecond CPU time  or 10 seconds 
+```
+* Batch Apex has its own set of limits which are higher that all run in background
 
-* How to [publish](https://developer.salesforce.com/index.php?title=Publish_Your_First_App_with_AppExchange_Checkout&oldid=49366#Partner_With_Salesforce)  
-* To publish your app first you need to go [https://partners.salesforce.com/](https://partners.salesforce.com/) and link your organization using same authentications you need to connect 
-* Answer questions at [community](https://success.salesforce.com/successHome)
 </details>
+<details>
+	<summary> Bulkification, Triggers, Maps, List, Sets </summary>
+
+* Triggers
+```java	
+before insert, after insert
+before update, after update
+before delete, after delete
+after undelete
+```
+* Bulkification: in order to avoid governors limits we use bulkification. One way is writing triggers to handle more than one record
+* Maps a collection of keys and values
+```java
+map<key, value>
+map<key, map<key, value>> //nested 
+list<list<value>> // instead of doing one records adding to db, we have to add them into a list and do it one time DML the whole list
+list.sort()
+sets  // it is unique and you can put ids, string, object etc in it. are best to work with result of queries. Ex put all ids you get from a query and then take it to a query and say give me results that mathch with ids in this query
+```
+
+</details>	
+<details>
+	<summary> Batch </summary>
+
+* Batch mood in background can process thousands of records of data limitations per thread
+```java
+SOQL- 200 
+DML - 150 
+CPU TIME 60,000 milliseconds
+```
+
+
+</details>
+
 
 <details>
 	<summary> Upload and Read CSVs </summary>

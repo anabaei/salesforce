@@ -46,6 +46,7 @@ Execution time limit
 <details>
 	<summary> Bulkification, Triggers, Maps, List, Sets </summary>
 
+* `Name` -> `Developer Console` -> `Debug` -> `Open Anonymous Window`
 * Triggers
 ```java	
 before insert, after insert
@@ -62,6 +63,36 @@ list<list<value>> // instead of doing one records adding to db, we have to add t
 list.sort()
 sets  // it is unique and you can put ids, string, object etc in it. are best to work with result of queries. Ex put all ids you get from a query and then take it to a query and say give me results that mathch with ids in this query
 ```
+#### SETS
+* `SETS` everything in it are unique. you can `add` two sets as 
+```java
+set<Id> mycontactIds = new set<Id>();
+set<Id> myOppIds = new set<Id>();
+
+mycontactIds.add(myAct.Contact__c);
+myOppIds.add(myAct.Opportunity__c);
+```
+```java
+List<Contact> mylistContacts = [select id, Name, Account_Text__c from Contact where id IN :mycontactIds];
+List<Opportunity> mylistOpps = [select id, Name, Account_Text__c from Opportunity where id IN :myOppIds];
+```
+#### LISTS
+* Can be list of objects
+```java
+list<Contact> mylist = new list<Contact>();
+mylist.add(mycon); 
+```
+* query returns list and if not found would be `empty`
+* common use of `lists` is to collect objects in order to one `DML` statement
+```java
+List<Contact> mycontacts = new List<Contact>();
+for(Contact mycon: [Select id, Name, from Contact where id IN :contactIds]) {
+    /// modifications made to mycon
+    mycontacts.add(mycon); //save them into a list
+}
+update mycontacts; // one DML
+```
+* If you put update inside loop it after completing `150` it would fail and undo all.
 
 </details>	
 <details>
@@ -73,11 +104,20 @@ SOQL- 200
 DML - 150 
 CPU TIME 60,000 milliseconds
 ```
-
-
 </details>
-
-
+<details>
+	<summary> Debuggin and Logging </summary>
+	
+* Debug satement
+```java
+   system.debug(loglevel, msg)
+   system.debug(msg)
+```
+* Logging levels
+```java
+NONE, ERROR, WARN, INFO, DEBUG, FINE, FINER, FINEST
+```
+</details>
 <details>
 	<summary> Upload and Read CSVs </summary>
 	

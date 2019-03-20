@@ -63,6 +63,34 @@ list<list<value>> // instead of doing one records adding to db, we have to add t
 list.sort()
 sets  // it is unique and you can put ids, string, object etc in it. are best to work with result of queries. Ex put all ids you get from a query and then take it to a query and say give me results that mathch with ids in this query
 ```
+#### Triggers
+* Best practice for triggers is to follow this pattern
+```java
+trigger AccountTrigger on Account (after delete, after insert, after undelete, after update, 
+                                   before delete, before insert, before update)
+{
+
+AccountTriggerHandler handler = new AccountTriggerHandler(trigger.isExecuting, trigger.size);
+//
+// Before Insert - new record(s) being created
+if(trigger.isInsert && trigger.isBefore) 
+  {
+    handler.OnBeforeInsert(trigger.new);
+    //
+    // After Insert - new record(s) being created
+  }else if(trigger.isInsert && trigger.isAfter) {
+   handler.OnAfterInsert(trigger.newMap);
+   //
+   // Before Update - existing record(s) being saved
+  }else if(trigger.isUpdate && trigger.isBefore){
+   handler.OnBeforeUpdate(trigger.oldMap, trigger.newMap);
+   //
+   // After Update - existing record(s) being saved
+  }......
+}
+```
+* Notice we keep only one function call after each one. 
+
 #### SETS
 * `SETS` everything in it are unique. you can `add` two sets as 
 ```java

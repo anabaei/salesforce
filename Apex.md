@@ -169,23 +169,22 @@ global void execute(Database.BatchableContext BC, List<sObject> scope)
 #### Scheduler
 * Remmeber: `type` of query here should be same as type of objects we `execute` at execution method ad loader
 ```java
-Global class ExampleScheduler implements Schedulable {
+Global class AccountScheduler implements Schedulable {
  global void execute(SchedulableContext SC)
   {
   // create a loader class and instantiate it
   // define query in loader class
-  ExampleBatchLoader myLoader = new ExampleBatchLoader();
+  AccountLoader myLoader = new AccountLoader();
   //
   // set the query string for the SOQL query
-  //
-  myLoader.query = 'select Id, AccountId, ContactId  from Case';
+  
+  myLoader.query = 'select Id, AccountNumber from Account';
   // call Database.executeBatch() to start the batch process executing
   // myLoader - instantiation of the batch loader
   // myBatchSize - the number of records to process in each batch
   integer myBatchSize = 2;
   ID batchprocessid = Database.executeBatch(myLoader, myBatchSize);
-  }
-  
+  } 
 }
 ```
 * BatchSize saying how many records we want to process at a time. If batchsize is 2 then it means if we get 4000 records, then the batch  would be 2000. If we set it to 1 then it would be 4000. Optimal is 100-200 and check if fails because of complexity of DML then decrease it. 

@@ -140,7 +140,7 @@ CPU TIME 60,000 milliseconds
 * `database.querylocator` always like this. It run the query and if there are one milion records in query then it call `execute` function in chunks like 100 each times. So when it is done all it calls finish function which usually is basic as defualt.
 * So only we work with `execute` funciton.  
 ```java
-global class ExampleBatchLoader implements Database.Batchable<sObject>, Database.Stateful {
+Global class AccountLoader implements Database.Batchable<sObject>, Database.Stateful {
 //
 // query string that is set in the ExampleScheduler (and ExampleController if one is created)
 //
@@ -152,9 +152,14 @@ global database.querylocator start(Database.BatchableContext BC) {
   }
   // execute method is called by database.queryLocater -- the number of executions is the total number of
   // records returned from query divided by the number of records to be done in each batch
-global void execute(Database.BatchableContect BC, List<sObject> scope) 
+global void execute(Database.BatchableContext BC, List<sObject> scope) 
   {
   /// do your jobs here!
+   list<Account> myLst = scope;
+      for(Account x: myLst)
+      {
+          
+      }
   }
   // after all batches have been executed, do any final cleanup tasks in this mehtod
  global void finish(Database.BatchableContext BC){

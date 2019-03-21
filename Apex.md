@@ -192,7 +192,7 @@ Global class AccountScheduler implements Schedulable {
 #### Run Batch Job
 
 * Run below in developer console and you can see results at `apex jobs` as completed. 
-```
+```java
 public void startBatch() {
     // create a loader class and instantiate it
     // define query in loader class

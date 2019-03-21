@@ -137,7 +137,8 @@ DML - 150
 CPU TIME 60,000 milliseconds
 ```
 #### Loader
-* 
+* `database.querylocator` always like this. It run the query and if there are one milion records in query then it call `execute` function in chunks like 100 each times. So when it is done all it calls finish function which usually is basic as defualt.
+* So only we work with `execute` funciton.  
 ```java
 global class ExampleBatchLoader implements Database.Batchable<sObject>, Database.Stateful {
 //
@@ -153,13 +154,43 @@ global database.querylocator start(Database.BatchableContext BC) {
   // records returned from query divided by the number of records to be done in each batch
 global void execute(Database.BatchableContect BC, List<sObject> scope) 
   {
-  
+  /// do your jobs here!
   }
   // after all batches have been executed, do any final cleanup tasks in this mehtod
  global void finish(Database.BatchableContext BC){
  }
 }
 ```
+#### Scheduler
+* Remmeber: `type` of query here should be same as type of objects we `execute` at execution method ad loader
+```java
+Global class ExampleScheduler implements Schedulable {
+ global void execute(SchedulableContext SC)
+  {
+  // create a loader class and instantiate it
+  // define query in loader class
+  ExampleBatchLoader myLoader = new ExampleBatchLoader();
+  //
+  // set the query string for the SOQL query
+  //
+  myLoader.query = 'select Id, AccountId, ContactId  from Case';
+  // call Database.executeBatch() to start the batch process executing
+  // myLoader - instantiation of the batch loader
+  // myBatchSize - the number of records to process in each batch
+  integer myBatchSize = 2;
+  ID batchprocessid = Database.executeBatch(myLoader, myBatchSize);
+  }
+  
+}
+```
+* BatchSize saying how many records we want to process at a time. If batchsize is 2 then it means if we get 4000 records, then the batch  would be 2000. If we set it to 1 then it would be 4000. Optimal is 100-200 and check if fails because of complexity of DML then decrease it. 
+
+#### Controller(optional)
+* Create a button to invoke scheduled class
+```java
+
+```
+
 </details>
 <details>
 	<summary> Debuggin and Logging </summary>

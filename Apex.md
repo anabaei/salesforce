@@ -216,7 +216,15 @@ public class AccountButtonController {
   }
 }
 ```
-
+* Apex page is like
+```java
+<apex:page standardController="Account" extensions="AccountButtonController" >
+</apex:page>
+```
+* In salesforce you need a button, to add a button at accounts objects  
+```java
+setup -> Account -> Buttons, Links and Actions -> new button -> name, select details page -> visual force page -> content a page 
+```
 </details>
 <details>
 	<summary> Debuggin and Logging </summary>

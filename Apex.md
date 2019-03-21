@@ -189,6 +189,29 @@ Global class AccountScheduler implements Schedulable {
 ```
 * BatchSize saying how many records we want to process at a time. If batchsize is 2 then it means if we get 4000 records, then the batch  would be 2000. If we set it to 1 then it would be 4000. Optimal is 100-200 and check if fails because of complexity of DML then decrease it. 
 
+#### Run Batch Job
+
+* Run below in developer console and you can see results at `apex jobs` as completed. 
+```
+public void startBatch() {
+    // create a loader class and instantiate it
+    // define query in loader class
+    AccountLoader myLoader = new AccountLoader();
+    // set the query string for the SOQL query
+    myLoader.query = 'select Id, AccountNumber from Account';
+    System.debug('******** myloader.query'+ myLoader.query);
+    ////// 
+    integer myBatchSize = 2;
+    ID batchprocessid = Database.executeBatch(myLoader, myBatchSize);
+    /// return the user to the current page 
+  }  
+startBatch();
+```
+* Now it is ready to schedual.Go to 
+```java
+setup -> develop -> classes -> schedual Apex -> Name -> Show classes that are schedulable -> 
+```
+
 #### Controller(optional)
 * Create a button to invoke scheduled class
 ```java
@@ -223,7 +246,11 @@ public class AccountButtonController {
 ```
 * In salesforce you need a button, to add a button at accounts objects  
 ```java
-setup -> Account -> Buttons, Links and Actions -> new button -> name, select details page -> visual force page -> content a page 
+setup -> Account -> Buttons, Links and Actions -> new button -> name, select details page -> visual force page -> content the page  
+```
+* Now back to account, you can not see it untill modify the layout of the account as
+```java
+account -> layout -> buttons -> add
 ```
 </details>
 <details>

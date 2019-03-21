@@ -126,11 +126,39 @@ update mycontacts; // one DML
 <details>
 	<summary> Batch </summary>
 
-* Batch mood in background can process thousands of records of data limitations per thread
+ Batch mood in background can process thousands of records of data limitations per thread and has three parts: 
+* `Loader`: has methods to repeat and has a final method
+* `Schedule`r: this is a class that we schedul on specific time frame 
+* `Controller`: (optional) - can be used to create a button to execute loader or wait for scheuler to start scheduled calss
+
 ```java
 SOQL- 200 
 DML - 150 
 CPU TIME 60,000 milliseconds
+```
+#### Loader
+* 
+```java
+global class ExampleBatchLoader implements Database.Batchable<sObject>, Database.Stateful {
+//
+// query string that is set in the ExampleScheduler (and ExampleController if one is created)
+//
+public string query;
+// Database.executeBatch() in ExampleScheduler call this start method
+//
+global database.querylocator start(Database.BatchableContext BC) {
+     return Database.getQueryLocator(query);
+  }
+  // execute method is called by database.queryLocater -- the number of executions is the total number of
+  // records returned from query divided by the number of records to be done in each batch
+global void execute(Database.BatchableContect BC, List<sObject> scope) 
+  {
+  
+  }
+  // after all batches have been executed, do any final cleanup tasks in this mehtod
+ global void finish(Database.BatchableContext BC){
+ }
+}
 ```
 </details>
 <details>
@@ -364,9 +392,7 @@ for(Contact conti: cantactSet){
 * Callout from scheduled Apex not supported use this [link](https://salesforcespace.blogspot.ca/2016/04/webservice-callout-from-scheduled-apex.html) Queaboe works 
 
 ### Batch
-* Loader: has to repeat methods and final method that we want to be repeated
-* Scheduler: this is a class that we schedul on specific time frame 
-* Controller: optional class - can be used to create a button to execute loader 
+
 * Bulkification: writing triggers to handle more than one record at a time
 * To run a sample in batch just define hello world class implements `Schedulable` interface as
 ```java

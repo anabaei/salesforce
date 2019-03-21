@@ -192,20 +192,19 @@ Global class AccountScheduler implements Schedulable {
 #### Controller(optional)
 * Create a button to invoke scheduled class
 ```java
-public class ExampleController {
+public class AccountButtonController {
   public ApexPages.standardcontroller Controller {get;set;}
   
-  public ExampleController(ApexPages.StandardController stdController) {
+  public AccountButtonController(ApexPages.StandardController stdController) {
        Controller = stdController;
   }
-  
   public pageReference startBatch() {
     string myId = ApexPages.currentPage().getParameters().get('id');
     // create a loader class and instantiate it
     // define query in loader class
-    ExampleBatchLoader myLoader = new ExampleBatchLoader();
+    AccountLoader myLoader = new AccountLoader();
     // set the query string for the SOQL query
-    myLoader.query = 'select id, AccountNumber from Account';
+    myLoader.query = 'select Id, AccountNumber from Account';
     System.debug('******** myloader.query'+ myLoader.query);
     ////// 
     integer myBatchSize = 2;

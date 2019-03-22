@@ -139,6 +139,7 @@ CPU TIME 60,000 milliseconds
 #### Loader
 * `database.querylocator` always like this. It run the query and if there are one milion records in query then it call `execute` function in chunks like 100 each times. So when it is done all it calls finish function which usually is basic as defualt.
 * So only we work with `execute` funciton.  
+* At start we can assign a call to returns thousands of records, then execute would go and run them instead of records from a query
 ```java
 Global class AccountLoader implements Database.Batchable<sObject>, Database.Stateful {
 //

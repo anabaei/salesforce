@@ -167,6 +167,7 @@ global void execute(Database.BatchableContext BC, List<sObject> scope)
  }
 }
 ```
+
 #### Scheduler
 * Remmeber: `type` of query here should be same as type of objects we `execute` at execution method ad loader
 ```java
@@ -188,7 +189,17 @@ Global class AccountScheduler implements Schedulable {
   } 
 }
 ```
-* BatchSize saying how many records we want to process at a time. If batchsize is 2 then it means if we get 4000 records, then the batch  would be 2000. If we set it to 1 then it would be 4000. Optimal is 100-200 and check if fails because of complexity of DML then decrease it. 
+* BatchSize calculate how many batchs. 
+```java
+Accounts = 10;
+myBatchSize = 2;
+=> Total Batches = 5
+OR
+Accounts = 10
+myBatchSize = 1;
+=> Total Batches = 10;
+```
+If batchsize is 2 then it means if we get 4000 records, then the batch  would be 2000. If we set it to 1 then it would be 4000. Optimal is 100-200 and check if fails because of complexity of DML then decrease it. 
 
 #### Run Batch Job
 

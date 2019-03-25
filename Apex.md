@@ -255,6 +255,14 @@ account -> layout -> buttons -> add
 ```
 </details>
 <details>
+	<summary> Batch a Call out </summary>
+	
+* Add `,Database.AllowsCallouts, ` to `AttendanceBatchLoader` class to overcome `too many call outs` error
+
+</details>
+
+
+<details>
 	<summary> Debuggin and Logging </summary>
 	
 * Debug satement

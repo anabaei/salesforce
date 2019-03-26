@@ -228,7 +228,7 @@ startBatch();
 ```java
 setup -> develop -> classes -> schedual Apex -> Name -> Show classes that are schedulable -> 
 ```
-
+* NOTICE: If you make scheudal job, you can not change it in code unless you remove it and assign  it again.
 #### Controller(optional)
 * Create a button to invoke scheduled class
 ```java

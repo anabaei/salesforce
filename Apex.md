@@ -269,6 +269,57 @@ account -> layout -> buttons -> add
 	<summary> Batch a Call out </summary>
 	
 * Add `,Database.AllowsCallouts, ` to `AttendanceBatchLoader` class to overcome `too many call outs` error
+### Test
+* At `debug -> open execute anonymously` 
+```java
+public void startBatch() 
+  {
+    // create a loader class and instantiate it
+    // define query in loader class
+    AttendeesBatchLoader myLoader = new AttendeesBatchLoader();
+    // set the query string for the SOQL query
+    myLoader.query = 'select Id from Account';
+    ////// 
+    integer myBatchSize = 2;
+    ID batchprocessid = Database.executeBatch(myLoader, myBatchSize);
+    /// return the user to the current page 
+  }  
+startBatch();
+```
+* Then create a class as `AttendeesBatchLoader` 
+```java
+Global class AttendeesBatchLoader implements Database.Batchable<sObject>,Database.AllowsCallouts  {
+//                                           Database.Batchable<sObject>
+// query string that is set in the ExampleScheduler (and ExampleController if one is created)
+//
+public string query;
+// Database.executeBatch() in ExampleScheduler call this start method
+// global database.querylocator start(Database.BatchableContext BC) {   
+//  return Database.getQueryLocator(query);
+//  }
+    
+    
+ global database.querylocator start(Database.BatchableContext BC) {
+     return Database.getQueryLocator(query);
+  }
+    
+    global void execute(Database.BatchableContext BC, List<sObject> scope) 
+  {
+   callout3();
+  }  
+       
+  // after all batches have been executed, do any final cleanup tasks in this mehtod
+ global void finish(Database.BatchableContext BC)
+ {
+ }
+ 
+ 
+public void callout3(){
+        System.debug('callout3');
+    }  
+```
+* Above is simple batch job and start a batch job. To add call out to get millions of records somehow we should back call out results as query here(like 5000) and then define number of batch jobs(100) we want to devide it as mybatchsize= 50 to overcome dml limitation
+* A good [resource](https://developer.salesforce.com/forums/?id=9060G000000BdVjQAK)
 
 </details>
 

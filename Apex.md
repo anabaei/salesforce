@@ -269,7 +269,7 @@ account -> layout -> buttons -> add
 	<summary> Batch a Call out </summary>
 	
 * Add `,Database.AllowsCallouts, ` to `AttendanceBatchLoader` class to overcome `too many call outs` error
-### Test
+
 * At `debug -> open execute anonymously` 
 ```java
 public void startBatch() 
@@ -312,7 +312,7 @@ Global class AttendeesBatchLoader implements Database.Batchable<sObject>,Databas
           //req.setHeader('Authorization', header);
           req.setHeader('Content-Type', 'application/json');
           req.setEndpoint(endpoint);
-          req.setMethod('GET');
+          req.setMethod('GET');  // OR POST
           req.setBody('Information you wanna send');
           req.setCompressed(true); // This is imp according to SF, but please check if
                                  // the webservice accepts the info. Mine did not :P

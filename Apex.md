@@ -189,6 +189,11 @@ Global class AccountScheduler implements Schedulable {
   } 
 }
 ```
+* After creating Batch files, you need to schedual it as 
+```java
+setup -> apex class -> schedule class -> assign dates and time
+```
+* An example of a `batchloader` and `batchscheual` you can find it [here](https://github.com/anabaei/salesforce/tree/master/codes)
 * BatchSize calculate how many batchs. 
 ```java
 Accounts = 10;

@@ -1,0 +1,78 @@
+
+<apex:page controller="EventbriteAttendees_controller">
+
+<apex:includeScript value="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+<apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" />
+<apex:stylesheet value="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"/>
+
+  <!-- Begin Default Content REMOVE THIS -->
+   <div class="col-12 alert alert-warning">
+  
+     <h3> Event </h3>
+     <p>{!ss} </p>
+     <p>{!ss3} </p>
+       
+   </div>
+   
+    <apex:form >
+        <apex:pagemessages />
+         <div class="col-12 alert alert-warning">
+           <apex:pageBlock >
+          <apex:pageBlockSection columns="4"> 
+                  <apex:commandButton value="Import" action="{!hittheserver}" />
+                  <apex:commandButton value="Delete All" action="{!deleteall}" />
+                  
+            </apex:pageBlockSection>
+              </apex:pageBlock>
+        <apex:pageBlock >
+           
+            <apex:pageBlockSection columns="4"> 
+               
+                  <apex:inputFile value="{!csvFileBody}"  filename="{!csvAsString}"/>
+                  
+                  <apex:commandButton value="Import EventBrite Attendees" action="{!importCSVFile}" />
+                  
+            </apex:pageBlockSection>
+           
+            
+        </apex:pageBlock>
+     
+        
+ 
+        
+        </div>
+        <apex:pageBlock >
+           <apex:pageblocktable value="{!accList}" var="acc">
+            <apex:column value="{!acc.eventId__c}" />
+            <apex:column value="{!acc.eventName__c}" />
+           
+            
+              <apex:column value="{!acc.order_id__c}" />
+               <apex:column value="{!acc.Order_Date__c}" />
+                <apex:column value="{!acc.FirstName__c}" />
+                 <apex:column value="{!acc.LastName__c}" />
+                  <apex:column value="{!acc.email__c}" />
+                   <apex:column value="{!acc.Quantity__c}" />
+                    <apex:column value="{!acc.Ticket_Type__c}" />
+                     <apex:column value="{!acc.Order_Type__c}" />
+                     <apex:column value="{!acc.Total_Paid__c}" />
+                     <apex:column value="{!acc.Question1__c}" />
+                     <apex:column value="{!acc.Question2__c}" />
+                  
+                    <apex:column value="{!acc.Question4__c}" />
+                    <apex:column value="{!acc.Question5__c}" />
+                    <apex:column value="{!acc.Question6__c}" />
+                      <apex:column value="{!acc.Question7__c}" />
+                     <apex:column value="{!acc.Eventbrite_Fees__c}" />
+                     <apex:column value="{!acc.Total_Paid__c}" />
+           <!--    <apex:column value="{!acc.AccountNumber}" />
+              <apex:column value="{!acc.Type}" />
+              <apex:column value="{!acc.Accountsource}" />
+              <apex:column value="{!acc.Industry }" />  -->
+        </apex:pageblocktable>
+     </apex:pageBlock>
+   </apex:form>
+   
+        
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

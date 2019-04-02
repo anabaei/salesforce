@@ -1,0 +1,42 @@
+<apex:page controller="SendEmailnow" standardStylesheets="false" sidebar="true" applyHtmlTag="true" showHeader="true">
+
+<apex:includeScript value="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+<apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" />
+<apex:stylesheet value="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"/>
+
+
+
+  <apex:form > 
+         
+      <div class="row">
+        <div class="col-1"> </div>
+        <div class="col-3 alert alert-success"> 
+              <apex:pageMessages escape="false"/>
+              
+              <label for="sendEmailnow"> Email </label>
+              <apex:inputtext styleClass="form-control"  value="{!email}" id="email" html-placeholder="Email"/>
+              
+              <br />
+              <apex:outputlabel >Select Report</apex:outputlabel>
+              
+               <apex:selectList value="{!reportid}" styleClass="form-control" multiselect="false" size="1">
+                <apex:selectOptions value="{!items}"/>
+              </apex:selectList><p/>
+             
+               
+              <apex:commandButton value="Send Email Now" rerender="one" action="{!sendEmailnow}"  /><br />
+              
+              
+        </div>
+        
+         
+         <div class="col-1"> </div>
+          <div class="col-2 ">
+          <apex:image value="https://image.flaticon.com/icons/svg/33/33999.svg" width="220" height="55" alt="image tag" />
+          </div>
+      </div>
+  </apex:form>
+ <script>
+ 
+</script>
+</apex:page>

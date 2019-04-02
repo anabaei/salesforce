@@ -1,0 +1,49 @@
+<apex:page controller="Eventslist" standardStylesheets="false" >
+
+<apex:includeScript value="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+<apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" />
+<apex:stylesheet value="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"/>
+  <style type="text/css">
+      .card {
+          float: left;
+          height: 60px;
+          width: 80px;
+          padding: 10px 10px 10px 10px;
+          text-align: center;
+          border: 1px solid black;
+          margin-right: 10px;
+          background-color: red;
+          color: white;
+          font-weight: bold;
+          font-size: 14px;
+      }
+        
+      .tr  {
+   border-bottom: 1px solid grey;
+   border-left: 1px solid grey;
+}
+       .th  {
+    border: 1px solid grey;
+}
+  .okay{
+   color: green;
+  }
+  .update{
+   color: red;
+  }
+
+  </style>
+  <br />
+  <center> <h1 style="font-size:16px; color:grey">List of Events</h1>
+  
+    <br /><br />
+  <apex:form > 
+     
+         <apex:outputText value="{!Eventinfo}" lang="html" escape="false"> </apex:outputText>
+    
+
+      
+      
+  </apex:form>
+  </center>
+</apex:page>

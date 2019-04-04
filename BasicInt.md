@@ -61,6 +61,15 @@
  
  </details>
  <details>
+	<summary> Export Data   </summary>
+ 
+ * In order to `export data` 
+ ```javascript
+ setup -> export data
+ ```
+ * In dev environemtn you can have `monthly` but in production version you can have `weekly` design
+ </details>	
+ <details>
 	<summary> Deactive Email notification receiving </summary>
 	
 * In order to deactive email receving 

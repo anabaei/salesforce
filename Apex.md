@@ -367,6 +367,27 @@ NONE, ERROR, WARN, INFO, DEBUG, FINE, FINER, FINEST
 ```
 </details>
 <details>
+	<summary> Remove Duplicates  </summary>
+
+* below remove duplicates from our object 
+```java
+public void rmdup(){
+    List<EventbriteList__c> temp = [Select id, order_id__c from EventbriteList__c];
+    Set<String> Names = new Set<String>();
+    List<EventbriteList__c> ToDelete = new List<EventbriteList__c>();
+    for (EventbriteList__c a : temp) {
+        if (Names.contains(a.order_id__c)) {
+          ToDelete.add(a);
+        }
+    else {
+        Names.add(a.order_id__c);
+        } 
+   }
+   delete ToDelete;   
+ }
+```
+</details>
+<details>
 	<summary> Upload and Read CSVs </summary>
 	
 * Read csv form visualforce page as [link](http://www.sfdcpoint.com/salesforce/import-csv-file-using-apex-visualforce/)	

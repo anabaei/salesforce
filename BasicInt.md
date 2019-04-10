@@ -61,7 +61,7 @@
  
  </details>
  <details>
-	<summary> Export Data   </summary>
+	<summary> Export Data  (schedule job report) </summary>
  
  * In order to `export data` 
  ```javascript

@@ -3,6 +3,41 @@
 * [Custom fields not showing in Report](https://success.salesforce.com/apex/answers?id=90630000000D4YnAAK)
 
 <details> 
+ <summary> Connect to VS IDE  </summary>
+	
+* Visual Studio need first you download CLI since CLI helps to connet to environment to download check [this](https://sfdc.co/sfdx_cli_osx) open terminal and print to check `cli` is installed
+```java
+sfdx 
+```
+Then download `Salesforce Extension Pack` in visual studio.
+#### Create a project
+* Command + Shift + P (SFDX: Create Project)  or in terminal  
+```java
+sfdx force:project:create --projectname VSCodeQuickStar
+```
+* to search a file type `Command + P ` . 
+* Connect to Salesforce first `Command + Shift + P `
+```java
+SFDX: Authorize an Org
+```
+#### Class
+* `force-app -> main -> default -> classes` create a folder classes
+```java
+ Command + Shift + P 
+ SFDX: Create Apex Class
+```
+#### Query
+* highlight query then  Command + Shift + P 
+```java
+Search for SFDX:Execute SOQL Query with Currently Selected Text
+Select REST API and press Enter.
+```
+#### Deploy
+* rigth click on class and select `deploy to org`
+
+</details>	
+
+<details> 
  <summary> Install Environment </summary>
 
 * Install [Java JDK](https://www.oracle.com/technetwork/java/javase/downloads/index.html) first

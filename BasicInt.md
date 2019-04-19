@@ -37,7 +37,16 @@ Select REST API and press Enter.
 * rigth click on class and select `deploy to org`
 
 </details>	
+<details> 
+ <summary> CPQ </summary>
 
+* contact price query basic job is 
+```java
+Pull prices and products.
+Generate quotes.
+```
+
+</details>	
 <details> 
  <summary> Install Environment </summary>
 

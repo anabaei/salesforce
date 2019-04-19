@@ -40,10 +40,10 @@ Select REST API and press Enter.
 <details> 
  <summary> CPQ </summary>
 
-* contact price query basic [job is](https://trailhead.salesforce.com/content/learn/modules/salesforce-cpq-features/advanced-approvals-aom?trail_id=getting_started_crm_basics) 
+* `configure price quote` basic [job is](https://trailhead.salesforce.com/content/learn/modules/salesforce-cpq-features/advanced-approvals-aom?trail_id=getting_started_crm_basics) 
 ```java
-Pull prices and products.
-Generate quotes.
+Pull prices and products
+Generate quotes
 ```
 * CPQ product rules help ensure sales reps are putting together the right products and bundles every single time
 * There are 4 types of rules you can select and combine to increase selling experience and quote accuracy.
@@ -58,6 +58,16 @@ alert rules
 ```java
 smart, requiring, delegate and replacing approvals
 ```
+ * CPQ offers advanced order management (AOM) with key features 
+ ```jafa
+ Fulfill Orders Faster 
+ Flexible for Evolving Customer Needs
+ 360-Degree View of the Customer
+ Connect to Back Office
+ ```
+* By Split quotes into multiple orders you get benefit from AOM
+#### Time
+* Salesforce CPQ is the only CPQ tool with the understanding the concept of time built in like renewal opportunities and quotes.    
 
 </details>	
 <details> 

@@ -40,10 +40,23 @@ Select REST API and press Enter.
 <details> 
  <summary> CPQ </summary>
 
-* contact price query basic job is 
+* contact price query basic [job is](https://trailhead.salesforce.com/content/learn/modules/salesforce-cpq-features/advanced-approvals-aom?trail_id=getting_started_crm_basics) 
 ```java
 Pull prices and products.
 Generate quotes.
+```
+* CPQ product rules help ensure sales reps are putting together the right products and bundles every single time
+* There are 4 types of rules you can select and combine to increase selling experience and quote accuracy.
+```java
+validation rules 
+selection rules 
+filter rules
+alert rules
+```
+`MDQ` multi dimential quoting. 
+* Salesforce has `advance approval` beside standard approval for complicate business. key features are
+```java
+smart, requiring, delegate and replacing approvals
 ```
 
 </details>	

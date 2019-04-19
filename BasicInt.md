@@ -5,6 +5,7 @@
 <details> 
  <summary> Connect to VS IDE  </summary>
 	
+	
 * Visual Studio need first you download CLI since CLI helps to connet to environment to download check [this](https://sfdc.co/sfdx_cli_osx) open terminal and print to check `cli` is installed
 ```java
 sfdx 
